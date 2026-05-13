@@ -1,0 +1,109 @@
+package com.ebay.listingmetadata.generated.metadata.models;
+
+import com.microsoft.kiota.serialization.AdditionalDataHolder;
+import com.microsoft.kiota.serialization.Parsable;
+import com.microsoft.kiota.serialization.ParseNode;
+import com.microsoft.kiota.serialization.SerializationWriter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+/**
+ * A type that defines the response fields for the &lt;b&gt;getProductSafetyLabels&lt;/b&gt; method.
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class ProductSafetyLabelsResponse implements AdditionalDataHolder, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    private Map<String, Object> additionalData;
+    /**
+     * This array contains a list of pictograms of product safety labels  for the specified marketplace.
+     */
+    private java.util.List<ProductSafetyLabelPictogram> pictograms;
+    /**
+     * This array contains available product safety labels statements for the specified marketplace. 
+     */
+    private java.util.List<ProductSafetyLabelStatement> statements;
+    /**
+     * Instantiates a new {@link ProductSafetyLabelsResponse} and sets the default values.
+     */
+    public ProductSafetyLabelsResponse() {
+        this.setAdditionalData(new HashMap<>());
+    }
+    /**
+     * Creates a new instance of the appropriate class based on discriminator value
+     * @param parseNode The parse node to use to read the discriminator value and create the object
+     * @return a {@link ProductSafetyLabelsResponse}
+     */
+    @jakarta.annotation.Nonnull
+    public static ProductSafetyLabelsResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+        Objects.requireNonNull(parseNode);
+        return new ProductSafetyLabelsResponse();
+    }
+    /**
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * @return a {@link Map<String, Object>}
+     */
+    @jakarta.annotation.Nonnull
+    public Map<String, Object> getAdditionalData() {
+        return this.additionalData;
+    }
+    /**
+     * The deserialization information for the current model
+     * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
+     */
+    @jakarta.annotation.Nonnull
+    public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("pictograms", (n) -> { this.setPictograms(n.getCollectionOfObjectValues(ProductSafetyLabelPictogram::createFromDiscriminatorValue)); });
+        deserializerMap.put("statements", (n) -> { this.setStatements(n.getCollectionOfObjectValues(ProductSafetyLabelStatement::createFromDiscriminatorValue)); });
+        return deserializerMap;
+    }
+    /**
+     * Gets the pictograms property value. This array contains a list of pictograms of product safety labels  for the specified marketplace.
+     * @return a {@link java.util.List<ProductSafetyLabelPictogram>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<ProductSafetyLabelPictogram> getPictograms() {
+        return this.pictograms;
+    }
+    /**
+     * Gets the statements property value. This array contains available product safety labels statements for the specified marketplace. 
+     * @return a {@link java.util.List<ProductSafetyLabelStatement>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<ProductSafetyLabelStatement> getStatements() {
+        return this.statements;
+    }
+    /**
+     * Serializes information the current object
+     * @param writer Serialization writer to use to serialize this model
+     */
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
+        Objects.requireNonNull(writer);
+        writer.writeCollectionOfObjectValues("pictograms", this.getPictograms());
+        writer.writeCollectionOfObjectValues("statements", this.getStatements());
+        writer.writeAdditionalData(this.getAdditionalData());
+    }
+    /**
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * @param value Value to set for the AdditionalData property.
+     */
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
+        this.additionalData = value;
+    }
+    /**
+     * Sets the pictograms property value. This array contains a list of pictograms of product safety labels  for the specified marketplace.
+     * @param value Value to set for the pictograms property.
+     */
+    public void setPictograms(@jakarta.annotation.Nullable final java.util.List<ProductSafetyLabelPictogram> value) {
+        this.pictograms = value;
+    }
+    /**
+     * Sets the statements property value. This array contains available product safety labels statements for the specified marketplace. 
+     * @param value Value to set for the statements property.
+     */
+    public void setStatements(@jakarta.annotation.Nullable final java.util.List<ProductSafetyLabelStatement> value) {
+        this.statements = value;
+    }
+}

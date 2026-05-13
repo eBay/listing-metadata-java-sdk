@@ -1,0 +1,151 @@
+package com.ebay.listingmetadata.generated.taxonomy.models;
+
+import com.microsoft.kiota.serialization.AdditionalDataHolder;
+import com.microsoft.kiota.serialization.Parsable;
+import com.microsoft.kiota.serialization.ParseNode;
+import com.microsoft.kiota.serialization.SerializationWriter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+/**
+ * This type contains information about one of the ancestors of a suggested category. An ordered list of these references describes the path from the suggested category to the root of the category tree it belongs to.
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class AncestorReference implements AdditionalDataHolder, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    private Map<String, Object> additionalData;
+    /**
+     * The unique identifier of the eBay ancestor category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of a full default category tree includes the &lt;b&gt;categoryId&lt;/b&gt; field, but its value should not be relied upon. It provides no useful information for application development.&lt;/span&gt;
+     */
+    private String categoryId;
+    /**
+     * The name of the ancestor category identified by &lt;b&gt;categoryId&lt;/b&gt;.
+     */
+    private String categoryName;
+    /**
+     * The href portion of the &lt;b&gt;getCategorySubtree&lt;/b&gt; call that retrieves the subtree below the ancestor category node.
+     */
+    private String categorySubtreeNodeHref;
+    /**
+     * The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;&lt;b&gt;0&lt;/b&gt;&lt;/code&gt;. &lt;/span&gt;
+     */
+    private Integer categoryTreeNodeLevel;
+    /**
+     * Instantiates a new {@link AncestorReference} and sets the default values.
+     */
+    public AncestorReference() {
+        this.setAdditionalData(new HashMap<>());
+    }
+    /**
+     * Creates a new instance of the appropriate class based on discriminator value
+     * @param parseNode The parse node to use to read the discriminator value and create the object
+     * @return a {@link AncestorReference}
+     */
+    @jakarta.annotation.Nonnull
+    public static AncestorReference createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+        Objects.requireNonNull(parseNode);
+        return new AncestorReference();
+    }
+    /**
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * @return a {@link Map<String, Object>}
+     */
+    @jakarta.annotation.Nonnull
+    public Map<String, Object> getAdditionalData() {
+        return this.additionalData;
+    }
+    /**
+     * Gets the categoryId property value. The unique identifier of the eBay ancestor category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of a full default category tree includes the &lt;b&gt;categoryId&lt;/b&gt; field, but its value should not be relied upon. It provides no useful information for application development.&lt;/span&gt;
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCategoryId() {
+        return this.categoryId;
+    }
+    /**
+     * Gets the categoryName property value. The name of the ancestor category identified by &lt;b&gt;categoryId&lt;/b&gt;.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCategoryName() {
+        return this.categoryName;
+    }
+    /**
+     * Gets the categorySubtreeNodeHref property value. The href portion of the &lt;b&gt;getCategorySubtree&lt;/b&gt; call that retrieves the subtree below the ancestor category node.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCategorySubtreeNodeHref() {
+        return this.categorySubtreeNodeHref;
+    }
+    /**
+     * Gets the categoryTreeNodeLevel property value. The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;&lt;b&gt;0&lt;/b&gt;&lt;/code&gt;. &lt;/span&gt;
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getCategoryTreeNodeLevel() {
+        return this.categoryTreeNodeLevel;
+    }
+    /**
+     * The deserialization information for the current model
+     * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
+     */
+    @jakarta.annotation.Nonnull
+    public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        deserializerMap.put("categoryId", (n) -> { this.setCategoryId(n.getStringValue()); });
+        deserializerMap.put("categoryName", (n) -> { this.setCategoryName(n.getStringValue()); });
+        deserializerMap.put("categorySubtreeNodeHref", (n) -> { this.setCategorySubtreeNodeHref(n.getStringValue()); });
+        deserializerMap.put("categoryTreeNodeLevel", (n) -> { this.setCategoryTreeNodeLevel(n.getIntegerValue()); });
+        return deserializerMap;
+    }
+    /**
+     * Serializes information the current object
+     * @param writer Serialization writer to use to serialize this model
+     */
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
+        Objects.requireNonNull(writer);
+        writer.writeStringValue("categoryId", this.getCategoryId());
+        writer.writeStringValue("categoryName", this.getCategoryName());
+        writer.writeStringValue("categorySubtreeNodeHref", this.getCategorySubtreeNodeHref());
+        writer.writeIntegerValue("categoryTreeNodeLevel", this.getCategoryTreeNodeLevel());
+        writer.writeAdditionalData(this.getAdditionalData());
+    }
+    /**
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * @param value Value to set for the AdditionalData property.
+     */
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
+        this.additionalData = value;
+    }
+    /**
+     * Sets the categoryId property value. The unique identifier of the eBay ancestor category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of a full default category tree includes the &lt;b&gt;categoryId&lt;/b&gt; field, but its value should not be relied upon. It provides no useful information for application development.&lt;/span&gt;
+     * @param value Value to set for the categoryId property.
+     */
+    public void setCategoryId(@jakarta.annotation.Nullable final String value) {
+        this.categoryId = value;
+    }
+    /**
+     * Sets the categoryName property value. The name of the ancestor category identified by &lt;b&gt;categoryId&lt;/b&gt;.
+     * @param value Value to set for the categoryName property.
+     */
+    public void setCategoryName(@jakarta.annotation.Nullable final String value) {
+        this.categoryName = value;
+    }
+    /**
+     * Sets the categorySubtreeNodeHref property value. The href portion of the &lt;b&gt;getCategorySubtree&lt;/b&gt; call that retrieves the subtree below the ancestor category node.
+     * @param value Value to set for the categorySubtreeNodeHref property.
+     */
+    public void setCategorySubtreeNodeHref(@jakarta.annotation.Nullable final String value) {
+        this.categorySubtreeNodeHref = value;
+    }
+    /**
+     * Sets the categoryTreeNodeLevel property value. The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;&lt;b&gt;0&lt;/b&gt;&lt;/code&gt;. &lt;/span&gt;
+     * @param value Value to set for the categoryTreeNodeLevel property.
+     */
+    public void setCategoryTreeNodeLevel(@jakarta.annotation.Nullable final Integer value) {
+        this.categoryTreeNodeLevel = value;
+    }
+}
