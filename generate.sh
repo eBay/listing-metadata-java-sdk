@@ -23,4 +23,8 @@ kiota generate -l java -d specs/sell_metadata_v1_oas3.yaml \
   -c MetadataApiClient -n com.ebay.listingmetadata.generated.metadata \
   -o src/main/java/com/ebay/listingmetadata/generated/metadata --ebc --co
 
+
+echo "Adding license headers to generated files..."
+./add-license-headers.sh ./src
+
 echo "Code generation complete!"
