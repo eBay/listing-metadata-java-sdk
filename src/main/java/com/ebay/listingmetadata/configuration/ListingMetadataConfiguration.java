@@ -23,11 +23,11 @@ import java.util.HashSet;
  * Provides base URLs for Catalog, Charity, Taxonomy, and Metadata APIs.
  */
 public final class ListingMetadataConfiguration {
-    // Base URLs for each API
-    private String catalogBaseUrl = "https://api.ebay.com/commerce/catalog/v1_beta";
-    private String charityBaseUrl = "https://api.ebay.com/commerce/charity/v1";
-    private String taxonomyBaseUrl = "https://api.ebay.com/commerce/taxonomy/v1";
-    private String metadataBaseUrl = "https://api.ebay.com/sell/metadata/v1";
+    // Base URLs for each API (private final; validated at construction time)
+    private final String catalogBaseUrl;
+    private final String charityBaseUrl;
+    private final String taxonomyBaseUrl;
+    private final String metadataBaseUrl;
 
     private String accessToken;  // static fallback; per-call token takes precedence
     private boolean diagnosticLogging = false;
@@ -38,21 +38,59 @@ public final class ListingMetadataConfiguration {
      */
     private RequestOptions defaultRequestOptions = new RequestOptions();
 
-    // Getters and setters
+    /**
+     * Creates a configuration with default eBay production base URLs.
+     */
+    public ListingMetadataConfiguration() {
+        this.catalogBaseUrl = "https://api.ebay.com/commerce/catalog/v1_beta";
+        this.charityBaseUrl = "https://api.ebay.com/commerce/charity/v1";
+        this.taxonomyBaseUrl = "https://api.ebay.com/commerce/taxonomy/v1";
+        this.metadataBaseUrl = "https://api.ebay.com/sell/metadata/v1";
+    }
+
+    /**
+     * Creates a configuration with custom base URLs.
+     * All URLs are validated to ensure they point to allowed hosts.
+     *
+     * @param catalogBaseUrl  Base URL for the Catalog API
+     * @param charityBaseUrl  Base URL for the Charity API
+     * @param taxonomyBaseUrl Base URL for the Taxonomy API
+     * @param metadataBaseUrl Base URL for the Metadata API
+     */
+    public ListingMetadataConfiguration(
+            String catalogBaseUrl,
+            String charityBaseUrl,
+            String taxonomyBaseUrl,
+            String metadataBaseUrl) {
+        // Validate with a temporary set of allowed hosts derived from all four URLs
+        Set<String> allowed = new HashSet<>();
+        allowed.add(extractHost(catalogBaseUrl));
+        allowed.add(extractHost(charityBaseUrl));
+        allowed.add(extractHost(taxonomyBaseUrl));
+        allowed.add(extractHost(metadataBaseUrl));
+
+        this.catalogBaseUrl = validateHost(catalogBaseUrl, allowed);
+        this.charityBaseUrl = validateHost(charityBaseUrl, allowed);
+        this.taxonomyBaseUrl = validateHost(taxonomyBaseUrl, allowed);
+        this.metadataBaseUrl = validateHost(metadataBaseUrl, allowed);
+    }
+
+    // Getters only — no public setters for URL fields (SEC-002)
     public String getCatalogBaseUrl() { return catalogBaseUrl; }
-    public void setCatalogBaseUrl(String catalogBaseUrl) { this.catalogBaseUrl = catalogBaseUrl; }
-
     public String getCharityBaseUrl() { return charityBaseUrl; }
-    public void setCharityBaseUrl(String charityBaseUrl) { this.charityBaseUrl = charityBaseUrl; }
-
     public String getTaxonomyBaseUrl() { return taxonomyBaseUrl; }
-    public void setTaxonomyBaseUrl(String taxonomyBaseUrl) { this.taxonomyBaseUrl = taxonomyBaseUrl; }
-
     public String getMetadataBaseUrl() { return metadataBaseUrl; }
-    public void setMetadataBaseUrl(String metadataBaseUrl) { this.metadataBaseUrl = metadataBaseUrl; }
 
-    public String getAccessToken() { return accessToken; }
+    /**
+     * Sets the fallback access token.
+     *
+     * <p><strong>Security note (SEC-002):</strong> The access token is stored as a plain
+     * {@code String} in the Java heap and may be visible to heap dumps or profilers.
+     * Prefer per-call token injection via {@code TokenContext.runWith()} for sensitive
+     * multi-tenant scenarios.</p>
+     */
     public void setAccessToken(String accessToken) { this.accessToken = accessToken; }
+    public String getAccessToken() { return accessToken; }
 
     public boolean isDiagnosticLogging() { return diagnosticLogging; }
     public void setDiagnosticLogging(boolean diagnosticLogging) { this.diagnosticLogging = diagnosticLogging; }
@@ -70,6 +108,18 @@ public final class ListingMetadataConfiguration {
         hosts.add(extractHost(taxonomyBaseUrl));
         hosts.add(extractHost(metadataBaseUrl));
         return hosts;
+    }
+
+    private String validateHost(String url, Set<String> allowedHosts) {
+        try {
+            String host = new java.net.URI(url).getHost();
+            if (host == null || !allowedHosts.contains(host)) {
+                throw new IllegalArgumentException("URL host not in allowed list: " + url);
+            }
+        } catch (java.net.URISyntaxException e) {
+            throw new IllegalArgumentException("Invalid URL: " + url, e);
+        }
+        return url;
     }
 
     private String extractHost(String url) {

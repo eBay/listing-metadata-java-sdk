@@ -64,8 +64,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                 .getAutomotivePartsCompatibilityPolicies().get(config -> {
@@ -74,7 +74,7 @@ public final class MetadataClient {
                         config.queryParameters.filter = filter;
                     }
                 });
-        });
+        }));
     }
 
     /**
@@ -91,8 +91,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getCategoryPolicies().get(config -> {
@@ -101,7 +101,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -118,8 +118,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getClassifiedAdPolicies().get(config -> {
@@ -128,7 +128,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -143,14 +143,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getCurrencies().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -167,8 +167,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getExtendedProducerResponsibilityPolicies().get(config -> {
@@ -177,7 +177,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -192,14 +192,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getHazardousMaterialsLabels().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -216,8 +216,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getItemConditionPolicies().get(config -> {
@@ -226,7 +226,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -243,8 +243,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getListingStructurePolicies().get(config -> {
@@ -253,7 +253,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -270,8 +270,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getListingTypePolicies().get(config -> {
@@ -280,7 +280,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -297,8 +297,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getMotorsListingPolicies().get(config -> {
@@ -307,7 +307,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -324,8 +324,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getNegotiatedPricePolicies().get(config -> {
@@ -334,7 +334,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -349,14 +349,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getProductSafetyLabels().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -373,8 +373,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getRegulatoryPolicies().get(config -> {
@@ -383,7 +383,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -400,8 +400,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getReturnPolicies().get(config -> {
@@ -410,7 +410,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -427,8 +427,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getShippingPolicies().get(config -> {
@@ -437,7 +437,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     /**
@@ -454,8 +454,8 @@ public final class MetadataClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.marketplace().byMarketplace_id(marketplaceId)
                     .getSiteVisibilityPolicies().get(config -> {
@@ -464,7 +464,7 @@ public final class MetadataClient {
                             config.queryParameters.filter = filter;
                         }
                     });
-        });
+        }));
     }
 
     // ── Compatibility operations ─────────────────────────────────────────────
@@ -481,13 +481,12 @@ public final class MetadataClient {
             SpecificationRequest body,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getCompatibilitiesBySpecification().post(body, config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     /**
@@ -502,13 +501,12 @@ public final class MetadataClient {
             PropertyNamesRequest body,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getCompatibilityPropertyNames().post(body, config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     /**
@@ -523,13 +521,12 @@ public final class MetadataClient {
             PropertyValuesRequest body,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getCompatibilityPropertyValues().post(body, config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     /**
@@ -544,13 +541,12 @@ public final class MetadataClient {
             MultiCompatibilityPropertyValuesRequest body,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getMultiCompatibilityPropertyValues().post(body, config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     /**
@@ -565,13 +561,12 @@ public final class MetadataClient {
             ProductRequest body,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getProductCompatibilities().post(body, config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     // ── Shipping marketplace operations ─────────────────────────────────────
@@ -588,14 +583,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
                     .getExcludeShippingLocations().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -610,14 +605,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
                     .getHandlingTimes().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -632,14 +627,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
                     .getShippingCarriers().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -654,14 +649,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
                     .getShippingLocations().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     /**
@@ -676,14 +671,14 @@ public final class MetadataClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("marketplaceId", marketplaceId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
                     .getShippingServices().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 
     // ── Sales-tax jurisdiction ───────────────────────────────────────────────
@@ -700,13 +695,13 @@ public final class MetadataClient {
             String countryCode,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("countryCode", countryCode);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.country().byCountryCode(countryCode)
                     .salesTaxJurisdiction().get(config -> {
                         headers.forEach((k, v) -> config.headers.add(k, v));
                     });
-        });
+        }));
     }
 }

@@ -61,13 +61,13 @@ public final class CharityClient {
             String charityOrgId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("charityOrgId", charityOrgId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.charityOrg().byCharity_org_id(charityOrgId).get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -88,8 +88,7 @@ public final class CharityClient {
             String registrationIds,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.charityOrg().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
@@ -106,6 +105,6 @@ public final class CharityClient {
                     config.queryParameters.registrationIds = registrationIds;
                 }
             });
-        });
+        }));
     }
 }

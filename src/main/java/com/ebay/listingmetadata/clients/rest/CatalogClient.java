@@ -61,13 +61,13 @@ public final class CatalogClient {
             String epid,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("epid", epid);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.product().byEpid(epid).get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -96,8 +96,7 @@ public final class CatalogClient {
             String q,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.productSummary().search().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
@@ -126,6 +125,6 @@ public final class CatalogClient {
                     config.queryParameters.q = q;
                 }
             });
-        });
+        }));
     }
 }

@@ -59,14 +59,14 @@ public final class TaxonomyClient {
             String categoryTreeId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .fetchItemAspects().get(config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     /**
@@ -83,8 +83,8 @@ public final class TaxonomyClient {
             String categoryId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .getCategorySubtree().get(config -> {
@@ -93,7 +93,7 @@ public final class TaxonomyClient {
                         config.queryParameters.categoryId = categoryId;
                     }
                 });
-        });
+        }));
     }
 
     /**
@@ -111,8 +111,8 @@ public final class TaxonomyClient {
             String q,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .getCategorySuggestions().get(config -> {
@@ -121,7 +121,7 @@ public final class TaxonomyClient {
                         config.queryParameters.q = q;
                     }
                 });
-        });
+        }));
     }
 
     /**
@@ -136,13 +136,13 @@ public final class TaxonomyClient {
             String categoryTreeId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId).get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -159,8 +159,8 @@ public final class TaxonomyClient {
             String categoryId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .getCompatibilityProperties().get(config -> {
@@ -169,7 +169,7 @@ public final class TaxonomyClient {
                         config.queryParameters.categoryId = categoryId;
                     }
                 });
-        });
+        }));
     }
 
     /**
@@ -190,8 +190,8 @@ public final class TaxonomyClient {
             String filter,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .getCompatibilityPropertyValues().get(config -> {
@@ -206,7 +206,7 @@ public final class TaxonomyClient {
                         config.queryParameters.filter = filter;
                     }
                 });
-        });
+        }));
     }
 
     /**
@@ -221,8 +221,7 @@ public final class TaxonomyClient {
             String marketplaceId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.getDefaultCategoryTreeId().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
@@ -230,7 +229,7 @@ public final class TaxonomyClient {
                     config.queryParameters.marketplaceId = marketplaceId;
                 }
             });
-        });
+        }));
     }
 
     /**
@@ -245,14 +244,14 @@ public final class TaxonomyClient {
             String categoryTreeId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .getExpiredCategories().get(config -> {
                     headers.forEach((k, v) -> config.headers.add(k, v));
                 });
-        });
+        }));
     }
 
     /**
@@ -270,8 +269,8 @@ public final class TaxonomyClient {
             String categoryId,
             String accessToken,
             RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("categoryTreeId", categoryTreeId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.categoryTree().byCategory_tree_id(categoryTreeId)
                 .getItemAspectsForCategory().get(config -> {
@@ -280,6 +279,6 @@ public final class TaxonomyClient {
                         config.queryParameters.categoryId = categoryId;
                     }
                 });
-        });
+        }));
     }
 }
