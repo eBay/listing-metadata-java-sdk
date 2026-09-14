@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type contains applicable negotiation price policy metadata for the leaf categories returned for the marketplace.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class NegotiatedPricePolicy implements AdditionalDataHolder, Parsable {
     /**

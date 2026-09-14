@@ -22,10 +22,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Container for an error parameter.
+ * This type defines error parameters.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class ErrorParameter implements AdditionalDataHolder, Parsable {
+public class ErrorParameterV3 implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -39,20 +39,20 @@ public class ErrorParameter implements AdditionalDataHolder, Parsable {
      */
     private String value;
     /**
-     * Instantiates a new {@link ErrorParameter} and sets the default values.
+     * Instantiates a new {@link ErrorParameterV3} and sets the default values.
      */
-    public ErrorParameter() {
+    public ErrorParameterV3() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link ErrorParameter}
+     * @return a {@link ErrorParameterV3}
      */
     @jakarta.annotation.Nonnull
-    public static ErrorParameter createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static ErrorParameterV3 createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new ErrorParameter();
+        return new ErrorParameterV3();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

@@ -31,13 +31,13 @@ public class RegulatoryAttribute implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * A unique value identifying a specific regulatory attribute. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:RegulatoryAttributeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * A unique value identifying a specific regulatory attribute.
      */
-    private String name;
+    private RegulatoryAttributeEnum name;
     /**
-     * The enumeration value in this field indicates whether the corresponding attribute is recommended or required for the corresponding leaf category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GenericUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The enumeration value in this field indicates whether the corresponding attribute is recommended or required for the corresponding leaf category.
      */
-    private String usage;
+    private GenericUsageEnum usage;
     /**
      * Instantiates a new {@link RegulatoryAttribute} and sets the default values.
      */
@@ -69,24 +69,24 @@ public class RegulatoryAttribute implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("usage", (n) -> { this.setUsage(n.getStringValue()); });
+        deserializerMap.put("name", (n) -> { this.setName(n.getEnumValue(RegulatoryAttributeEnum::forValue)); });
+        deserializerMap.put("usage", (n) -> { this.setUsage(n.getEnumValue(GenericUsageEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the name property value. A unique value identifying a specific regulatory attribute. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:RegulatoryAttributeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the name property value. A unique value identifying a specific regulatory attribute.
+     * @return a {@link RegulatoryAttributeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getName() {
+    public RegulatoryAttributeEnum getName() {
         return this.name;
     }
     /**
-     * Gets the usage property value. The enumeration value in this field indicates whether the corresponding attribute is recommended or required for the corresponding leaf category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GenericUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the usage property value. The enumeration value in this field indicates whether the corresponding attribute is recommended or required for the corresponding leaf category.
+     * @return a {@link GenericUsageEnum}
      */
     @jakarta.annotation.Nullable
-    public String getUsage() {
+    public GenericUsageEnum getUsage() {
         return this.usage;
     }
     /**
@@ -95,8 +95,8 @@ public class RegulatoryAttribute implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("usage", this.getUsage());
+        writer.writeEnumValue("name", this.getName());
+        writer.writeEnumValue("usage", this.getUsage());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -107,17 +107,17 @@ public class RegulatoryAttribute implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the name property value. A unique value identifying a specific regulatory attribute. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:RegulatoryAttributeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the name property value. A unique value identifying a specific regulatory attribute.
      * @param value Value to set for the name property.
      */
-    public void setName(@jakarta.annotation.Nullable final String value) {
+    public void setName(@jakarta.annotation.Nullable final RegulatoryAttributeEnum value) {
         this.name = value;
     }
     /**
-     * Sets the usage property value. The enumeration value in this field indicates whether the corresponding attribute is recommended or required for the corresponding leaf category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GenericUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the usage property value. The enumeration value in this field indicates whether the corresponding attribute is recommended or required for the corresponding leaf category.
      * @param value Value to set for the usage property.
      */
-    public void setUsage(@jakarta.annotation.Nullable final String value) {
+    public void setUsage(@jakarta.annotation.Nullable final GenericUsageEnum value) {
         this.usage = value;
     }
 }

@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type contains applicable compatibility policy metadata for the leaf categories returned for the marketplace.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AutomotivePartsCompatibilityPolicy implements AdditionalDataHolder, Parsable {
     /**
@@ -36,13 +39,13 @@ public class AutomotivePartsCompatibilityPolicy implements AdditionalDataHolder,
      */
     private String categoryTreeId;
     /**
-     * Indicates whether the category supports parts compatibility by either &lt;code&gt;ASSEMBLY&lt;/code&gt; or by &lt;code&gt;SPECIFICATION&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:CompatibilityTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Indicates whether the category supports parts compatibility by either &lt;code&gt;ASSEMBLY&lt;/code&gt; or by &lt;code&gt;SPECIFICATION&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Only categories returning the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field support compatibility. Categories where all compatibility fields are missing, or where only &lt;b&gt;compatibilityBasedOn&lt;/b&gt; is missing, should be considered as not supporting compatibility.&lt;/span&gt;
      */
-    private String compatibilityBasedOn;
+    private CompatibilityTypeEnum compatibilityBasedOn;
     /**
      * Indicates the compatibility classification of the part based on high-level vehicle types.
      */
-    private java.util.List<String> compatibleVehicleTypes;
+    private java.util.List<CompatibleVehicleTypeEnum> compatibleVehicleTypes;
     /**
      * Specifies the maximum number of compatible vehicle-applications allowed per item.
      */
@@ -88,19 +91,19 @@ public class AutomotivePartsCompatibilityPolicy implements AdditionalDataHolder,
         return this.categoryTreeId;
     }
     /**
-     * Gets the compatibilityBasedOn property value. Indicates whether the category supports parts compatibility by either &lt;code&gt;ASSEMBLY&lt;/code&gt; or by &lt;code&gt;SPECIFICATION&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:CompatibilityTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the compatibilityBasedOn property value. Indicates whether the category supports parts compatibility by either &lt;code&gt;ASSEMBLY&lt;/code&gt; or by &lt;code&gt;SPECIFICATION&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Only categories returning the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field support compatibility. Categories where all compatibility fields are missing, or where only &lt;b&gt;compatibilityBasedOn&lt;/b&gt; is missing, should be considered as not supporting compatibility.&lt;/span&gt;
+     * @return a {@link CompatibilityTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getCompatibilityBasedOn() {
+    public CompatibilityTypeEnum getCompatibilityBasedOn() {
         return this.compatibilityBasedOn;
     }
     /**
      * Gets the compatibleVehicleTypes property value. Indicates the compatibility classification of the part based on high-level vehicle types.
-     * @return a {@link java.util.List<String>}
+     * @return a {@link java.util.List<CompatibleVehicleTypeEnum>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<String> getCompatibleVehicleTypes() {
+    public java.util.List<CompatibleVehicleTypeEnum> getCompatibleVehicleTypes() {
         return this.compatibleVehicleTypes;
     }
     /**
@@ -112,8 +115,8 @@ public class AutomotivePartsCompatibilityPolicy implements AdditionalDataHolder,
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("categoryId", (n) -> { this.setCategoryId(n.getStringValue()); });
         deserializerMap.put("categoryTreeId", (n) -> { this.setCategoryTreeId(n.getStringValue()); });
-        deserializerMap.put("compatibilityBasedOn", (n) -> { this.setCompatibilityBasedOn(n.getStringValue()); });
-        deserializerMap.put("compatibleVehicleTypes", (n) -> { this.setCompatibleVehicleTypes(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("compatibilityBasedOn", (n) -> { this.setCompatibilityBasedOn(n.getEnumValue(CompatibilityTypeEnum::forValue)); });
+        deserializerMap.put("compatibleVehicleTypes", (n) -> { this.setCompatibleVehicleTypes(n.getCollectionOfEnumValues(CompatibleVehicleTypeEnum::forValue)); });
         deserializerMap.put("maxNumberOfCompatibleVehicles", (n) -> { this.setMaxNumberOfCompatibleVehicles(n.getIntegerValue()); });
         return deserializerMap;
     }
@@ -133,8 +136,8 @@ public class AutomotivePartsCompatibilityPolicy implements AdditionalDataHolder,
         Objects.requireNonNull(writer);
         writer.writeStringValue("categoryId", this.getCategoryId());
         writer.writeStringValue("categoryTreeId", this.getCategoryTreeId());
-        writer.writeStringValue("compatibilityBasedOn", this.getCompatibilityBasedOn());
-        writer.writeCollectionOfPrimitiveValues("compatibleVehicleTypes", this.getCompatibleVehicleTypes());
+        writer.writeEnumValue("compatibilityBasedOn", this.getCompatibilityBasedOn());
+        writer.writeCollectionOfEnumValues("compatibleVehicleTypes", this.getCompatibleVehicleTypes());
         writer.writeIntegerValue("maxNumberOfCompatibleVehicles", this.getMaxNumberOfCompatibleVehicles());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -160,17 +163,17 @@ public class AutomotivePartsCompatibilityPolicy implements AdditionalDataHolder,
         this.categoryTreeId = value;
     }
     /**
-     * Sets the compatibilityBasedOn property value. Indicates whether the category supports parts compatibility by either &lt;code&gt;ASSEMBLY&lt;/code&gt; or by &lt;code&gt;SPECIFICATION&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:CompatibilityTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the compatibilityBasedOn property value. Indicates whether the category supports parts compatibility by either &lt;code&gt;ASSEMBLY&lt;/code&gt; or by &lt;code&gt;SPECIFICATION&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Only categories returning the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field support compatibility. Categories where all compatibility fields are missing, or where only &lt;b&gt;compatibilityBasedOn&lt;/b&gt; is missing, should be considered as not supporting compatibility.&lt;/span&gt;
      * @param value Value to set for the compatibilityBasedOn property.
      */
-    public void setCompatibilityBasedOn(@jakarta.annotation.Nullable final String value) {
+    public void setCompatibilityBasedOn(@jakarta.annotation.Nullable final CompatibilityTypeEnum value) {
         this.compatibilityBasedOn = value;
     }
     /**
      * Sets the compatibleVehicleTypes property value. Indicates the compatibility classification of the part based on high-level vehicle types.
      * @param value Value to set for the compatibleVehicleTypes property.
      */
-    public void setCompatibleVehicleTypes(@jakarta.annotation.Nullable final java.util.List<String> value) {
+    public void setCompatibleVehicleTypes(@jakarta.annotation.Nullable final java.util.List<CompatibleVehicleTypeEnum> value) {
         this.compatibleVehicleTypes = value;
     }
     /**

@@ -22,10 +22,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * A container that defines the elements of error and warning messages.
+ * This type defines the elements of error and warning messages.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class Error implements AdditionalDataHolder, Parsable {
+public class ErrorDetailV3 implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -61,26 +61,26 @@ public class Error implements AdditionalDataHolder, Parsable {
     /**
      * This optional complex field type contains a list of one or more context-specific &lt;code&gt;ErrorParameter&lt;/code&gt; objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each &lt;code&gt;ErrorParameter&lt;/code&gt; object consists of two fields, a &lt;code&gt;name&lt;/code&gt; and a &lt;code&gt;value&lt;/code&gt;.
      */
-    private java.util.List<ErrorParameter> parameters;
+    private java.util.List<ErrorParameterV3> parameters;
     /**
      * Name of the domain&apos;s subsystem or subdivision. For example, checkout is a subdomain in the buying domain.
      */
     private String subdomain;
     /**
-     * Instantiates a new {@link Error} and sets the default values.
+     * Instantiates a new {@link ErrorDetailV3} and sets the default values.
      */
-    public Error() {
+    public ErrorDetailV3() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link Error}
+     * @return a {@link ErrorDetailV3}
      */
     @jakarta.annotation.Nonnull
-    public static Error createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static ErrorDetailV3 createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new Error();
+        return new ErrorDetailV3();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -128,7 +128,7 @@ public class Error implements AdditionalDataHolder, Parsable {
         deserializerMap.put("longMessage", (n) -> { this.setLongMessage(n.getStringValue()); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         deserializerMap.put("outputRefIds", (n) -> { this.setOutputRefIds(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("parameters", (n) -> { this.setParameters(n.getCollectionOfObjectValues(ErrorParameter::createFromDiscriminatorValue)); });
+        deserializerMap.put("parameters", (n) -> { this.setParameters(n.getCollectionOfObjectValues(ErrorParameterV3::createFromDiscriminatorValue)); });
         deserializerMap.put("subdomain", (n) -> { this.setSubdomain(n.getStringValue()); });
         return deserializerMap;
     }
@@ -166,10 +166,10 @@ public class Error implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the parameters property value. This optional complex field type contains a list of one or more context-specific &lt;code&gt;ErrorParameter&lt;/code&gt; objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each &lt;code&gt;ErrorParameter&lt;/code&gt; object consists of two fields, a &lt;code&gt;name&lt;/code&gt; and a &lt;code&gt;value&lt;/code&gt;.
-     * @return a {@link java.util.List<ErrorParameter>}
+     * @return a {@link java.util.List<ErrorParameterV3>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<ErrorParameter> getParameters() {
+    public java.util.List<ErrorParameterV3> getParameters() {
         return this.parameters;
     }
     /**
@@ -257,7 +257,7 @@ public class Error implements AdditionalDataHolder, Parsable {
      * Sets the parameters property value. This optional complex field type contains a list of one or more context-specific &lt;code&gt;ErrorParameter&lt;/code&gt; objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each &lt;code&gt;ErrorParameter&lt;/code&gt; object consists of two fields, a &lt;code&gt;name&lt;/code&gt; and a &lt;code&gt;value&lt;/code&gt;.
      * @param value Value to set for the parameters property.
      */
-    public void setParameters(@jakarta.annotation.Nullable final java.util.List<ErrorParameter> value) {
+    public void setParameters(@jakarta.annotation.Nullable final java.util.List<ErrorParameterV3> value) {
         this.parameters = value;
     }
     /**

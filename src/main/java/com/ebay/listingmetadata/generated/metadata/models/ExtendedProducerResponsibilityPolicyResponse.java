@@ -37,7 +37,7 @@ public class ExtendedProducerResponsibilityPolicyResponse implements AdditionalD
     /**
      * A collection of warnings generated for the request.
      */
-    private java.util.List<Error> warnings;
+    private java.util.List<ErrorDetailV3> warnings;
     /**
      * Instantiates a new {@link ExtendedProducerResponsibilityPolicyResponse} and sets the default values.
      */
@@ -78,15 +78,15 @@ public class ExtendedProducerResponsibilityPolicyResponse implements AdditionalD
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("extendedProducerResponsibilities", (n) -> { this.setExtendedProducerResponsibilities(n.getCollectionOfObjectValues(ExtendedProducerResponsibilityPolicy::createFromDiscriminatorValue)); });
-        deserializerMap.put("warnings", (n) -> { this.setWarnings(n.getCollectionOfObjectValues(Error::createFromDiscriminatorValue)); });
+        deserializerMap.put("warnings", (n) -> { this.setWarnings(n.getCollectionOfObjectValues(ErrorDetailV3::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
      * Gets the warnings property value. A collection of warnings generated for the request.
-     * @return a {@link java.util.List<Error>}
+     * @return a {@link java.util.List<ErrorDetailV3>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<Error> getWarnings() {
+    public java.util.List<ErrorDetailV3> getWarnings() {
         return this.warnings;
     }
     /**
@@ -117,7 +117,7 @@ public class ExtendedProducerResponsibilityPolicyResponse implements AdditionalD
      * Sets the warnings property value. A collection of warnings generated for the request.
      * @param value Value to set for the warnings property.
      */
-    public void setWarnings(@jakarta.annotation.Nullable final java.util.List<Error> value) {
+    public void setWarnings(@jakarta.annotation.Nullable final java.util.List<ErrorDetailV3> value) {
         this.warnings = value;
     }
 }

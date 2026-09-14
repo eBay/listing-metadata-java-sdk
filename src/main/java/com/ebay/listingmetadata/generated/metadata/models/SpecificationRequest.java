@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type provides the properties and specifications to use to search for compatibilities.
+ * This type defines the properties and specifications to use to search for compatibilities.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SpecificationRequest implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class SpecificationRequest implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The unique identifier of the eBay leaf category for which compatibility details are being retrieved. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcycles.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/marketplace/methods/getAutomotivePartsCompatibilityPolicies&quot; target=&quot;_blank &quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility by specification. For the categories in the response that support compatibility by specification, youll see &lt;code&gt;SPECIFICATIONS&lt;/code&gt; as the value for the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field 
+     * The unique identifier of the eBay leaf category for which compatibility details are being retrieved. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcycles.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-marketplace-getautomotivepartscompatibilitypolicies&quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility by specification. For the categories in the response that support compatibility by specification, youll see &lt;code&gt;SPECIFICATIONS&lt;/code&gt; as the value for the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field 
      */
     private String categoryId;
     /**
@@ -51,7 +51,7 @@ public class SpecificationRequest implements AdditionalDataHolder, Parsable {
      */
     private Boolean exactMatch;
     /**
-     * This type defines the fields used to control the pagination of the result set.
+     * &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Pagination is not yet supported by this method. If this container is included in the request, it will be ignored.&lt;/p&gt;&lt;/div&gt;
      */
     private PaginationInput paginationInput;
     /**
@@ -87,7 +87,7 @@ public class SpecificationRequest implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the categoryId property value. The unique identifier of the eBay leaf category for which compatibility details are being retrieved. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcycles.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/marketplace/methods/getAutomotivePartsCompatibilityPolicies&quot; target=&quot;_blank &quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility by specification. For the categories in the response that support compatibility by specification, youll see &lt;code&gt;SPECIFICATIONS&lt;/code&gt; as the value for the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field 
+     * Gets the categoryId property value. The unique identifier of the eBay leaf category for which compatibility details are being retrieved. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcycles.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-marketplace-getautomotivepartscompatibilitypolicies&quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility by specification. For the categories in the response that support compatibility by specification, youll see &lt;code&gt;SPECIFICATIONS&lt;/code&gt; as the value for the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field 
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -144,7 +144,7 @@ public class SpecificationRequest implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the paginationInput property value. This type defines the fields used to control the pagination of the result set.
+     * Gets the paginationInput property value. &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Pagination is not yet supported by this method. If this container is included in the request, it will be ignored.&lt;/p&gt;&lt;/div&gt;
      * @return a {@link PaginationInput}
      */
     @jakarta.annotation.Nullable
@@ -191,7 +191,7 @@ public class SpecificationRequest implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the categoryId property value. The unique identifier of the eBay leaf category for which compatibility details are being retrieved. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcycles.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/marketplace/methods/getAutomotivePartsCompatibilityPolicies&quot; target=&quot;_blank &quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility by specification. For the categories in the response that support compatibility by specification, youll see &lt;code&gt;SPECIFICATIONS&lt;/code&gt; as the value for the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field 
+     * Sets the categoryId property value. The unique identifier of the eBay leaf category for which compatibility details are being retrieved. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcycles.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-marketplace-getautomotivepartscompatibilitypolicies&quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility by specification. For the categories in the response that support compatibility by specification, youll see &lt;code&gt;SPECIFICATIONS&lt;/code&gt; as the value for the &lt;b&gt;compatibilityBasedOn&lt;/b&gt; field 
      * @param value Value to set for the categoryId property.
      */
     public void setCategoryId(@jakarta.annotation.Nullable final String value) {
@@ -226,7 +226,7 @@ public class SpecificationRequest implements AdditionalDataHolder, Parsable {
         this.exactMatch = value;
     }
     /**
-     * Sets the paginationInput property value. This type defines the fields used to control the pagination of the result set.
+     * Sets the paginationInput property value. &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Pagination is not yet supported by this method. If this container is included in the request, it will be ignored.&lt;/p&gt;&lt;/div&gt;
      * @param value Value to set for the paginationInput property.
      */
     public void setPaginationInput(@jakarta.annotation.Nullable final PaginationInput value) {

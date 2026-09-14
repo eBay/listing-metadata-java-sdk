@@ -31,11 +31,11 @@ public class SignalWord implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The description of the signal word localized to the default language of the marketplace. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos;&gt;Signal word information&lt;/a&gt;.
+     * The description of the signal word localized to the default language of the marketplace. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos; target=&apos;_blank&apos;&gt;Signal word information&lt;/a&gt;.
      */
     private String signalWordDescription;
     /**
-     * The identifier of the signal word. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos;&gt;Signal word information&lt;/a&gt;.
+     * The identifier of the signal word. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos; target=&apos;_blank&apos;&gt;Signal word information&lt;/a&gt;.
      */
     private String signalWordId;
     /**
@@ -74,7 +74,7 @@ public class SignalWord implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the signalWordDescription property value. The description of the signal word localized to the default language of the marketplace. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos;&gt;Signal word information&lt;/a&gt;.
+     * Gets the signalWordDescription property value. The description of the signal word localized to the default language of the marketplace. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos; target=&apos;_blank&apos;&gt;Signal word information&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class SignalWord implements AdditionalDataHolder, Parsable {
         return this.signalWordDescription;
     }
     /**
-     * Gets the signalWordId property value. The identifier of the signal word. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos;&gt;Signal word information&lt;/a&gt;.
+     * Gets the signalWordId property value. The identifier of the signal word. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos; target=&apos;_blank&apos;&gt;Signal word information&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class SignalWord implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the signalWordDescription property value. The description of the signal word localized to the default language of the marketplace. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos;&gt;Signal word information&lt;/a&gt;.
+     * Sets the signalWordDescription property value. The description of the signal word localized to the default language of the marketplace. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos; target=&apos;_blank&apos;&gt;Signal word information&lt;/a&gt;.
      * @param value Value to set for the signalWordDescription property.
      */
     public void setSignalWordDescription(@jakarta.annotation.Nullable final String value) {
         this.signalWordDescription = value;
     }
     /**
-     * Sets the signalWordId property value. The identifier of the signal word. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos;&gt;Signal word information&lt;/a&gt;.
+     * Sets the signalWordId property value. The identifier of the signal word. For more information, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Signal&apos; target=&apos;_blank&apos;&gt;Signal word information&lt;/a&gt;.
      * @param value Value to set for the signalWordId property.
      */
     public void setSignalWordId(@jakarta.annotation.Nullable final String value) {

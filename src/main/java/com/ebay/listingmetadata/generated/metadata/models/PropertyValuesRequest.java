@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the request fields used in the &lt;b&gt;getCompatibilityPropertyValues&lt;/b&gt; method.
+ * This type defines the category ID and property name for which to retrieve values.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The unique identifier of the eBay leaf category for which to retrieve compatibility property values. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/marketplace/methods/getAutomotivePartsCompatibilityPolicies&quot; target=&quot;_blank &quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility.
+     * The unique identifier of the eBay leaf category for which to retrieve compatibility property values. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-marketplace-getautomotivepartscompatibilitypolicies&quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility.
      */
     private String categoryId;
     /**
@@ -39,7 +39,7 @@ public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<PropertyFilterInner> propertyFilters;
     /**
-     * This field specifies the name of the property for which to retrieve associated property values.&lt;br&gt;&lt;br&gt;For example, typical vehicle property names are &apos;Make&apos;, &apos;Model&apos;, &apos;Year&apos;, &apos;Engine&apos;, and &apos;Trim&apos;, but will vary based on the eBay marketplace and the eBay category. Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/compatibilities/methods/getCompatibilityPropertyNames&quot; target=&quot;_blank &quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; method to retrieve valid property names for a specified category.
+     * This field specifies the name of the property for which to retrieve associated property values.&lt;br&gt;&lt;br&gt;For example, typical vehicle property names are &apos;Make&apos;, &apos;Model&apos;, &apos;Year&apos;, &apos;Engine&apos;, and &apos;Trim&apos;, but will vary based on the eBay marketplace and the eBay category. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertynames&quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; method to retrieve valid property names for a specified category.
      */
     private String propertyName;
     /**
@@ -71,7 +71,7 @@ public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the categoryId property value. The unique identifier of the eBay leaf category for which to retrieve compatibility property values. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/marketplace/methods/getAutomotivePartsCompatibilityPolicies&quot; target=&quot;_blank &quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility.
+     * Gets the categoryId property value. The unique identifier of the eBay leaf category for which to retrieve compatibility property values. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-marketplace-getautomotivepartscompatibilitypolicies&quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -100,7 +100,7 @@ public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
         return this.propertyFilters;
     }
     /**
-     * Gets the propertyName property value. This field specifies the name of the property for which to retrieve associated property values.&lt;br&gt;&lt;br&gt;For example, typical vehicle property names are &apos;Make&apos;, &apos;Model&apos;, &apos;Year&apos;, &apos;Engine&apos;, and &apos;Trim&apos;, but will vary based on the eBay marketplace and the eBay category. Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/compatibilities/methods/getCompatibilityPropertyNames&quot; target=&quot;_blank &quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; method to retrieve valid property names for a specified category.
+     * Gets the propertyName property value. This field specifies the name of the property for which to retrieve associated property values.&lt;br&gt;&lt;br&gt;For example, typical vehicle property names are &apos;Make&apos;, &apos;Model&apos;, &apos;Year&apos;, &apos;Engine&apos;, and &apos;Trim&apos;, but will vary based on the eBay marketplace and the eBay category. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertynames&quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; method to retrieve valid property names for a specified category.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the categoryId property value. The unique identifier of the eBay leaf category for which to retrieve compatibility property values. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/marketplace/methods/getAutomotivePartsCompatibilityPolicies&quot; target=&quot;_blank &quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility.
+     * Sets the categoryId property value. The unique identifier of the eBay leaf category for which to retrieve compatibility property values. This category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-marketplace-getautomotivepartscompatibilitypolicies&quot;&gt;getAutomotivePartsCompatibilityPolicies&lt;/a&gt; method to retrieve a list of categories that support parts compatibility.
      * @param value Value to set for the categoryId property.
      */
     public void setCategoryId(@jakarta.annotation.Nullable final String value) {
@@ -149,7 +149,7 @@ public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {
         this.propertyFilters = value;
     }
     /**
-     * Sets the propertyName property value. This field specifies the name of the property for which to retrieve associated property values.&lt;br&gt;&lt;br&gt;For example, typical vehicle property names are &apos;Make&apos;, &apos;Model&apos;, &apos;Year&apos;, &apos;Engine&apos;, and &apos;Trim&apos;, but will vary based on the eBay marketplace and the eBay category. Use the &lt;a href=&quot;/api-docs/sell/metadata/resources/compatibilities/methods/getCompatibilityPropertyNames&quot; target=&quot;_blank &quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; method to retrieve valid property names for a specified category.
+     * Sets the propertyName property value. This field specifies the name of the property for which to retrieve associated property values.&lt;br&gt;&lt;br&gt;For example, typical vehicle property names are &apos;Make&apos;, &apos;Model&apos;, &apos;Year&apos;, &apos;Engine&apos;, and &apos;Trim&apos;, but will vary based on the eBay marketplace and the eBay category. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertynames&quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; method to retrieve valid property names for a specified category.
      * @param value Value to set for the propertyName property.
      */
     public void setPropertyName(@jakarta.annotation.Nullable final String value) {

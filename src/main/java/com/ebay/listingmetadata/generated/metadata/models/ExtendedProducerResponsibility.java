@@ -35,13 +35,13 @@ public class ExtendedProducerResponsibility implements AdditionalDataHolder, Par
      */
     private Boolean enabledForVariations;
     /**
-     * The name of the attribute included in the policy. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ExtendedProducerResponsibilityEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The name of the attribute included in the policy.
      */
-    private String name;
+    private ExtendedProducerResponsibilityEnum name;
     /**
-     * The usage guidelines for the attribute, in the specified marketplace. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GenericUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The usage guidelines for the attribute, in the specified marketplace.
      */
-    private String usage;
+    private GenericUsageEnum usage;
     /**
      * Instantiates a new {@link ExtendedProducerResponsibility} and sets the default values.
      */
@@ -82,24 +82,24 @@ public class ExtendedProducerResponsibility implements AdditionalDataHolder, Par
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("enabledForVariations", (n) -> { this.setEnabledForVariations(n.getBooleanValue()); });
-        deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("usage", (n) -> { this.setUsage(n.getStringValue()); });
+        deserializerMap.put("name", (n) -> { this.setName(n.getEnumValue(ExtendedProducerResponsibilityEnum::forValue)); });
+        deserializerMap.put("usage", (n) -> { this.setUsage(n.getEnumValue(GenericUsageEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the name property value. The name of the attribute included in the policy. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ExtendedProducerResponsibilityEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the name property value. The name of the attribute included in the policy.
+     * @return a {@link ExtendedProducerResponsibilityEnum}
      */
     @jakarta.annotation.Nullable
-    public String getName() {
+    public ExtendedProducerResponsibilityEnum getName() {
         return this.name;
     }
     /**
-     * Gets the usage property value. The usage guidelines for the attribute, in the specified marketplace. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GenericUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the usage property value. The usage guidelines for the attribute, in the specified marketplace.
+     * @return a {@link GenericUsageEnum}
      */
     @jakarta.annotation.Nullable
-    public String getUsage() {
+    public GenericUsageEnum getUsage() {
         return this.usage;
     }
     /**
@@ -109,8 +109,8 @@ public class ExtendedProducerResponsibility implements AdditionalDataHolder, Par
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("enabledForVariations", this.getEnabledForVariations());
-        writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("usage", this.getUsage());
+        writer.writeEnumValue("name", this.getName());
+        writer.writeEnumValue("usage", this.getUsage());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -128,17 +128,17 @@ public class ExtendedProducerResponsibility implements AdditionalDataHolder, Par
         this.enabledForVariations = value;
     }
     /**
-     * Sets the name property value. The name of the attribute included in the policy. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ExtendedProducerResponsibilityEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the name property value. The name of the attribute included in the policy.
      * @param value Value to set for the name property.
      */
-    public void setName(@jakarta.annotation.Nullable final String value) {
+    public void setName(@jakarta.annotation.Nullable final ExtendedProducerResponsibilityEnum value) {
         this.name = value;
     }
     /**
-     * Sets the usage property value. The usage guidelines for the attribute, in the specified marketplace. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GenericUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the usage property value. The usage guidelines for the attribute, in the specified marketplace.
      * @param value Value to set for the usage property.
      */
-    public void setUsage(@jakarta.annotation.Nullable final String value) {
+    public void setUsage(@jakarta.annotation.Nullable final GenericUsageEnum value) {
         this.usage = value;
     }
 }

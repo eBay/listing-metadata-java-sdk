@@ -31,11 +31,11 @@ public class HazardStatement implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The description of the statement localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos;&gt;Hazard statement sample values&lt;/a&gt;.
+     * The description of the statement localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos; target=&apos;_blank&apos;&gt;Hazard statement sample values&lt;/a&gt;.
      */
     private String statementDescription;
     /**
-     * The identifier of the statement. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos;&gt;Hazard statement sample values&lt;/a&gt;.
+     * The identifier of the statement. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos; target=&apos;_blank&apos;&gt;Hazard statement sample values&lt;/a&gt;.
      */
     private String statementId;
     /**
@@ -74,7 +74,7 @@ public class HazardStatement implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the statementDescription property value. The description of the statement localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos;&gt;Hazard statement sample values&lt;/a&gt;.
+     * Gets the statementDescription property value. The description of the statement localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos; target=&apos;_blank&apos;&gt;Hazard statement sample values&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class HazardStatement implements AdditionalDataHolder, Parsable {
         return this.statementDescription;
     }
     /**
-     * Gets the statementId property value. The identifier of the statement. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos;&gt;Hazard statement sample values&lt;/a&gt;.
+     * Gets the statementId property value. The identifier of the statement. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos; target=&apos;_blank&apos;&gt;Hazard statement sample values&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class HazardStatement implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the statementDescription property value. The description of the statement localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos;&gt;Hazard statement sample values&lt;/a&gt;.
+     * Sets the statementDescription property value. The description of the statement localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos; target=&apos;_blank&apos;&gt;Hazard statement sample values&lt;/a&gt;.
      * @param value Value to set for the statementDescription property.
      */
     public void setStatementDescription(@jakarta.annotation.Nullable final String value) {
         this.statementDescription = value;
     }
     /**
-     * Sets the statementId property value. The identifier of the statement. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos;&gt;Hazard statement sample values&lt;/a&gt;.
+     * Sets the statementId property value. The identifier of the statement. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Hazard&apos; target=&apos;_blank&apos;&gt;Hazard statement sample values&lt;/a&gt;.
      * @param value Value to set for the statementId property.
      */
     public void setStatementId(@jakarta.annotation.Nullable final String value) {

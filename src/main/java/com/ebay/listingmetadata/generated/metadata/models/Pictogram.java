@@ -31,11 +31,11 @@ public class Pictogram implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The description of the pictogram localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos;&gt;Pictogram sample values&lt;/a&gt;.
+     * The description of the pictogram localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos; target=&apos;_blank&apos;&gt;Pictogram sample values&lt;/a&gt;.
      */
     private String pictogramDescription;
     /**
-     * The identifier of the pictogram. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos;&gt;Pictogram sample values&lt;/a&gt;.
+     * The identifier of the pictogram. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos; target=&apos;_blank&apos;&gt;Pictogram sample values&lt;/a&gt;.
      */
     private String pictogramId;
     /**
@@ -79,7 +79,7 @@ public class Pictogram implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the pictogramDescription property value. The description of the pictogram localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos;&gt;Pictogram sample values&lt;/a&gt;.
+     * Gets the pictogramDescription property value. The description of the pictogram localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos; target=&apos;_blank&apos;&gt;Pictogram sample values&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -87,7 +87,7 @@ public class Pictogram implements AdditionalDataHolder, Parsable {
         return this.pictogramDescription;
     }
     /**
-     * Gets the pictogramId property value. The identifier of the pictogram. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos;&gt;Pictogram sample values&lt;/a&gt;.
+     * Gets the pictogramId property value. The identifier of the pictogram. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos; target=&apos;_blank&apos;&gt;Pictogram sample values&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -121,14 +121,14 @@ public class Pictogram implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the pictogramDescription property value. The description of the pictogram localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos;&gt;Pictogram sample values&lt;/a&gt;.
+     * Sets the pictogramDescription property value. The description of the pictogram localized to the default language of the marketplace. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos; target=&apos;_blank&apos;&gt;Pictogram sample values&lt;/a&gt;.
      * @param value Value to set for the pictogramDescription property.
      */
     public void setPictogramDescription(@jakarta.annotation.Nullable final String value) {
         this.pictogramDescription = value;
     }
     /**
-     * Sets the pictogramId property value. The identifier of the pictogram. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos;&gt;Pictogram sample values&lt;/a&gt;.
+     * Sets the pictogramId property value. The identifier of the pictogram. For sample values, see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html#Pictogra&apos; target=&apos;_blank&apos;&gt;Pictogram sample values&lt;/a&gt;.
      * @param value Value to set for the pictogramId property.
      */
     public void setPictogramId(@jakarta.annotation.Nullable final String value) {

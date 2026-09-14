@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * The type defining valid currencies for the marketplace.
+ * This field specifies the default currency used by the marketplace.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Currency implements AdditionalDataHolder, Parsable {
@@ -31,9 +31,9 @@ public class Currency implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html &quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code returned.  &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Restriction: &lt;/b&gt; Only the currency of the marketplace is supported. Examples: on the US marketplace, the only currency supported is the United States dollar, &lt;code&gt;USD&lt;/code&gt;; on the Canadian marketplace, the only currency supported is the Canadian dollar, &lt;code&gt;CAD&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/bas:CurrencyCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html &quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code returned.  &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Restriction: &lt;/b&gt; Only the currency of the marketplace is supported. Examples: on the US marketplace, the only currency supported is the United States dollar, &lt;code&gt;USD&lt;/code&gt;; on the Canadian marketplace, the only currency supported is the Canadian dollar, &lt;code&gt;CAD&lt;/code&gt;.
      */
-    private String code;
+    private CurrencyCodeEnum code;
     /**
      * The description of the returned three-letter code. For example, if the code is &lt;code&gt;USD&lt;/code&gt;, the description returned would be &lt;code&gt;US Dollar&lt;/code&gt;.
      */
@@ -63,11 +63,11 @@ public class Currency implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the code property value. The three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html &quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code returned.  &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Restriction: &lt;/b&gt; Only the currency of the marketplace is supported. Examples: on the US marketplace, the only currency supported is the United States dollar, &lt;code&gt;USD&lt;/code&gt;; on the Canadian marketplace, the only currency supported is the Canadian dollar, &lt;code&gt;CAD&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/bas:CurrencyCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the code property value. The three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html &quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code returned.  &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Restriction: &lt;/b&gt; Only the currency of the marketplace is supported. Examples: on the US marketplace, the only currency supported is the United States dollar, &lt;code&gt;USD&lt;/code&gt;; on the Canadian marketplace, the only currency supported is the Canadian dollar, &lt;code&gt;CAD&lt;/code&gt;.
+     * @return a {@link CurrencyCodeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getCode() {
+    public CurrencyCodeEnum getCode() {
         return this.code;
     }
     /**
@@ -85,7 +85,7 @@ public class Currency implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("code", (n) -> { this.setCode(n.getStringValue()); });
+        deserializerMap.put("code", (n) -> { this.setCode(n.getEnumValue(CurrencyCodeEnum::forValue)); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
         return deserializerMap;
     }
@@ -95,7 +95,7 @@ public class Currency implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("code", this.getCode());
+        writer.writeEnumValue("code", this.getCode());
         writer.writeStringValue("description", this.getDescription());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,10 +107,10 @@ public class Currency implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the code property value. The three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html &quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code returned.  &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Restriction: &lt;/b&gt; Only the currency of the marketplace is supported. Examples: on the US marketplace, the only currency supported is the United States dollar, &lt;code&gt;USD&lt;/code&gt;; on the Canadian marketplace, the only currency supported is the Canadian dollar, &lt;code&gt;CAD&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/bas:CurrencyCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the code property value. The three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html &quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code returned.  &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Restriction: &lt;/b&gt; Only the currency of the marketplace is supported. Examples: on the US marketplace, the only currency supported is the United States dollar, &lt;code&gt;USD&lt;/code&gt;; on the Canadian marketplace, the only currency supported is the Canadian dollar, &lt;code&gt;CAD&lt;/code&gt;.
      * @param value Value to set for the code property.
      */
-    public void setCode(@jakarta.annotation.Nullable final String value) {
+    public void setCode(@jakarta.annotation.Nullable final CurrencyCodeEnum value) {
         this.code = value;
     }
     /**

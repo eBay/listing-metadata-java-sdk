@@ -15,106 +15,40 @@
 package com.ebay.listingmetadata.configuration;
 
 import jakarta.annotation.Nullable;
-import java.net.URI;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
-/**
- * Configuration for the Listing Metadata SDK.
- * Provides base URLs for Catalog, Charity, Taxonomy, and Metadata APIs.
- */
 public final class ListingMetadataConfiguration {
-    // Base URLs for each API (private final; validated at construction time)
-    private final String catalogBaseUrl;
-    private final String charityBaseUrl;
-    private final String taxonomyBaseUrl;
-    private final String metadataBaseUrl;
-
-    private @Nullable String accessToken;  // static fallback; per-call token takes precedence
-    private boolean diagnosticLogging = false;
-
-    /**
-     * Default request options (headers) applied to all SDK calls.
-     * Per-call RequestOptions will override these.
-     */
+    private @Nullable String accessToken;
     private RequestOptions defaultRequestOptions = new RequestOptions();
 
-    /**
-     * Creates a configuration with default eBay production base URLs.
-     */
+    private final String catalogBaseUrl;
+    private final String charityBaseUrl;
+    private final String metadataBaseUrl;
+    private final String taxonomyBaseUrl;
+
     public ListingMetadataConfiguration() {
         this.catalogBaseUrl = "https://api.ebay.com/commerce/catalog/v1_beta";
         this.charityBaseUrl = "https://api.ebay.com/commerce/charity/v1";
-        this.taxonomyBaseUrl = "https://api.ebay.com/commerce/taxonomy/v1";
         this.metadataBaseUrl = "https://api.ebay.com/sell/metadata/v1";
+        this.taxonomyBaseUrl = "https://api.ebay.com/commerce/taxonomy/v1";
     }
 
-    /**
-     * Creates a configuration with custom base URLs.
-     * All URLs are validated to ensure they point to allowed hosts.
-     *
-     * @param catalogBaseUrl  Base URL for the Catalog API
-     * @param charityBaseUrl  Base URL for the Charity API
-     * @param taxonomyBaseUrl Base URL for the Taxonomy API
-     * @param metadataBaseUrl Base URL for the Metadata API
-     */
     public ListingMetadataConfiguration(
             String catalogBaseUrl,
             String charityBaseUrl,
-            String taxonomyBaseUrl,
-            String metadataBaseUrl) {
-        // Validate with a temporary set of allowed hosts derived from all four URLs
-        Set<String> allowed = new HashSet<>();
-        allowed.add(extractHost(catalogBaseUrl));
-        allowed.add(extractHost(charityBaseUrl));
-        allowed.add(extractHost(taxonomyBaseUrl));
-        allowed.add(extractHost(metadataBaseUrl));
-
-        this.catalogBaseUrl = validateHost(catalogBaseUrl, allowed);
-        this.charityBaseUrl = validateHost(charityBaseUrl, allowed);
-        this.taxonomyBaseUrl = validateHost(taxonomyBaseUrl, allowed);
-        this.metadataBaseUrl = validateHost(metadataBaseUrl, allowed);
+            String metadataBaseUrl,
+            String taxonomyBaseUrl) {
+        this.catalogBaseUrl = validateHost(catalogBaseUrl);
+        this.charityBaseUrl = validateHost(charityBaseUrl);
+        this.metadataBaseUrl = validateHost(metadataBaseUrl);
+        this.taxonomyBaseUrl = validateHost(taxonomyBaseUrl);
     }
 
-    // Getters only — no public setters for URL fields (SEC-002)
-    public String getCatalogBaseUrl() { return catalogBaseUrl; }
-    public String getCharityBaseUrl() { return charityBaseUrl; }
-    public String getTaxonomyBaseUrl() { return taxonomyBaseUrl; }
-    public String getMetadataBaseUrl() { return metadataBaseUrl; }
-
-    /**
-     * Sets the fallback access token.
-     *
-     * <p><strong>Security note (SEC-002):</strong> The access token is stored as a plain
-     * {@code String} in the Java heap and may be visible to heap dumps or profilers.
-     * Prefer per-call token injection via {@code TokenContext.runWith()} for sensitive
-     * multi-tenant scenarios.</p>
-     */
-    public void setAccessToken(@Nullable String accessToken) { this.accessToken = accessToken; }
-    public @Nullable String getAccessToken() { return accessToken; }
-
-    public boolean isDiagnosticLogging() { return diagnosticLogging; }
-    public void setDiagnosticLogging(boolean diagnosticLogging) { this.diagnosticLogging = diagnosticLogging; }
-
-    public RequestOptions getDefaultRequestOptions() { return defaultRequestOptions; }
-    public void setDefaultRequestOptions(RequestOptions defaultRequestOptions) { this.defaultRequestOptions = defaultRequestOptions; }
-
-    /**
-     * All hostnames tokens may be sent to; used by AllowedHostsValidator.
-     */
-    public Set<String> getAllowedHosts() {
-        Set<String> hosts = new HashSet<>();
-        hosts.add(extractHost(catalogBaseUrl));
-        hosts.add(extractHost(charityBaseUrl));
-        hosts.add(extractHost(taxonomyBaseUrl));
-        hosts.add(extractHost(metadataBaseUrl));
-        return hosts;
-    }
-
-    private String validateHost(String url, Set<String> allowedHosts) {
+    private String validateHost(String url) {
         try {
             String host = new java.net.URI(url).getHost();
-            if (host == null || !allowedHosts.contains(host)) {
+            if (host == null || !getAllowedHosts().contains(host)) {
                 throw new IllegalArgumentException("URL host not in allowed list: " + url);
             }
         } catch (java.net.URISyntaxException e) {
@@ -123,11 +57,45 @@ public final class ListingMetadataConfiguration {
         return url;
     }
 
-    private String extractHost(String url) {
-        try {
-            return URI.create(url).getHost();
-        } catch (Exception e) {
-            return "api.ebay.com"; // fallback
-        }
+    /**
+     * Sets the OAuth Bearer token used for API calls when no per-call token is provided.
+     *
+     * <p><b>Security note:</b> The token is stored as a Java {@code String} and will remain
+     * in heap memory until garbage collected. To minimize exposure: do not log this
+     * configuration object, null out the token reference when it is no longer needed,
+     * and avoid storing the configuration longer than the client lifecycle.
+     */
+    public void setAccessToken(@Nullable String token) {
+        this.accessToken = token;
+    }
+
+    public @Nullable String getAccessToken() {
+        return accessToken;
+    }
+
+    public RequestOptions getDefaultRequestOptions() {
+        return defaultRequestOptions;
+    }
+
+    public Set<String> getAllowedHosts() {
+        Set<String> hosts = new HashSet<>();
+        hosts.add("api.ebay.com");
+        return hosts;
+    }
+
+    public String getCatalogBaseUrl() {
+        return catalogBaseUrl;
+    }
+
+    public String getCharityBaseUrl() {
+        return charityBaseUrl;
+    }
+
+    public String getMetadataBaseUrl() {
+        return metadataBaseUrl;
+    }
+
+    public String getTaxonomyBaseUrl() {
+        return taxonomyBaseUrl;
     }
 }

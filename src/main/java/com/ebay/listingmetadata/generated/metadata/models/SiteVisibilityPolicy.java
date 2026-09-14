@@ -43,11 +43,11 @@ public class SiteVisibilityPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean crossBorderTradeAustraliaEnabled;
     /**
-     * If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada merketplaces can pass in UK as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay UK (ebay.co.uk) and eBay IE (ebay.ie) sites. For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;.
+     * If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada marketplaces can pass in UK as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay UK (ebay.co.uk) and eBay IE (ebay.ie) sites. For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;.
      */
     private Boolean crossBorderTradeGBEnabled;
     /**
-     * If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada merketplaces can pass in North America as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay US (ebay.com) and eBay Canada (ebay.ca) sites (English). For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;. 
+     * If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada marketplaces can pass in North America as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay US (ebay.com) and eBay Canada (ebay.ca) sites (English). For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;. 
      */
     private Boolean crossBorderTradeNorthAmericaEnabled;
     /**
@@ -99,7 +99,7 @@ public class SiteVisibilityPolicy implements AdditionalDataHolder, Parsable {
         return this.crossBorderTradeAustraliaEnabled;
     }
     /**
-     * Gets the crossBorderTradeGBEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada merketplaces can pass in UK as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay UK (ebay.co.uk) and eBay IE (ebay.ie) sites. For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;.
+     * Gets the crossBorderTradeGBEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada marketplaces can pass in UK as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay UK (ebay.co.uk) and eBay IE (ebay.ie) sites. For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -107,7 +107,7 @@ public class SiteVisibilityPolicy implements AdditionalDataHolder, Parsable {
         return this.crossBorderTradeGBEnabled;
     }
     /**
-     * Gets the crossBorderTradeNorthAmericaEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada merketplaces can pass in North America as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay US (ebay.com) and eBay Canada (ebay.ca) sites (English). For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;. 
+     * Gets the crossBorderTradeNorthAmericaEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada marketplaces can pass in North America as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay US (ebay.com) and eBay Canada (ebay.ca) sites (English). For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;. 
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -170,14 +170,14 @@ public class SiteVisibilityPolicy implements AdditionalDataHolder, Parsable {
         this.crossBorderTradeAustraliaEnabled = value;
     }
     /**
-     * Sets the crossBorderTradeGBEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada merketplaces can pass in UK as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay UK (ebay.co.uk) and eBay IE (ebay.ie) sites. For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;.
+     * Sets the crossBorderTradeGBEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada marketplaces can pass in UK as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay UK (ebay.co.uk) and eBay IE (ebay.ie) sites. For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;.
      * @param value Value to set for the crossBorderTradeGBEnabled property.
      */
     public void setCrossBorderTradeGBEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.crossBorderTradeGBEnabled = value;
     }
     /**
-     * Sets the crossBorderTradeNorthAmericaEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada merketplaces can pass in North America as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay US (ebay.com) and eBay Canada (ebay.ca) sites (English). For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;. 
+     * Sets the crossBorderTradeNorthAmericaEnabled property value. If &lt;code&gt;true&lt;/code&gt;, the category supports specifying that listings of a seller on the US or Canada marketplaces can pass in North America as a value in a &lt;CrossBorderTrade&gt; field to expose that item on the eBay US (ebay.com) and eBay Canada (ebay.ca) sites (English). For more information, see &lt;a href=&quot;/api-docs/user-guides/static/trading-user-guide/cross-border-trading.html&quot;  target=&quot;_blank&quot;&gt;Cross-border trading&lt;/a&gt;. 
      * @param value Value to set for the crossBorderTradeNorthAmericaEnabled property.
      */
     public void setCrossBorderTradeNorthAmericaEnabled(@jakarta.annotation.Nullable final Boolean value) {

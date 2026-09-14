@@ -39,7 +39,7 @@ public class PropertyNamesResponsePropertyNames implements AdditionalDataHolder,
      */
     private String propertyName;
     /**
-     * This type defines the property name metadata.
+     * The metadata for a property.
      */
     private PropertyNamesResponsePropertyNameMetadata propertyNameMetadata;
     /**
@@ -95,7 +95,7 @@ public class PropertyNamesResponsePropertyNames implements AdditionalDataHolder,
         return this.propertyName;
     }
     /**
-     * Gets the propertyNameMetadata property value. This type defines the property name metadata.
+     * Gets the propertyNameMetadata property value. The metadata for a property.
      * @return a {@link PropertyNamesResponsePropertyNameMetadata}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class PropertyNamesResponsePropertyNames implements AdditionalDataHolder,
         this.propertyName = value;
     }
     /**
-     * Sets the propertyNameMetadata property value. This type defines the property name metadata.
+     * Sets the propertyNameMetadata property value. The metadata for a property.
      * @param value Value to set for the propertyNameMetadata property.
      */
     public void setPropertyNameMetadata(@jakarta.annotation.Nullable final PropertyNamesResponsePropertyNameMetadata value) {

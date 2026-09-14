@@ -35,7 +35,7 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<Compatibility> compatibilityDetails;
     /**
-     * This type defines the pagination settings for a result set.
+     * &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
      */
     private Pagination pagination;
     /**
@@ -82,7 +82,7 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the pagination property value. This type defines the pagination settings for a result set.
+     * Gets the pagination property value. &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
      * @return a {@link Pagination}
      */
     @jakarta.annotation.Nullable
@@ -114,7 +114,7 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
         this.compatibilityDetails = value;
     }
     /**
-     * Sets the pagination property value. This type defines the pagination settings for a result set.
+     * Sets the pagination property value. &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
      * @param value Value to set for the pagination property.
      */
     public void setPagination(@jakarta.annotation.Nullable final Pagination value) {

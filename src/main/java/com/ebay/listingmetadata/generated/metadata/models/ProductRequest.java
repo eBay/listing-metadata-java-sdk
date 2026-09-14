@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the request fields for the &lt;b&gt;getProductCompatibilities&lt;/b&gt; method.
+ * This type defines properties for which to find compatibilities.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProductRequest implements AdditionalDataHolder, Parsable {
@@ -43,15 +43,15 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> datasetPropertyName;
     /**
-     * This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
+     * This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
      */
     private DisabledProductFilter disabledProductFilter;
     /**
-     * This type defines the fields used to control the pagination of the result set.
+     * This container controls the pagination of the result set.
      */
     private PaginationInput paginationInput;
     /**
-     * This type defines the supported product identifiers.
+     * This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
      */
     private ProductIdentifier productIdentifier;
     /**
@@ -107,7 +107,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return this.datasetPropertyName;
     }
     /**
-     * Gets the disabledProductFilter property value. This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
+     * Gets the disabledProductFilter property value. This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
      * @return a {@link DisabledProductFilter}
      */
     @jakarta.annotation.Nullable
@@ -131,7 +131,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the paginationInput property value. This type defines the fields used to control the pagination of the result set.
+     * Gets the paginationInput property value. This container controls the pagination of the result set.
      * @return a {@link PaginationInput}
      */
     @jakarta.annotation.Nullable
@@ -139,7 +139,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return this.paginationInput;
     }
     /**
-     * Gets the productIdentifier property value. This type defines the supported product identifiers.
+     * Gets the productIdentifier property value. This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
      * @return a {@link ProductIdentifier}
      */
     @jakarta.annotation.Nullable
@@ -198,21 +198,21 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         this.datasetPropertyName = value;
     }
     /**
-     * Sets the disabledProductFilter property value. This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
+     * Sets the disabledProductFilter property value. This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
      * @param value Value to set for the disabledProductFilter property.
      */
     public void setDisabledProductFilter(@jakarta.annotation.Nullable final DisabledProductFilter value) {
         this.disabledProductFilter = value;
     }
     /**
-     * Sets the paginationInput property value. This type defines the fields used to control the pagination of the result set.
+     * Sets the paginationInput property value. This container controls the pagination of the result set.
      * @param value Value to set for the paginationInput property.
      */
     public void setPaginationInput(@jakarta.annotation.Nullable final PaginationInput value) {
         this.paginationInput = value;
     }
     /**
-     * Sets the productIdentifier property value. This type defines the supported product identifiers.
+     * Sets the productIdentifier property value. This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
      * @param value Value to set for the productIdentifier property.
      */
     public void setProductIdentifier(@jakarta.annotation.Nullable final ProductIdentifier value) {

@@ -51,7 +51,7 @@ public class GetProductCompatibilitiesRequestBuilder extends BaseRequestBuilder 
     }
     /**
      * This method is used to retrieve all available item compatibility details for the specified product.&lt;br&gt;&lt;br&gt;Item compatibility details can be used to see the properties for which an item is compatible. For example, if you are searching for a part for a specific vehicle, you can use this method to see the years, engine, and/or trim for which the part is compatible. Item compatibility details are returned as name-value pairs.&lt;br&gt;&lt;br&gt;The product for which to retrieve item compatibility details must be provided through the &lt;b&gt;productIdentifier&lt;/b&gt; field. This value can be either an eBay specific identifier (such as an ePID) or an external identifier (such as a UPC).&lt;br&gt;&lt;br&gt;By default, all available item compatibility details for the specified product are returned. You can limit the size of the result set using the &lt;b&gt;dataset&lt;/b&gt; or &lt;b&gt;datasetPropertyName&lt;/b&gt; fields to specify the types of properties you want returned in the response. The &lt;b&gt;applicationPropertyFilter&lt;/b&gt; array can also be used so that only parts compatible with the specified name-value pairs are returned.
-     * @param body This type defines the request fields for the &lt;b&gt;getProductCompatibilities&lt;/b&gt; method.
+     * @param body This type defines properties for which to find compatibilities.
      * @return a {@link ProductResponse}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class GetProductCompatibilitiesRequestBuilder extends BaseRequestBuilder 
     }
     /**
      * This method is used to retrieve all available item compatibility details for the specified product.&lt;br&gt;&lt;br&gt;Item compatibility details can be used to see the properties for which an item is compatible. For example, if you are searching for a part for a specific vehicle, you can use this method to see the years, engine, and/or trim for which the part is compatible. Item compatibility details are returned as name-value pairs.&lt;br&gt;&lt;br&gt;The product for which to retrieve item compatibility details must be provided through the &lt;b&gt;productIdentifier&lt;/b&gt; field. This value can be either an eBay specific identifier (such as an ePID) or an external identifier (such as a UPC).&lt;br&gt;&lt;br&gt;By default, all available item compatibility details for the specified product are returned. You can limit the size of the result set using the &lt;b&gt;dataset&lt;/b&gt; or &lt;b&gt;datasetPropertyName&lt;/b&gt; fields to specify the types of properties you want returned in the response. The &lt;b&gt;applicationPropertyFilter&lt;/b&gt; array can also be used so that only parts compatible with the specified name-value pairs are returned.
-     * @param body This type defines the request fields for the &lt;b&gt;getProductCompatibilities&lt;/b&gt; method.
+     * @param body This type defines properties for which to find compatibilities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ProductResponse}
      */
@@ -72,7 +72,7 @@ public class GetProductCompatibilitiesRequestBuilder extends BaseRequestBuilder 
     }
     /**
      * This method is used to retrieve all available item compatibility details for the specified product.&lt;br&gt;&lt;br&gt;Item compatibility details can be used to see the properties for which an item is compatible. For example, if you are searching for a part for a specific vehicle, you can use this method to see the years, engine, and/or trim for which the part is compatible. Item compatibility details are returned as name-value pairs.&lt;br&gt;&lt;br&gt;The product for which to retrieve item compatibility details must be provided through the &lt;b&gt;productIdentifier&lt;/b&gt; field. This value can be either an eBay specific identifier (such as an ePID) or an external identifier (such as a UPC).&lt;br&gt;&lt;br&gt;By default, all available item compatibility details for the specified product are returned. You can limit the size of the result set using the &lt;b&gt;dataset&lt;/b&gt; or &lt;b&gt;datasetPropertyName&lt;/b&gt; fields to specify the types of properties you want returned in the response. The &lt;b&gt;applicationPropertyFilter&lt;/b&gt; array can also be used so that only parts compatible with the specified name-value pairs are returned.
-     * @param body This type defines the request fields for the &lt;b&gt;getProductCompatibilities&lt;/b&gt; method.
+     * @param body This type defines properties for which to find compatibilities.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -81,7 +81,7 @@ public class GetProductCompatibilitiesRequestBuilder extends BaseRequestBuilder 
     }
     /**
      * This method is used to retrieve all available item compatibility details for the specified product.&lt;br&gt;&lt;br&gt;Item compatibility details can be used to see the properties for which an item is compatible. For example, if you are searching for a part for a specific vehicle, you can use this method to see the years, engine, and/or trim for which the part is compatible. Item compatibility details are returned as name-value pairs.&lt;br&gt;&lt;br&gt;The product for which to retrieve item compatibility details must be provided through the &lt;b&gt;productIdentifier&lt;/b&gt; field. This value can be either an eBay specific identifier (such as an ePID) or an external identifier (such as a UPC).&lt;br&gt;&lt;br&gt;By default, all available item compatibility details for the specified product are returned. You can limit the size of the result set using the &lt;b&gt;dataset&lt;/b&gt; or &lt;b&gt;datasetPropertyName&lt;/b&gt; fields to specify the types of properties you want returned in the response. The &lt;b&gt;applicationPropertyFilter&lt;/b&gt; array can also be used so that only parts compatible with the specified name-value pairs are returned.
-     * @param body This type defines the request fields for the &lt;b&gt;getProductCompatibilities&lt;/b&gt; method.
+     * @param body This type defines properties for which to find compatibilities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

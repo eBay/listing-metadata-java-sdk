@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type provides fields that contains applicable Classified Ad policy metadata for the leaf categories returned for the marketplace.
+ * This type provides fields that contain applicable Classified Ad policy metadata for the leaf categories returned for the marketplace.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
@@ -31,9 +31,9 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This enumerated value indicates the type or status of available Classified Ad formats for this category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type or status of available Classified Ad formats for this category.
      */
-    private String adFormatEnabled;
+    private AdFormatEnabledEnum adFormatEnabled;
     /**
      * The unique identifier of the eBay leaf category for which metadata is being returned.
      */
@@ -51,9 +51,9 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean classifiedAdAutoDeclineEnabled;
     /**
-     * This enumerated value indicates if Best Offer is enabled, disabled, or required for Classified Ad listings in this category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates if Best Offer is enabled, disabled, or required for Classified Ad listings in this category.
      */
-    private String classifiedAdBestOfferEnabled;
+    private ClassifiedAdBestOfferEnabledEnum classifiedAdBestOfferEnabled;
     /**
      * Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
      */
@@ -75,9 +75,9 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean classifiedAdCounterOfferEnabled;
     /**
-     * This enumerated value indicates support for the payment method being displayed to the user for the category. Even if enabled, checkout may or may not be enabled. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates support for the payment method being displayed to the user for the category. Even if enabled, checkout may or may not be enabled.
      */
-    private String classifiedAdPaymentMethodEnabled;
+    private ClassifiedAdPaymentMethodEnabledEnum classifiedAdPaymentMethodEnabled;
     /**
      * Indicates how many contact phone numbers can be specified in contact information for the category. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings.
      */
@@ -119,11 +119,11 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the adFormatEnabled property value. This enumerated value indicates the type or status of available Classified Ad formats for this category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the adFormatEnabled property value. This enumerated value indicates the type or status of available Classified Ad formats for this category.
+     * @return a {@link AdFormatEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getAdFormatEnabled() {
+    public AdFormatEnabledEnum getAdFormatEnabled() {
         return this.adFormatEnabled;
     }
     /**
@@ -159,11 +159,11 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         return this.classifiedAdAutoDeclineEnabled;
     }
     /**
-     * Gets the classifiedAdBestOfferEnabled property value. This enumerated value indicates if Best Offer is enabled, disabled, or required for Classified Ad listings in this category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the classifiedAdBestOfferEnabled property value. This enumerated value indicates if Best Offer is enabled, disabled, or required for Classified Ad listings in this category.
+     * @return a {@link ClassifiedAdBestOfferEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getClassifiedAdBestOfferEnabled() {
+    public ClassifiedAdBestOfferEnabledEnum getClassifiedAdBestOfferEnabled() {
         return this.classifiedAdBestOfferEnabled;
     }
     /**
@@ -207,11 +207,11 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         return this.classifiedAdCounterOfferEnabled;
     }
     /**
-     * Gets the classifiedAdPaymentMethodEnabled property value. This enumerated value indicates support for the payment method being displayed to the user for the category. Even if enabled, checkout may or may not be enabled. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the classifiedAdPaymentMethodEnabled property value. This enumerated value indicates support for the payment method being displayed to the user for the category. Even if enabled, checkout may or may not be enabled.
+     * @return a {@link ClassifiedAdPaymentMethodEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getClassifiedAdPaymentMethodEnabled() {
+    public ClassifiedAdPaymentMethodEnabledEnum getClassifiedAdPaymentMethodEnabled() {
         return this.classifiedAdPaymentMethodEnabled;
     }
     /**
@@ -245,18 +245,18 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(16);
-        deserializerMap.put("adFormatEnabled", (n) -> { this.setAdFormatEnabled(n.getStringValue()); });
+        deserializerMap.put("adFormatEnabled", (n) -> { this.setAdFormatEnabled(n.getEnumValue(AdFormatEnabledEnum::forValue)); });
         deserializerMap.put("categoryId", (n) -> { this.setCategoryId(n.getStringValue()); });
         deserializerMap.put("categoryTreeId", (n) -> { this.setCategoryTreeId(n.getStringValue()); });
         deserializerMap.put("classifiedAdAutoAcceptEnabled", (n) -> { this.setClassifiedAdAutoAcceptEnabled(n.getBooleanValue()); });
         deserializerMap.put("classifiedAdAutoDeclineEnabled", (n) -> { this.setClassifiedAdAutoDeclineEnabled(n.getBooleanValue()); });
-        deserializerMap.put("classifiedAdBestOfferEnabled", (n) -> { this.setClassifiedAdBestOfferEnabled(n.getStringValue()); });
+        deserializerMap.put("classifiedAdBestOfferEnabled", (n) -> { this.setClassifiedAdBestOfferEnabled(n.getEnumValue(ClassifiedAdBestOfferEnabledEnum::forValue)); });
         deserializerMap.put("classifiedAdCompanyNameEnabled", (n) -> { this.setClassifiedAdCompanyNameEnabled(n.getBooleanValue()); });
         deserializerMap.put("classifiedAdContactByAddressEnabled", (n) -> { this.setClassifiedAdContactByAddressEnabled(n.getBooleanValue()); });
         deserializerMap.put("classifiedAdContactByEmailEnabled", (n) -> { this.setClassifiedAdContactByEmailEnabled(n.getBooleanValue()); });
         deserializerMap.put("classifiedAdContactByPhoneEnabled", (n) -> { this.setClassifiedAdContactByPhoneEnabled(n.getBooleanValue()); });
         deserializerMap.put("classifiedAdCounterOfferEnabled", (n) -> { this.setClassifiedAdCounterOfferEnabled(n.getBooleanValue()); });
-        deserializerMap.put("classifiedAdPaymentMethodEnabled", (n) -> { this.setClassifiedAdPaymentMethodEnabled(n.getStringValue()); });
+        deserializerMap.put("classifiedAdPaymentMethodEnabled", (n) -> { this.setClassifiedAdPaymentMethodEnabled(n.getEnumValue(ClassifiedAdPaymentMethodEnabledEnum::forValue)); });
         deserializerMap.put("classifiedAdPhoneCount", (n) -> { this.setClassifiedAdPhoneCount(n.getIntegerValue()); });
         deserializerMap.put("classifiedAdShippingMethodEnabled", (n) -> { this.setClassifiedAdShippingMethodEnabled(n.getBooleanValue()); });
         deserializerMap.put("classifiedAdStreetCount", (n) -> { this.setClassifiedAdStreetCount(n.getIntegerValue()); });
@@ -277,18 +277,18 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("adFormatEnabled", this.getAdFormatEnabled());
+        writer.writeEnumValue("adFormatEnabled", this.getAdFormatEnabled());
         writer.writeStringValue("categoryId", this.getCategoryId());
         writer.writeStringValue("categoryTreeId", this.getCategoryTreeId());
         writer.writeBooleanValue("classifiedAdAutoAcceptEnabled", this.getClassifiedAdAutoAcceptEnabled());
         writer.writeBooleanValue("classifiedAdAutoDeclineEnabled", this.getClassifiedAdAutoDeclineEnabled());
-        writer.writeStringValue("classifiedAdBestOfferEnabled", this.getClassifiedAdBestOfferEnabled());
+        writer.writeEnumValue("classifiedAdBestOfferEnabled", this.getClassifiedAdBestOfferEnabled());
         writer.writeBooleanValue("classifiedAdCompanyNameEnabled", this.getClassifiedAdCompanyNameEnabled());
         writer.writeBooleanValue("classifiedAdContactByAddressEnabled", this.getClassifiedAdContactByAddressEnabled());
         writer.writeBooleanValue("classifiedAdContactByEmailEnabled", this.getClassifiedAdContactByEmailEnabled());
         writer.writeBooleanValue("classifiedAdContactByPhoneEnabled", this.getClassifiedAdContactByPhoneEnabled());
         writer.writeBooleanValue("classifiedAdCounterOfferEnabled", this.getClassifiedAdCounterOfferEnabled());
-        writer.writeStringValue("classifiedAdPaymentMethodEnabled", this.getClassifiedAdPaymentMethodEnabled());
+        writer.writeEnumValue("classifiedAdPaymentMethodEnabled", this.getClassifiedAdPaymentMethodEnabled());
         writer.writeIntegerValue("classifiedAdPhoneCount", this.getClassifiedAdPhoneCount());
         writer.writeBooleanValue("classifiedAdShippingMethodEnabled", this.getClassifiedAdShippingMethodEnabled());
         writer.writeIntegerValue("classifiedAdStreetCount", this.getClassifiedAdStreetCount());
@@ -303,10 +303,10 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the adFormatEnabled property value. This enumerated value indicates the type or status of available Classified Ad formats for this category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the adFormatEnabled property value. This enumerated value indicates the type or status of available Classified Ad formats for this category.
      * @param value Value to set for the adFormatEnabled property.
      */
-    public void setAdFormatEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setAdFormatEnabled(@jakarta.annotation.Nullable final AdFormatEnabledEnum value) {
         this.adFormatEnabled = value;
     }
     /**
@@ -338,10 +338,10 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         this.classifiedAdAutoDeclineEnabled = value;
     }
     /**
-     * Sets the classifiedAdBestOfferEnabled property value. This enumerated value indicates if Best Offer is enabled, disabled, or required for Classified Ad listings in this category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the classifiedAdBestOfferEnabled property value. This enumerated value indicates if Best Offer is enabled, disabled, or required for Classified Ad listings in this category.
      * @param value Value to set for the classifiedAdBestOfferEnabled property.
      */
-    public void setClassifiedAdBestOfferEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setClassifiedAdBestOfferEnabled(@jakarta.annotation.Nullable final ClassifiedAdBestOfferEnabledEnum value) {
         this.classifiedAdBestOfferEnabled = value;
     }
     /**
@@ -380,10 +380,10 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         this.classifiedAdCounterOfferEnabled = value;
     }
     /**
-     * Sets the classifiedAdPaymentMethodEnabled property value. This enumerated value indicates support for the payment method being displayed to the user for the category. Even if enabled, checkout may or may not be enabled. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the classifiedAdPaymentMethodEnabled property value. This enumerated value indicates support for the payment method being displayed to the user for the category. Even if enabled, checkout may or may not be enabled.
      * @param value Value to set for the classifiedAdPaymentMethodEnabled property.
      */
-    public void setClassifiedAdPaymentMethodEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setClassifiedAdPaymentMethodEnabled(@jakarta.annotation.Nullable final ClassifiedAdPaymentMethodEnabledEnum value) {
         this.classifiedAdPaymentMethodEnabled = value;
     }
     /**

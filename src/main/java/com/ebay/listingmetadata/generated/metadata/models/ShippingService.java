@@ -47,7 +47,7 @@ public class ShippingService implements AdditionalDataHolder, Parsable {
      */
     private Integer minShippingTime;
     /**
-     * The packageLimits field is used to specify the physical constraints and measurement units of packages, ensuring compliance with various shipping requirements.
+     * This container provides name-value pairs that specify physical constraints and measurement units of packages for the &lt;b&gt;shippingCarrier&lt;/b&gt; and the corresponding &lt;b&gt;shippingService&lt;/b&gt;. An empty container is returned if the shipping service does not have any package limits defined.
      */
     private PackageLimits packageLimits;
     /**
@@ -146,7 +146,7 @@ public class ShippingService implements AdditionalDataHolder, Parsable {
         return this.minShippingTime;
     }
     /**
-     * Gets the packageLimits property value. The packageLimits field is used to specify the physical constraints and measurement units of packages, ensuring compliance with various shipping requirements.
+     * Gets the packageLimits property value. This container provides name-value pairs that specify physical constraints and measurement units of packages for the &lt;b&gt;shippingCarrier&lt;/b&gt; and the corresponding &lt;b&gt;shippingService&lt;/b&gt;. An empty container is returned if the shipping service does not have any package limits defined.
      * @return a {@link PackageLimits}
      */
     @jakarta.annotation.Nullable
@@ -247,7 +247,7 @@ public class ShippingService implements AdditionalDataHolder, Parsable {
         this.minShippingTime = value;
     }
     /**
-     * Sets the packageLimits property value. The packageLimits field is used to specify the physical constraints and measurement units of packages, ensuring compliance with various shipping requirements.
+     * Sets the packageLimits property value. This container provides name-value pairs that specify physical constraints and measurement units of packages for the &lt;b&gt;shippingCarrier&lt;/b&gt; and the corresponding &lt;b&gt;shippingService&lt;/b&gt;. An empty container is returned if the shipping service does not have any package limits defined.
      * @param value Value to set for the packageLimits property.
      */
     public void setPackageLimits(@jakarta.annotation.Nullable final PackageLimits value) {

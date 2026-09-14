@@ -23,6 +23,7 @@ import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_hazardou
 import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_item_condition_policies.GetItemConditionPoliciesRequestBuilder;
 import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_listing_structure_policies.GetListingStructurePoliciesRequestBuilder;
 import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_listing_type_policies.GetListingTypePoliciesRequestBuilder;
+import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_minimum_listing_price_policies.GetMinimumListingPricePoliciesRequestBuilder;
 import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_motors_listing_policies.GetMotorsListingPoliciesRequestBuilder;
 import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_negotiated_price_policies.GetNegotiatedPricePoliciesRequestBuilder;
 import com.ebay.listingmetadata.generated.metadata.marketplace.item.get_product_safety_labels.GetProductSafetyLabelsRequestBuilder;
@@ -110,6 +111,14 @@ public class WithMarketplaceItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public GetListingTypePoliciesRequestBuilder getListingTypePolicies() {
         return new GetListingTypePoliciesRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The get_minimum_listing_price_policies property
+     * @return a {@link GetMinimumListingPricePoliciesRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public GetMinimumListingPricePoliciesRequestBuilder getMinimumListingPricePolicies() {
+        return new GetMinimumListingPricePoliciesRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The get_motors_listing_policies property
