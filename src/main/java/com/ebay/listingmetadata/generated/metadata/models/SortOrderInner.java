@@ -31,7 +31,7 @@ public class SortOrderInner implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This type is used to define the property to be used in sorting. 
+     * This container is used to define the property to be used in the sorting.
      */
     private SortOrderProperties sortOrder;
     /**
@@ -74,7 +74,7 @@ public class SortOrderInner implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the sortOrder property value. This type is used to define the property to be used in sorting. 
+     * Gets the sortOrder property value. This container is used to define the property to be used in the sorting.
      * @return a {@link SortOrderProperties}
      */
     @jakarta.annotation.Nullable
@@ -107,7 +107,7 @@ public class SortOrderInner implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the sortOrder property value. This type is used to define the property to be used in sorting. 
+     * Sets the sortOrder property value. This container is used to define the property to be used in the sorting.
      * @param value Value to set for the sortOrder property.
      */
     public void setSortOrder(@jakarta.annotation.Nullable final SortOrderProperties value) {

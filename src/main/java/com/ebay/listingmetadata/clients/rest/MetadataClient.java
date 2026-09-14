@@ -23,10 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Client for the Sell Metadata API.
- * Provides methods to retrieve marketplace policies, compatibility data, and shipping metadata.
- */
 public final class MetadataClient {
     private final MetadataApiClient kiota;
     private final ListingMetadataConfiguration config;
@@ -36,10 +32,6 @@ public final class MetadataClient {
         this.config = config;
     }
 
-    /**
-     * Merges default headers from config with per-call headers.
-     * Per-call headers override defaults.
-     */
     private Map<String, String> mergedHeaders(RequestOptions requestOptions) {
         Map<String, String> headers = new HashMap<>(config.getDefaultRequestOptions().getHeaders());
         if (requestOptions != null) {
@@ -48,660 +40,326 @@ public final class MetadataClient {
         return headers;
     }
 
-    // ── Marketplace-scoped policies ─────────────────────────────────────────
-
-    /**
-     * Returns eBay policies that define how to list automotive parts compatibility items.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Automotive parts compatibility policies
-     */
-    public CompletableFuture<Object> getAutomotivePartsCompatibilityPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<AutomotivePartsCompatibilityPolicyResponse> getAutomotivePartsCompatibilityPoliciesAsync(
+            String marketplaceId, String filter, String acceptEncoding, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                .getAutomotivePartsCompatibilityPolicies().get(config -> {
-                    headers.forEach((k, v) -> config.headers.add(k, v));
-                    if (filter != null) {
-                        config.queryParameters.filter = filter;
-                    }
-                });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getAutomotivePartsCompatibilityPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptEncoding != null) config.headers.add("Accept-Encoding", acceptEncoding);
+            });
         }));
     }
 
-    /**
-     * Returns category-specific policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Category policies
-     */
-    public CompletableFuture<Object> getCategoryPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<CategoryPolicyResponse> getCategoryPoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getCategoryPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getCategoryPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns classified ad policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Classified ad policies
-     */
-    public CompletableFuture<Object> getClassifiedAdPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ClassifiedAdPolicyResponse> getClassifiedAdPoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getClassifiedAdPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getClassifiedAdPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns the supported currencies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Supported currencies
-     */
-    public CompletableFuture<Object> getCurrenciesAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<GetCurrenciesResponse> getCurrenciesAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getCurrencies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getCurrencies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns extended producer responsibility policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return EPR policies
-     */
-    public CompletableFuture<Object> getExtendedProducerResponsibilityPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ExtendedProducerResponsibilityPolicyResponse> getExtendedProducerResponsibilityPoliciesAsync(
+            String marketplaceId, String filter, String acceptEncoding, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getExtendedProducerResponsibilityPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getExtendedProducerResponsibilityPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptEncoding != null) config.headers.add("Accept-Encoding", acceptEncoding);
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns hazardous materials label information for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Hazardous materials labels
-     */
-    public CompletableFuture<Object> getHazardousMaterialsLabelsAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<HazardousMaterialDetailsResponse> getHazardousMaterialsLabelsAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getHazardousMaterialsLabels().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getHazardousMaterialsLabels().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns item condition policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Item condition policies
-     */
-    public CompletableFuture<Object> getItemConditionPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ItemConditionPolicyResponse> getItemConditionPoliciesAsync(
+            String marketplaceId, String filter, String acceptEncoding, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getItemConditionPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getItemConditionPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptEncoding != null) config.headers.add("Accept-Encoding", acceptEncoding);
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns listing structure policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Listing structure policies
-     */
-    public CompletableFuture<Object> getListingStructurePoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ListingStructurePolicyResponse> getListingStructurePoliciesAsync(
+            String marketplaceId, String filter, String acceptEncoding, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getListingStructurePolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getListingStructurePolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptEncoding != null) config.headers.add("Accept-Encoding", acceptEncoding);
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns listing type policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Listing type policies
-     */
-    public CompletableFuture<Object> getListingTypePoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ListingTypePoliciesResponse> getListingTypePoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getListingTypePolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getListingTypePolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns motors listing policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Motors listing policies
-     */
-    public CompletableFuture<Object> getMotorsListingPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<GetMinimumListingPricePoliciesResponse> getMinimumListingPricePoliciesAsync(
+            String marketplaceId, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getMotorsListingPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getMinimumListingPricePolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+            });
         }));
     }
 
-    /**
-     * Returns negotiated price policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Negotiated price policies
-     */
-    public CompletableFuture<Object> getNegotiatedPricePoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<MotorsListingPoliciesResponse> getMotorsListingPoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getNegotiatedPricePolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getMotorsListingPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns product safety label information for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Product safety labels
-     */
-    public CompletableFuture<Object> getProductSafetyLabelsAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<NegotiatedPricePolicyResponse> getNegotiatedPricePoliciesAsync(
+            String marketplaceId, String filter, String acceptEncoding, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getProductSafetyLabels().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getNegotiatedPricePolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptEncoding != null) config.headers.add("Accept-Encoding", acceptEncoding);
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns regulatory policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Regulatory policies
-     */
-    public CompletableFuture<Object> getRegulatoryPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ProductSafetyLabelsResponse> getProductSafetyLabelsAsync(
+            String marketplaceId, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getRegulatoryPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getProductSafetyLabels().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+            });
         }));
     }
 
-    /**
-     * Returns return policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Return policies
-     */
-    public CompletableFuture<Object> getReturnPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<RegulatoryPolicyResponse> getRegulatoryPoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getReturnPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getRegulatoryPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns shipping policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Shipping policies
-     */
-    public CompletableFuture<Object> getShippingPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ReturnPolicyResponse> getReturnPoliciesAsync(
+            String marketplaceId, String filter, String acceptEncoding, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getShippingPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getReturnPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptEncoding != null) config.headers.add("Accept-Encoding", acceptEncoding);
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns site visibility policies for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param filter Limits response to specified categoryId values (pipe-separated)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Site visibility policies
-     */
-    public CompletableFuture<Object> getSiteVisibilityPoliciesAsync(
-            String marketplaceId,
-            String filter,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ShippingPoliciesResponse> getShippingPoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.marketplace().byMarketplace_id(marketplaceId)
-                    .getSiteVisibilityPolicies().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                        if (filter != null) {
-                            config.queryParameters.filter = filter;
-                        }
-                    });
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getShippingPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    // ── Compatibility operations ─────────────────────────────────────────────
+    public CompletableFuture<SiteVisibilityPoliciesResponse> getSiteVisibilityPoliciesAsync(
+            String marketplaceId, String filter, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
+            Map<String, String> headers = mergedHeaders(requestOptions);
+            return kiota.marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getSiteVisibilityPolicies().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (filter != null) config.queryParameters.filter = filter;
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
+        }));
+    }
 
-    /**
-     * Returns compatibilities for a set of product specifications.
-     *
-     * @param body Request body containing specification criteria
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Compatibilities
-     */
-    public CompletableFuture<Object> getCompatibilitiesBySpecificationAsync(
-            SpecificationRequest body,
-            String accessToken,
-            RequestOptions requestOptions) {
+    public CompletableFuture<SpecificationResponse> getCompatibilitiesBySpecificationAsync(
+            SpecificationRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getCompatibilitiesBySpecification().post(body, config -> {
-                    headers.forEach((k, v) -> config.headers.add(k, v));
-                });
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
+            });
         }));
     }
 
-    /**
-     * Returns compatibility property names for the specified dataset.
-     *
-     * @param body Request body containing categoryId and optional dataset filters
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Compatibility property names
-     */
-    public CompletableFuture<Object> getCompatibilityPropertyNamesAsync(
-            PropertyNamesRequest body,
-            String accessToken,
-            RequestOptions requestOptions) {
+    public CompletableFuture<PropertyNamesResponse> getCompatibilityPropertyNamesAsync(
+            PropertyNamesRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getCompatibilityPropertyNames().post(body, config -> {
-                    headers.forEach((k, v) -> config.headers.add(k, v));
-                });
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
+            });
         }));
     }
 
-    /**
-     * Returns compatibility property values for the specified property name and dataset.
-     *
-     * @param body Request body containing categoryId, propertyName, and optional filters
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Compatibility property values
-     */
-    public CompletableFuture<Object> getCompatibilityPropertyValuesAsync(
-            PropertyValuesRequest body,
-            String accessToken,
-            RequestOptions requestOptions) {
+    public CompletableFuture<PropertyValuesResponse> getCompatibilityPropertyValuesAsync(
+            PropertyValuesRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getCompatibilityPropertyValues().post(body, config -> {
-                    headers.forEach((k, v) -> config.headers.add(k, v));
-                });
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
+            });
         }));
     }
 
-    /**
-     * Returns multiple compatibility property values in a single call.
-     *
-     * @param body Request body containing categoryId, propertyNames, and required propertyFilter
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Multiple compatibility property values
-     */
-    public CompletableFuture<Object> getMultiCompatibilityPropertyValuesAsync(
-            MultiCompatibilityPropertyValuesRequest body,
-            String accessToken,
-            RequestOptions requestOptions) {
+    public CompletableFuture<MultiCompatibilityPropertyValuesResponse> getMultiCompatibilityPropertyValuesAsync(
+            MultiCompatibilityPropertyValuesRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getMultiCompatibilityPropertyValues().post(body, config -> {
-                    headers.forEach((k, v) -> config.headers.add(k, v));
-                });
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
+            });
         }));
     }
 
-    /**
-     * Returns product compatibilities for the specified product.
-     *
-     * @param body Request body containing productIdentifier and optional filters
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Product compatibilities
-     */
-    public CompletableFuture<Object> getProductCompatibilitiesAsync(
-            ProductRequest body,
-            String accessToken,
-            RequestOptions requestOptions) {
+    public CompletableFuture<ProductResponse> getProductCompatibilitiesAsync(
+            ProductRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.compatibilities().getProductCompatibilities().post(body, config -> {
-                    headers.forEach((k, v) -> config.headers.add(k, v));
-                });
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
+            });
         }));
     }
 
-    // ── Shipping marketplace operations ─────────────────────────────────────
-
-    /**
-     * Returns exclude shipping locations for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Exclude shipping locations
-     */
-    public CompletableFuture<Object> getExcludeShippingLocationsAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ShippingExcludeLocationResponse> getExcludeShippingLocationsAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
-                    .getExcludeShippingLocations().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.shipping().marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getExcludeShippingLocations().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns handling times for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Handling times
-     */
-    public CompletableFuture<Object> getHandlingTimesAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ShippingHandlingTimeResponse> getHandlingTimesAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
-                    .getHandlingTimes().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.shipping().marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getHandlingTimes().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns available shipping carriers for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Shipping carriers
-     */
-    public CompletableFuture<Object> getShippingCarriersAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ShippingCarrierResponse> getShippingCarriersAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
-                    .getShippingCarriers().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.shipping().marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getShippingCarriers().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns available shipping locations for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Shipping locations
-     */
-    public CompletableFuture<Object> getShippingLocationsAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ShippingLocationResponse> getShippingLocationsAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
-                    .getShippingLocations().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.shipping().marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getShippingLocations().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    /**
-     * Returns available shipping services for the specified marketplace.
-     *
-     * @param marketplaceId eBay marketplace ID (e.g. EBAY_US)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Shipping services
-     */
-    public CompletableFuture<Object> getShippingServicesAsync(
-            String marketplaceId,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("marketplaceId", marketplaceId);
+    public CompletableFuture<ShippingServiceResponse> getShippingServicesAsync(
+            String marketplaceId, String acceptLanguage, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.shipping().marketplace().byMarketplace_id(marketplaceId)
-                    .getShippingServices().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.shipping().marketplace().byMarketplace_id(Params.requireValid("marketplaceId", marketplaceId)).getShippingServices().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (acceptLanguage != null) config.headers.add("Accept-Language", acceptLanguage);
+            });
         }));
     }
 
-    // ── Sales-tax jurisdiction ───────────────────────────────────────────────
-
-    /**
-     * Returns all sales-tax jurisdictions for the specified country (US or CA).
-     *
-     * @param countryCode Two-letter ISO 3166 country code (US or CA)
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Sales tax jurisdictions
-     */
-    public CompletableFuture<Object> getSalesTaxJurisdictionsAsync(
-            String countryCode,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("countryCode", countryCode);
+    public CompletableFuture<SalesTaxJurisdictions> getSalesTaxJurisdictionsAsync(
+            String countryCode, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.country().byCountryCode(countryCode)
-                    .salesTaxJurisdiction().get(config -> {
-                        headers.forEach((k, v) -> config.headers.add(k, v));
-                    });
+            return kiota.country().byCountryCode(Params.requireValid("countryCode", countryCode)).salesTaxJurisdiction().get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+            });
         }));
     }
 }

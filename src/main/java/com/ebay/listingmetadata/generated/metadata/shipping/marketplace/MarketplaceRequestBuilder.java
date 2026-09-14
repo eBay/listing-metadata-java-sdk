@@ -26,7 +26,7 @@ import java.util.Objects;
 public class MarketplaceRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.listingmetadata.generated.metadata.shipping.marketplace.item collection
-     * @param marketplace_id This path parameter specifies the eBay marketplace for which excluded shipping locations information is retrieved.&lt;br&gt;&lt;br&gt;See &lt;a href=&quot;/api-docs/sell/metadata/types/bas:MarketplaceIdEnum&quot; target=&quot;_blank&quot;&gt;MarketplaceIdEnum&lt;/a&gt; for supported eBay marketplace ID values. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt; When listing the items on the French Canada, French Belgium, and Dutch Belgium marketplaces, also set the &lt;b&gt;Accept-Language&lt;/b&gt; header as needed.&lt;/span&gt;&lt;/p&gt;
+     * @param marketplace_id This path parameter specifies the eBay marketplace for which excluded shipping locations information is retrieved.&lt;br&gt;&lt;br&gt;See &lt;a href=&quot;/develop/api/sell/request_headers#marketplace-id-values&quot; target=&quot;_blank&quot;&gt;Marketplace ID values&lt;/a&gt; for supported eBay marketplace ID values. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt; When listing the items on the French Canada, French Belgium, and Dutch Belgium marketplaces, also set the &lt;b&gt;Accept-Language&lt;/b&gt; header as needed.&lt;/span&gt;&lt;/p&gt;
      * @return a {@link WithMarketplaceItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

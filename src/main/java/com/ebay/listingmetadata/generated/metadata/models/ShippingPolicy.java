@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type contains applicable shipping policy metadata for the leaf categories returned for the marketplace.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ShippingPolicy implements AdditionalDataHolder, Parsable {
     /**
@@ -40,15 +43,15 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean globalShippingEnabled;
     /**
-     * The type that defines the fields for the currency and a monetary amount.
+     * Returns the applicable max cap per shipping cost for shipping service group1.
      */
     private Amount group1MaxFlatShippingCost;
     /**
-     * The type that defines the fields for the currency and a monetary amount.
+     * Returns the applicable max cap per shipping cost for shipping service group2.
      */
     private Amount group2MaxFlatShippingCost;
     /**
-     * The type that defines the fields for the currency and a monetary amount.
+     * Returns the applicable max cap per shipping cost for shipping service group3.
      */
     private Amount group3MaxFlatShippingCost;
     /**
@@ -56,7 +59,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean handlingTimeEnabled;
     /**
-     * The type that defines the fields for the currency and a monetary amount.
+     * The maximum cost the seller can charge for the first domestic flat-rate shipping service. Mutually exclusive with the GroupNMaxFlatShippingCost elements.
      */
     private Amount maxFlatShippingCost;
     /**
@@ -130,7 +133,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         return this.globalShippingEnabled;
     }
     /**
-     * Gets the group1MaxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Gets the group1MaxFlatShippingCost property value. Returns the applicable max cap per shipping cost for shipping service group1.
      * @return a {@link Amount}
      */
     @jakarta.annotation.Nullable
@@ -138,7 +141,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         return this.group1MaxFlatShippingCost;
     }
     /**
-     * Gets the group2MaxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Gets the group2MaxFlatShippingCost property value. Returns the applicable max cap per shipping cost for shipping service group2.
      * @return a {@link Amount}
      */
     @jakarta.annotation.Nullable
@@ -146,7 +149,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         return this.group2MaxFlatShippingCost;
     }
     /**
-     * Gets the group3MaxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Gets the group3MaxFlatShippingCost property value. Returns the applicable max cap per shipping cost for shipping service group3.
      * @return a {@link Amount}
      */
     @jakarta.annotation.Nullable
@@ -162,7 +165,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         return this.handlingTimeEnabled;
     }
     /**
-     * Gets the maxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Gets the maxFlatShippingCost property value. The maximum cost the seller can charge for the first domestic flat-rate shipping service. Mutually exclusive with the GroupNMaxFlatShippingCost elements.
      * @return a {@link Amount}
      */
     @jakarta.annotation.Nullable
@@ -223,21 +226,21 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         this.globalShippingEnabled = value;
     }
     /**
-     * Sets the group1MaxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Sets the group1MaxFlatShippingCost property value. Returns the applicable max cap per shipping cost for shipping service group1.
      * @param value Value to set for the group1MaxFlatShippingCost property.
      */
     public void setGroup1MaxFlatShippingCost(@jakarta.annotation.Nullable final Amount value) {
         this.group1MaxFlatShippingCost = value;
     }
     /**
-     * Sets the group2MaxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Sets the group2MaxFlatShippingCost property value. Returns the applicable max cap per shipping cost for shipping service group2.
      * @param value Value to set for the group2MaxFlatShippingCost property.
      */
     public void setGroup2MaxFlatShippingCost(@jakarta.annotation.Nullable final Amount value) {
         this.group2MaxFlatShippingCost = value;
     }
     /**
-     * Sets the group3MaxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Sets the group3MaxFlatShippingCost property value. Returns the applicable max cap per shipping cost for shipping service group3.
      * @param value Value to set for the group3MaxFlatShippingCost property.
      */
     public void setGroup3MaxFlatShippingCost(@jakarta.annotation.Nullable final Amount value) {
@@ -251,7 +254,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         this.handlingTimeEnabled = value;
     }
     /**
-     * Sets the maxFlatShippingCost property value. The type that defines the fields for the currency and a monetary amount.
+     * Sets the maxFlatShippingCost property value. The maximum cost the seller can charge for the first domestic flat-rate shipping service. Mutually exclusive with the GroupNMaxFlatShippingCost elements.
      * @param value Value to set for the maxFlatShippingCost property.
      */
     public void setMaxFlatShippingCost(@jakarta.annotation.Nullable final Amount value) {

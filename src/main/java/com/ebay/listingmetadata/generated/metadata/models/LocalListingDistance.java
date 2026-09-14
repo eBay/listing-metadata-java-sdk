@@ -35,9 +35,9 @@ public class LocalListingDistance implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<Integer> distances;
     /**
-     * This enumerated value indicates the type of local listing distances, such as non-subscription or regular, for items listed by sellers. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:DistanceType&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type of local listing distances, such as non-subscription or regular, for items listed by sellers.
      */
-    private String distanceType;
+    private DistanceType distanceType;
     /**
      * Instantiates a new {@link LocalListingDistance} and sets the default values.
      */
@@ -71,11 +71,11 @@ public class LocalListingDistance implements AdditionalDataHolder, Parsable {
         return this.distances;
     }
     /**
-     * Gets the distanceType property value. This enumerated value indicates the type of local listing distances, such as non-subscription or regular, for items listed by sellers. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:DistanceType&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the distanceType property value. This enumerated value indicates the type of local listing distances, such as non-subscription or regular, for items listed by sellers.
+     * @return a {@link DistanceType}
      */
     @jakarta.annotation.Nullable
-    public String getDistanceType() {
+    public DistanceType getDistanceType() {
         return this.distanceType;
     }
     /**
@@ -86,7 +86,7 @@ public class LocalListingDistance implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("distances", (n) -> { this.setDistances(n.getCollectionOfPrimitiveValues(Integer.class)); });
-        deserializerMap.put("distanceType", (n) -> { this.setDistanceType(n.getStringValue()); });
+        deserializerMap.put("distanceType", (n) -> { this.setDistanceType(n.getEnumValue(DistanceType::forValue)); });
         return deserializerMap;
     }
     /**
@@ -96,7 +96,7 @@ public class LocalListingDistance implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfPrimitiveValues("distances", this.getDistances());
-        writer.writeStringValue("distanceType", this.getDistanceType());
+        writer.writeEnumValue("distanceType", this.getDistanceType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -114,10 +114,10 @@ public class LocalListingDistance implements AdditionalDataHolder, Parsable {
         this.distances = value;
     }
     /**
-     * Sets the distanceType property value. This enumerated value indicates the type of local listing distances, such as non-subscription or regular, for items listed by sellers. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:DistanceType&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the distanceType property value. This enumerated value indicates the type of local listing distances, such as non-subscription or regular, for items listed by sellers.
      * @param value Value to set for the distanceType property.
      */
-    public void setDistanceType(@jakarta.annotation.Nullable final String value) {
+    public void setDistanceType(@jakarta.annotation.Nullable final DistanceType value) {
         this.distanceType = value;
     }
 }

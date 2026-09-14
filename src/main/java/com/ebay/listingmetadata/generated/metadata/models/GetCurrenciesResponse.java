@@ -31,13 +31,13 @@ public class GetCurrenciesResponse implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The type defining valid currencies for the marketplace.
+     * This field specifies the default currency used by the marketplace.
      */
     private Currency defaultCurrency;
     /**
-     * The ID of the eBay marketplace to which the default currency applies. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/bas:MarketplaceIdEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The ID of the eBay marketplace to which the default currency applies.
      */
-    private String marketplaceId;
+    private MarketplaceIdEnum marketplaceId;
     /**
      * Instantiates a new {@link GetCurrenciesResponse} and sets the default values.
      */
@@ -63,7 +63,7 @@ public class GetCurrenciesResponse implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the defaultCurrency property value. The type defining valid currencies for the marketplace.
+     * Gets the defaultCurrency property value. This field specifies the default currency used by the marketplace.
      * @return a {@link Currency}
      */
     @jakarta.annotation.Nullable
@@ -78,15 +78,15 @@ public class GetCurrenciesResponse implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("defaultCurrency", (n) -> { this.setDefaultCurrency(n.getObjectValue(Currency::createFromDiscriminatorValue)); });
-        deserializerMap.put("marketplaceId", (n) -> { this.setMarketplaceId(n.getStringValue()); });
+        deserializerMap.put("marketplaceId", (n) -> { this.setMarketplaceId(n.getEnumValue(MarketplaceIdEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the marketplaceId property value. The ID of the eBay marketplace to which the default currency applies. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/bas:MarketplaceIdEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the marketplaceId property value. The ID of the eBay marketplace to which the default currency applies.
+     * @return a {@link MarketplaceIdEnum}
      */
     @jakarta.annotation.Nullable
-    public String getMarketplaceId() {
+    public MarketplaceIdEnum getMarketplaceId() {
         return this.marketplaceId;
     }
     /**
@@ -96,7 +96,7 @@ public class GetCurrenciesResponse implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("defaultCurrency", this.getDefaultCurrency());
-        writer.writeStringValue("marketplaceId", this.getMarketplaceId());
+        writer.writeEnumValue("marketplaceId", this.getMarketplaceId());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -107,17 +107,17 @@ public class GetCurrenciesResponse implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the defaultCurrency property value. The type defining valid currencies for the marketplace.
+     * Sets the defaultCurrency property value. This field specifies the default currency used by the marketplace.
      * @param value Value to set for the defaultCurrency property.
      */
     public void setDefaultCurrency(@jakarta.annotation.Nullable final Currency value) {
         this.defaultCurrency = value;
     }
     /**
-     * Sets the marketplaceId property value. The ID of the eBay marketplace to which the default currency applies. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/bas:MarketplaceIdEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the marketplaceId property value. The ID of the eBay marketplace to which the default currency applies.
      * @param value Value to set for the marketplaceId property.
      */
-    public void setMarketplaceId(@jakarta.annotation.Nullable final String value) {
+    public void setMarketplaceId(@jakarta.annotation.Nullable final MarketplaceIdEnum value) {
         this.marketplaceId = value;
     }
 }

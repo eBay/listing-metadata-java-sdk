@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type contains applicable motors listing policy metadata for the leaf categories returned for the marketplace.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
     /**
@@ -40,9 +43,9 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean depositSupported;
     /**
-     * Indicates whether or not eBay Motors Pro sellers can use classified ads in this category to sell their vehicles. This element is applicable for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Indicates whether or not eBay Motors Pro sellers can use classified ads in this category to sell their vehicles. This element is applicable for eBay Motors Pro users.
      */
-    private String ebayMotorsProAdFormatEnabled;
+    private AdFormatEnabledEnum ebayMotorsProAdFormatEnabled;
     /**
      * Indicates whether or not the category supports the Best Offer Auto Accept feature for eBay Motors Pro listings. This element is for eBay Motors Pro users.
      */
@@ -52,9 +55,9 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean ebayMotorsProAutoDeclineEnabled;
     /**
-     * This enumerated value indicates whether or not Best Offer features are supported for eBay Motors Classified Ad listings in this category. This element is for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates whether or not Best Offer features are supported for eBay Motors Classified Ad listings in this category. This element is for eBay Motors Pro users.
      */
-    private String ebayMotorsProBestOfferEnabled;
+    private ClassifiedAdBestOfferEnabledEnum ebayMotorsProBestOfferEnabled;
     /**
      * Indicates whether this category supports including the company name in the seller&apos;s contact information. This element is for eBay Motors Pro users.
      */
@@ -76,9 +79,9 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean ebayMotorsProCounterOfferEnabled;
     /**
-     * This enumerated value indicates whether this category supports that the payment method should be displayed to the user for this category in an eBay Motors Classified Ad listing. Even if enabled, checkout may or may not be enabled. This element is for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates whether this category supports that the payment method should be displayed to the user for this category in an eBay Motors Classified Ad listing. Even if enabled, checkout may or may not be enabled. This element is for eBay Motors Pro users.
      */
-    private String ebayMotorsProPaymentMethodCheckOutEnabled;
+    private ClassifiedAdPaymentMethodEnabledEnum ebayMotorsProPaymentMethodCheckOutEnabled;
     /**
      * Indicates the number of phone numbers that can be included through contact information for this category. This element is for eBay Motors Pro users.
      */
@@ -108,9 +111,9 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<LocalListingDistance> localListingDistances;
     /**
-     * Specifies whether this category supports Motor Local Market Classified Ad listings. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Specifies whether this category supports Motor Local Market Classified Ad listings.
      */
-    private String localMarketAdFormatEnabled;
+    private AdFormatEnabledEnum localMarketAdFormatEnabled;
     /**
      * Specifies whether this category supports auto-accept for Best Offers for Motors Local Market Classified Ads.
      */
@@ -120,9 +123,9 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean localMarketAutoDeclineEnabled;
     /**
-     * Indicates if Best Offer is enabled/required for Motors Local Market Classified Ad listings in this category.  For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Indicates if Best Offer is enabled/required for Motors Local Market Classified Ad listings in this category. 
      */
-    private String localMarketBestOfferEnabled;
+    private ClassifiedAdBestOfferEnabledEnum localMarketBestOfferEnabled;
     /**
      * Indicates whether the category supports the seller&apos;s company name being specified when using Motors Local Market classified ads.
      */
@@ -148,9 +151,9 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean localMarketNonSubscription;
     /**
-     * Indicates if the payment method should be displayed to the user for this category in an Motors Local Market Classified Ad listing. Even if enabled, checkout may or may not be enabled. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Indicates if the payment method should be displayed to the user for this category in an Motors Local Market Classified Ad listing. Even if enabled, checkout may or may not be enabled.
      */
-    private String localMarketPaymentMethodCheckOutEnabled;
+    private ClassifiedAdPaymentMethodEnabledEnum localMarketPaymentMethodCheckOutEnabled;
     /**
      * Indicates the number of phone numbers that can be included through contact information for this category.
      */
@@ -172,7 +175,7 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean localMarketShippingMethodEnabled;
     /**
-     * Indicates whether the category supports the Speciality level subscription to Motors Local Market listings. This feature is only available to licensed vehicle dealers.
+     * Indicates whether the category supports the Specialty level subscription to Motors Local Market listings. This feature is only available to licensed vehicle dealers.
      */
     private Boolean localMarketSpecialitySubscription;
     /**
@@ -192,25 +195,25 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
      */
     private Integer minItemCompatibility;
     /**
-     * The value in this field indicates whether the category supports Motors Local Market listings if the seller does not have a vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The value in this field indicates whether the category supports Motors Local Market listings if the seller does not have a vehicle subscription.
      */
-    private String nonSubscription;
+    private GeographicExposureEnum nonSubscription;
     /**
-     * The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Premium vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Premium vehicle subscription.
      */
-    private String premiumSubscription;
+    private GeographicExposureEnum premiumSubscription;
     /**
-     * The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Regular vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Regular vehicle subscription.
      */
-    private String regularSubscription;
+    private GeographicExposureEnum regularSubscription;
     /**
      * This field is returned as &lt;code&gt;true&lt;/code&gt; if the corresponding category supports the use of a seller-provided title for a motor vehicle listing on the US or Canada Motors marketplaces. A seller-provided title is a descriptive title, given by the seller, that appears below eBay&apos;s pre-filled listing title for the motor vehicle. Visually, the seller-provided title is similar to a subtitle on other types of eBay listings (non-vehicle). A seller-provided title can assist in helping buyers discover the vehicle.
      */
     private Boolean sellerProvidedTitleSupported;
     /**
-     * The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Specialty vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Specialty vehicle subscription.
      */
-    private String specialitySubscription;
+    private GeographicExposureEnum specialitySubscription;
     /**
      * Indicates if Vehicle Identification Number is supported.
      */
@@ -268,11 +271,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.depositSupported;
     }
     /**
-     * Gets the ebayMotorsProAdFormatEnabled property value. Indicates whether or not eBay Motors Pro sellers can use classified ads in this category to sell their vehicles. This element is applicable for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ebayMotorsProAdFormatEnabled property value. Indicates whether or not eBay Motors Pro sellers can use classified ads in this category to sell their vehicles. This element is applicable for eBay Motors Pro users.
+     * @return a {@link AdFormatEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getEbayMotorsProAdFormatEnabled() {
+    public AdFormatEnabledEnum getEbayMotorsProAdFormatEnabled() {
         return this.ebayMotorsProAdFormatEnabled;
     }
     /**
@@ -292,11 +295,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.ebayMotorsProAutoDeclineEnabled;
     }
     /**
-     * Gets the ebayMotorsProBestOfferEnabled property value. This enumerated value indicates whether or not Best Offer features are supported for eBay Motors Classified Ad listings in this category. This element is for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ebayMotorsProBestOfferEnabled property value. This enumerated value indicates whether or not Best Offer features are supported for eBay Motors Classified Ad listings in this category. This element is for eBay Motors Pro users.
+     * @return a {@link ClassifiedAdBestOfferEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getEbayMotorsProBestOfferEnabled() {
+    public ClassifiedAdBestOfferEnabledEnum getEbayMotorsProBestOfferEnabled() {
         return this.ebayMotorsProBestOfferEnabled;
     }
     /**
@@ -340,11 +343,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.ebayMotorsProCounterOfferEnabled;
     }
     /**
-     * Gets the ebayMotorsProPaymentMethodCheckOutEnabled property value. This enumerated value indicates whether this category supports that the payment method should be displayed to the user for this category in an eBay Motors Classified Ad listing. Even if enabled, checkout may or may not be enabled. This element is for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ebayMotorsProPaymentMethodCheckOutEnabled property value. This enumerated value indicates whether this category supports that the payment method should be displayed to the user for this category in an eBay Motors Classified Ad listing. Even if enabled, checkout may or may not be enabled. This element is for eBay Motors Pro users.
+     * @return a {@link ClassifiedAdPaymentMethodEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getEbayMotorsProPaymentMethodCheckOutEnabled() {
+    public ClassifiedAdPaymentMethodEnabledEnum getEbayMotorsProPaymentMethodCheckOutEnabled() {
         return this.ebayMotorsProPaymentMethodCheckOutEnabled;
     }
     /**
@@ -397,16 +400,16 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         deserializerMap.put("categoryId", (n) -> { this.setCategoryId(n.getStringValue()); });
         deserializerMap.put("categoryTreeId", (n) -> { this.setCategoryTreeId(n.getStringValue()); });
         deserializerMap.put("depositSupported", (n) -> { this.setDepositSupported(n.getBooleanValue()); });
-        deserializerMap.put("ebayMotorsProAdFormatEnabled", (n) -> { this.setEbayMotorsProAdFormatEnabled(n.getStringValue()); });
+        deserializerMap.put("ebayMotorsProAdFormatEnabled", (n) -> { this.setEbayMotorsProAdFormatEnabled(n.getEnumValue(AdFormatEnabledEnum::forValue)); });
         deserializerMap.put("ebayMotorsProAutoAcceptEnabled", (n) -> { this.setEbayMotorsProAutoAcceptEnabled(n.getBooleanValue()); });
         deserializerMap.put("ebayMotorsProAutoDeclineEnabled", (n) -> { this.setEbayMotorsProAutoDeclineEnabled(n.getBooleanValue()); });
-        deserializerMap.put("ebayMotorsProBestOfferEnabled", (n) -> { this.setEbayMotorsProBestOfferEnabled(n.getStringValue()); });
+        deserializerMap.put("ebayMotorsProBestOfferEnabled", (n) -> { this.setEbayMotorsProBestOfferEnabled(n.getEnumValue(ClassifiedAdBestOfferEnabledEnum::forValue)); });
         deserializerMap.put("ebayMotorsProCompanyNameEnabled", (n) -> { this.setEbayMotorsProCompanyNameEnabled(n.getBooleanValue()); });
         deserializerMap.put("ebayMotorsProContactByAddressEnabled", (n) -> { this.setEbayMotorsProContactByAddressEnabled(n.getBooleanValue()); });
         deserializerMap.put("ebayMotorsProContactByEmailEnabled", (n) -> { this.setEbayMotorsProContactByEmailEnabled(n.getBooleanValue()); });
         deserializerMap.put("ebayMotorsProContactByPhoneEnabled", (n) -> { this.setEbayMotorsProContactByPhoneEnabled(n.getBooleanValue()); });
         deserializerMap.put("ebayMotorsProCounterOfferEnabled", (n) -> { this.setEbayMotorsProCounterOfferEnabled(n.getBooleanValue()); });
-        deserializerMap.put("ebayMotorsProPaymentMethodCheckOutEnabled", (n) -> { this.setEbayMotorsProPaymentMethodCheckOutEnabled(n.getStringValue()); });
+        deserializerMap.put("ebayMotorsProPaymentMethodCheckOutEnabled", (n) -> { this.setEbayMotorsProPaymentMethodCheckOutEnabled(n.getEnumValue(ClassifiedAdPaymentMethodEnabledEnum::forValue)); });
         deserializerMap.put("ebayMotorsProPhoneCount", (n) -> { this.setEbayMotorsProPhoneCount(n.getIntegerValue()); });
         deserializerMap.put("ebayMotorsProSellerContactDetailsEnabled", (n) -> { this.setEbayMotorsProSellerContactDetailsEnabled(n.getBooleanValue()); });
         deserializerMap.put("ebayMotorsProShippingMethodEnabled", (n) -> { this.setEbayMotorsProShippingMethodEnabled(n.getBooleanValue()); });
@@ -414,17 +417,17 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         deserializerMap.put("epidSupported", (n) -> { this.setEpidSupported(n.getBooleanValue()); });
         deserializerMap.put("kTypeSupported", (n) -> { this.setKTypeSupported(n.getBooleanValue()); });
         deserializerMap.put("localListingDistances", (n) -> { this.setLocalListingDistances(n.getCollectionOfObjectValues(LocalListingDistance::createFromDiscriminatorValue)); });
-        deserializerMap.put("localMarketAdFormatEnabled", (n) -> { this.setLocalMarketAdFormatEnabled(n.getStringValue()); });
+        deserializerMap.put("localMarketAdFormatEnabled", (n) -> { this.setLocalMarketAdFormatEnabled(n.getEnumValue(AdFormatEnabledEnum::forValue)); });
         deserializerMap.put("localMarketAutoAcceptEnabled", (n) -> { this.setLocalMarketAutoAcceptEnabled(n.getBooleanValue()); });
         deserializerMap.put("localMarketAutoDeclineEnabled", (n) -> { this.setLocalMarketAutoDeclineEnabled(n.getBooleanValue()); });
-        deserializerMap.put("localMarketBestOfferEnabled", (n) -> { this.setLocalMarketBestOfferEnabled(n.getStringValue()); });
+        deserializerMap.put("localMarketBestOfferEnabled", (n) -> { this.setLocalMarketBestOfferEnabled(n.getEnumValue(ClassifiedAdBestOfferEnabledEnum::forValue)); });
         deserializerMap.put("localMarketCompanyNameEnabled", (n) -> { this.setLocalMarketCompanyNameEnabled(n.getBooleanValue()); });
         deserializerMap.put("localMarketContactByAddressEnabled", (n) -> { this.setLocalMarketContactByAddressEnabled(n.getBooleanValue()); });
         deserializerMap.put("localMarketContactByEmailEnabled", (n) -> { this.setLocalMarketContactByEmailEnabled(n.getBooleanValue()); });
         deserializerMap.put("localMarketContactByPhoneEnabled", (n) -> { this.setLocalMarketContactByPhoneEnabled(n.getBooleanValue()); });
         deserializerMap.put("localMarketCounterOfferEnabled", (n) -> { this.setLocalMarketCounterOfferEnabled(n.getBooleanValue()); });
         deserializerMap.put("localMarketNonSubscription", (n) -> { this.setLocalMarketNonSubscription(n.getBooleanValue()); });
-        deserializerMap.put("localMarketPaymentMethodCheckOutEnabled", (n) -> { this.setLocalMarketPaymentMethodCheckOutEnabled(n.getStringValue()); });
+        deserializerMap.put("localMarketPaymentMethodCheckOutEnabled", (n) -> { this.setLocalMarketPaymentMethodCheckOutEnabled(n.getEnumValue(ClassifiedAdPaymentMethodEnabledEnum::forValue)); });
         deserializerMap.put("localMarketPhoneCount", (n) -> { this.setLocalMarketPhoneCount(n.getIntegerValue()); });
         deserializerMap.put("localMarketPremiumSubscription", (n) -> { this.setLocalMarketPremiumSubscription(n.getBooleanValue()); });
         deserializerMap.put("localMarketRegularSubscription", (n) -> { this.setLocalMarketRegularSubscription(n.getBooleanValue()); });
@@ -435,11 +438,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         deserializerMap.put("maxGranularFitmentCount", (n) -> { this.setMaxGranularFitmentCount(n.getIntegerValue()); });
         deserializerMap.put("maxItemCompatibility", (n) -> { this.setMaxItemCompatibility(n.getIntegerValue()); });
         deserializerMap.put("minItemCompatibility", (n) -> { this.setMinItemCompatibility(n.getIntegerValue()); });
-        deserializerMap.put("nonSubscription", (n) -> { this.setNonSubscription(n.getStringValue()); });
-        deserializerMap.put("premiumSubscription", (n) -> { this.setPremiumSubscription(n.getStringValue()); });
-        deserializerMap.put("regularSubscription", (n) -> { this.setRegularSubscription(n.getStringValue()); });
+        deserializerMap.put("nonSubscription", (n) -> { this.setNonSubscription(n.getEnumValue(GeographicExposureEnum::forValue)); });
+        deserializerMap.put("premiumSubscription", (n) -> { this.setPremiumSubscription(n.getEnumValue(GeographicExposureEnum::forValue)); });
+        deserializerMap.put("regularSubscription", (n) -> { this.setRegularSubscription(n.getEnumValue(GeographicExposureEnum::forValue)); });
         deserializerMap.put("sellerProvidedTitleSupported", (n) -> { this.setSellerProvidedTitleSupported(n.getBooleanValue()); });
-        deserializerMap.put("specialitySubscription", (n) -> { this.setSpecialitySubscription(n.getStringValue()); });
+        deserializerMap.put("specialitySubscription", (n) -> { this.setSpecialitySubscription(n.getEnumValue(GeographicExposureEnum::forValue)); });
         deserializerMap.put("vinSupported", (n) -> { this.setVinSupported(n.getBooleanValue()); });
         deserializerMap.put("vrmSupported", (n) -> { this.setVrmSupported(n.getBooleanValue()); });
         return deserializerMap;
@@ -461,11 +464,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.localListingDistances;
     }
     /**
-     * Gets the localMarketAdFormatEnabled property value. Specifies whether this category supports Motor Local Market Classified Ad listings. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the localMarketAdFormatEnabled property value. Specifies whether this category supports Motor Local Market Classified Ad listings.
+     * @return a {@link AdFormatEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getLocalMarketAdFormatEnabled() {
+    public AdFormatEnabledEnum getLocalMarketAdFormatEnabled() {
         return this.localMarketAdFormatEnabled;
     }
     /**
@@ -485,11 +488,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.localMarketAutoDeclineEnabled;
     }
     /**
-     * Gets the localMarketBestOfferEnabled property value. Indicates if Best Offer is enabled/required for Motors Local Market Classified Ad listings in this category.  For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the localMarketBestOfferEnabled property value. Indicates if Best Offer is enabled/required for Motors Local Market Classified Ad listings in this category. 
+     * @return a {@link ClassifiedAdBestOfferEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getLocalMarketBestOfferEnabled() {
+    public ClassifiedAdBestOfferEnabledEnum getLocalMarketBestOfferEnabled() {
         return this.localMarketBestOfferEnabled;
     }
     /**
@@ -541,11 +544,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.localMarketNonSubscription;
     }
     /**
-     * Gets the localMarketPaymentMethodCheckOutEnabled property value. Indicates if the payment method should be displayed to the user for this category in an Motors Local Market Classified Ad listing. Even if enabled, checkout may or may not be enabled. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the localMarketPaymentMethodCheckOutEnabled property value. Indicates if the payment method should be displayed to the user for this category in an Motors Local Market Classified Ad listing. Even if enabled, checkout may or may not be enabled.
+     * @return a {@link ClassifiedAdPaymentMethodEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getLocalMarketPaymentMethodCheckOutEnabled() {
+    public ClassifiedAdPaymentMethodEnabledEnum getLocalMarketPaymentMethodCheckOutEnabled() {
         return this.localMarketPaymentMethodCheckOutEnabled;
     }
     /**
@@ -589,7 +592,7 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.localMarketShippingMethodEnabled;
     }
     /**
-     * Gets the localMarketSpecialitySubscription property value. Indicates whether the category supports the Speciality level subscription to Motors Local Market listings. This feature is only available to licensed vehicle dealers.
+     * Gets the localMarketSpecialitySubscription property value. Indicates whether the category supports the Specialty level subscription to Motors Local Market listings. This feature is only available to licensed vehicle dealers.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -629,27 +632,27 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.minItemCompatibility;
     }
     /**
-     * Gets the nonSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller does not have a vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the nonSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller does not have a vehicle subscription.
+     * @return a {@link GeographicExposureEnum}
      */
     @jakarta.annotation.Nullable
-    public String getNonSubscription() {
+    public GeographicExposureEnum getNonSubscription() {
         return this.nonSubscription;
     }
     /**
-     * Gets the premiumSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Premium vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the premiumSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Premium vehicle subscription.
+     * @return a {@link GeographicExposureEnum}
      */
     @jakarta.annotation.Nullable
-    public String getPremiumSubscription() {
+    public GeographicExposureEnum getPremiumSubscription() {
         return this.premiumSubscription;
     }
     /**
-     * Gets the regularSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Regular vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the regularSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Regular vehicle subscription.
+     * @return a {@link GeographicExposureEnum}
      */
     @jakarta.annotation.Nullable
-    public String getRegularSubscription() {
+    public GeographicExposureEnum getRegularSubscription() {
         return this.regularSubscription;
     }
     /**
@@ -661,11 +664,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         return this.sellerProvidedTitleSupported;
     }
     /**
-     * Gets the specialitySubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Specialty vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the specialitySubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Specialty vehicle subscription.
+     * @return a {@link GeographicExposureEnum}
      */
     @jakarta.annotation.Nullable
-    public String getSpecialitySubscription() {
+    public GeographicExposureEnum getSpecialitySubscription() {
         return this.specialitySubscription;
     }
     /**
@@ -693,16 +696,16 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("categoryId", this.getCategoryId());
         writer.writeStringValue("categoryTreeId", this.getCategoryTreeId());
         writer.writeBooleanValue("depositSupported", this.getDepositSupported());
-        writer.writeStringValue("ebayMotorsProAdFormatEnabled", this.getEbayMotorsProAdFormatEnabled());
+        writer.writeEnumValue("ebayMotorsProAdFormatEnabled", this.getEbayMotorsProAdFormatEnabled());
         writer.writeBooleanValue("ebayMotorsProAutoAcceptEnabled", this.getEbayMotorsProAutoAcceptEnabled());
         writer.writeBooleanValue("ebayMotorsProAutoDeclineEnabled", this.getEbayMotorsProAutoDeclineEnabled());
-        writer.writeStringValue("ebayMotorsProBestOfferEnabled", this.getEbayMotorsProBestOfferEnabled());
+        writer.writeEnumValue("ebayMotorsProBestOfferEnabled", this.getEbayMotorsProBestOfferEnabled());
         writer.writeBooleanValue("ebayMotorsProCompanyNameEnabled", this.getEbayMotorsProCompanyNameEnabled());
         writer.writeBooleanValue("ebayMotorsProContactByAddressEnabled", this.getEbayMotorsProContactByAddressEnabled());
         writer.writeBooleanValue("ebayMotorsProContactByEmailEnabled", this.getEbayMotorsProContactByEmailEnabled());
         writer.writeBooleanValue("ebayMotorsProContactByPhoneEnabled", this.getEbayMotorsProContactByPhoneEnabled());
         writer.writeBooleanValue("ebayMotorsProCounterOfferEnabled", this.getEbayMotorsProCounterOfferEnabled());
-        writer.writeStringValue("ebayMotorsProPaymentMethodCheckOutEnabled", this.getEbayMotorsProPaymentMethodCheckOutEnabled());
+        writer.writeEnumValue("ebayMotorsProPaymentMethodCheckOutEnabled", this.getEbayMotorsProPaymentMethodCheckOutEnabled());
         writer.writeIntegerValue("ebayMotorsProPhoneCount", this.getEbayMotorsProPhoneCount());
         writer.writeBooleanValue("ebayMotorsProSellerContactDetailsEnabled", this.getEbayMotorsProSellerContactDetailsEnabled());
         writer.writeBooleanValue("ebayMotorsProShippingMethodEnabled", this.getEbayMotorsProShippingMethodEnabled());
@@ -710,17 +713,17 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         writer.writeBooleanValue("epidSupported", this.getEpidSupported());
         writer.writeBooleanValue("kTypeSupported", this.getKTypeSupported());
         writer.writeCollectionOfObjectValues("localListingDistances", this.getLocalListingDistances());
-        writer.writeStringValue("localMarketAdFormatEnabled", this.getLocalMarketAdFormatEnabled());
+        writer.writeEnumValue("localMarketAdFormatEnabled", this.getLocalMarketAdFormatEnabled());
         writer.writeBooleanValue("localMarketAutoAcceptEnabled", this.getLocalMarketAutoAcceptEnabled());
         writer.writeBooleanValue("localMarketAutoDeclineEnabled", this.getLocalMarketAutoDeclineEnabled());
-        writer.writeStringValue("localMarketBestOfferEnabled", this.getLocalMarketBestOfferEnabled());
+        writer.writeEnumValue("localMarketBestOfferEnabled", this.getLocalMarketBestOfferEnabled());
         writer.writeBooleanValue("localMarketCompanyNameEnabled", this.getLocalMarketCompanyNameEnabled());
         writer.writeBooleanValue("localMarketContactByAddressEnabled", this.getLocalMarketContactByAddressEnabled());
         writer.writeBooleanValue("localMarketContactByEmailEnabled", this.getLocalMarketContactByEmailEnabled());
         writer.writeBooleanValue("localMarketContactByPhoneEnabled", this.getLocalMarketContactByPhoneEnabled());
         writer.writeBooleanValue("localMarketCounterOfferEnabled", this.getLocalMarketCounterOfferEnabled());
         writer.writeBooleanValue("localMarketNonSubscription", this.getLocalMarketNonSubscription());
-        writer.writeStringValue("localMarketPaymentMethodCheckOutEnabled", this.getLocalMarketPaymentMethodCheckOutEnabled());
+        writer.writeEnumValue("localMarketPaymentMethodCheckOutEnabled", this.getLocalMarketPaymentMethodCheckOutEnabled());
         writer.writeIntegerValue("localMarketPhoneCount", this.getLocalMarketPhoneCount());
         writer.writeBooleanValue("localMarketPremiumSubscription", this.getLocalMarketPremiumSubscription());
         writer.writeBooleanValue("localMarketRegularSubscription", this.getLocalMarketRegularSubscription());
@@ -731,11 +734,11 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         writer.writeIntegerValue("maxGranularFitmentCount", this.getMaxGranularFitmentCount());
         writer.writeIntegerValue("maxItemCompatibility", this.getMaxItemCompatibility());
         writer.writeIntegerValue("minItemCompatibility", this.getMinItemCompatibility());
-        writer.writeStringValue("nonSubscription", this.getNonSubscription());
-        writer.writeStringValue("premiumSubscription", this.getPremiumSubscription());
-        writer.writeStringValue("regularSubscription", this.getRegularSubscription());
+        writer.writeEnumValue("nonSubscription", this.getNonSubscription());
+        writer.writeEnumValue("premiumSubscription", this.getPremiumSubscription());
+        writer.writeEnumValue("regularSubscription", this.getRegularSubscription());
         writer.writeBooleanValue("sellerProvidedTitleSupported", this.getSellerProvidedTitleSupported());
-        writer.writeStringValue("specialitySubscription", this.getSpecialitySubscription());
+        writer.writeEnumValue("specialitySubscription", this.getSpecialitySubscription());
         writer.writeBooleanValue("vinSupported", this.getVinSupported());
         writer.writeBooleanValue("vrmSupported", this.getVrmSupported());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -769,10 +772,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.depositSupported = value;
     }
     /**
-     * Sets the ebayMotorsProAdFormatEnabled property value. Indicates whether or not eBay Motors Pro sellers can use classified ads in this category to sell their vehicles. This element is applicable for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ebayMotorsProAdFormatEnabled property value. Indicates whether or not eBay Motors Pro sellers can use classified ads in this category to sell their vehicles. This element is applicable for eBay Motors Pro users.
      * @param value Value to set for the ebayMotorsProAdFormatEnabled property.
      */
-    public void setEbayMotorsProAdFormatEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setEbayMotorsProAdFormatEnabled(@jakarta.annotation.Nullable final AdFormatEnabledEnum value) {
         this.ebayMotorsProAdFormatEnabled = value;
     }
     /**
@@ -790,10 +793,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.ebayMotorsProAutoDeclineEnabled = value;
     }
     /**
-     * Sets the ebayMotorsProBestOfferEnabled property value. This enumerated value indicates whether or not Best Offer features are supported for eBay Motors Classified Ad listings in this category. This element is for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ebayMotorsProBestOfferEnabled property value. This enumerated value indicates whether or not Best Offer features are supported for eBay Motors Classified Ad listings in this category. This element is for eBay Motors Pro users.
      * @param value Value to set for the ebayMotorsProBestOfferEnabled property.
      */
-    public void setEbayMotorsProBestOfferEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setEbayMotorsProBestOfferEnabled(@jakarta.annotation.Nullable final ClassifiedAdBestOfferEnabledEnum value) {
         this.ebayMotorsProBestOfferEnabled = value;
     }
     /**
@@ -832,10 +835,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.ebayMotorsProCounterOfferEnabled = value;
     }
     /**
-     * Sets the ebayMotorsProPaymentMethodCheckOutEnabled property value. This enumerated value indicates whether this category supports that the payment method should be displayed to the user for this category in an eBay Motors Classified Ad listing. Even if enabled, checkout may or may not be enabled. This element is for eBay Motors Pro users. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ebayMotorsProPaymentMethodCheckOutEnabled property value. This enumerated value indicates whether this category supports that the payment method should be displayed to the user for this category in an eBay Motors Classified Ad listing. Even if enabled, checkout may or may not be enabled. This element is for eBay Motors Pro users.
      * @param value Value to set for the ebayMotorsProPaymentMethodCheckOutEnabled property.
      */
-    public void setEbayMotorsProPaymentMethodCheckOutEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setEbayMotorsProPaymentMethodCheckOutEnabled(@jakarta.annotation.Nullable final ClassifiedAdPaymentMethodEnabledEnum value) {
         this.ebayMotorsProPaymentMethodCheckOutEnabled = value;
     }
     /**
@@ -888,10 +891,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.localListingDistances = value;
     }
     /**
-     * Sets the localMarketAdFormatEnabled property value. Specifies whether this category supports Motor Local Market Classified Ad listings. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:AdFormatEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the localMarketAdFormatEnabled property value. Specifies whether this category supports Motor Local Market Classified Ad listings.
      * @param value Value to set for the localMarketAdFormatEnabled property.
      */
-    public void setLocalMarketAdFormatEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setLocalMarketAdFormatEnabled(@jakarta.annotation.Nullable final AdFormatEnabledEnum value) {
         this.localMarketAdFormatEnabled = value;
     }
     /**
@@ -909,10 +912,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.localMarketAutoDeclineEnabled = value;
     }
     /**
-     * Sets the localMarketBestOfferEnabled property value. Indicates if Best Offer is enabled/required for Motors Local Market Classified Ad listings in this category.  For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdBestOfferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the localMarketBestOfferEnabled property value. Indicates if Best Offer is enabled/required for Motors Local Market Classified Ad listings in this category. 
      * @param value Value to set for the localMarketBestOfferEnabled property.
      */
-    public void setLocalMarketBestOfferEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setLocalMarketBestOfferEnabled(@jakarta.annotation.Nullable final ClassifiedAdBestOfferEnabledEnum value) {
         this.localMarketBestOfferEnabled = value;
     }
     /**
@@ -958,10 +961,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.localMarketNonSubscription = value;
     }
     /**
-     * Sets the localMarketPaymentMethodCheckOutEnabled property value. Indicates if the payment method should be displayed to the user for this category in an Motors Local Market Classified Ad listing. Even if enabled, checkout may or may not be enabled. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ClassifiedAdPaymentMethodEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the localMarketPaymentMethodCheckOutEnabled property value. Indicates if the payment method should be displayed to the user for this category in an Motors Local Market Classified Ad listing. Even if enabled, checkout may or may not be enabled.
      * @param value Value to set for the localMarketPaymentMethodCheckOutEnabled property.
      */
-    public void setLocalMarketPaymentMethodCheckOutEnabled(@jakarta.annotation.Nullable final String value) {
+    public void setLocalMarketPaymentMethodCheckOutEnabled(@jakarta.annotation.Nullable final ClassifiedAdPaymentMethodEnabledEnum value) {
         this.localMarketPaymentMethodCheckOutEnabled = value;
     }
     /**
@@ -1000,7 +1003,7 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.localMarketShippingMethodEnabled = value;
     }
     /**
-     * Sets the localMarketSpecialitySubscription property value. Indicates whether the category supports the Speciality level subscription to Motors Local Market listings. This feature is only available to licensed vehicle dealers.
+     * Sets the localMarketSpecialitySubscription property value. Indicates whether the category supports the Specialty level subscription to Motors Local Market listings. This feature is only available to licensed vehicle dealers.
      * @param value Value to set for the localMarketSpecialitySubscription property.
      */
     public void setLocalMarketSpecialitySubscription(@jakarta.annotation.Nullable final Boolean value) {
@@ -1035,24 +1038,24 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.minItemCompatibility = value;
     }
     /**
-     * Sets the nonSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller does not have a vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the nonSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller does not have a vehicle subscription.
      * @param value Value to set for the nonSubscription property.
      */
-    public void setNonSubscription(@jakarta.annotation.Nullable final String value) {
+    public void setNonSubscription(@jakarta.annotation.Nullable final GeographicExposureEnum value) {
         this.nonSubscription = value;
     }
     /**
-     * Sets the premiumSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Premium vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the premiumSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Premium vehicle subscription.
      * @param value Value to set for the premiumSubscription property.
      */
-    public void setPremiumSubscription(@jakarta.annotation.Nullable final String value) {
+    public void setPremiumSubscription(@jakarta.annotation.Nullable final GeographicExposureEnum value) {
         this.premiumSubscription = value;
     }
     /**
-     * Sets the regularSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Regular vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the regularSubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Regular vehicle subscription.
      * @param value Value to set for the regularSubscription property.
      */
-    public void setRegularSubscription(@jakarta.annotation.Nullable final String value) {
+    public void setRegularSubscription(@jakarta.annotation.Nullable final GeographicExposureEnum value) {
         this.regularSubscription = value;
     }
     /**
@@ -1063,10 +1066,10 @@ public class MotorsListingPolicy implements AdditionalDataHolder, Parsable {
         this.sellerProvidedTitleSupported = value;
     }
     /**
-     * Sets the specialitySubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Specialty vehicle subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:GeographicExposureEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the specialitySubscription property value. The value in this field indicates whether the category supports Motors Local Market listings if the seller has a Specialty vehicle subscription.
      * @param value Value to set for the specialitySubscription property.
      */
-    public void setSpecialitySubscription(@jakarta.annotation.Nullable final String value) {
+    public void setSpecialitySubscription(@jakarta.annotation.Nullable final GeographicExposureEnum value) {
         this.specialitySubscription = value;
     }
     /**

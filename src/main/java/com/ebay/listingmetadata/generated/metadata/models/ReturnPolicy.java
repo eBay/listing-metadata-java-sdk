@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type contains applicable return policy metadata for the leaf categories returned for the marketplace.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ReturnPolicy implements AdditionalDataHolder, Parsable {
     /**
@@ -36,11 +39,11 @@ public class ReturnPolicy implements AdditionalDataHolder, Parsable {
      */
     private String categoryTreeId;
     /**
-     * This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
+     * This complex type defines the category policies related to domestic item returns.
      */
     private ReturnPolicyDetails domestic;
     /**
-     * This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
+     * This complex type defines the category policies related to international item returns.
      */
     private ReturnPolicyDetails international;
     /**
@@ -88,7 +91,7 @@ public class ReturnPolicy implements AdditionalDataHolder, Parsable {
         return this.categoryTreeId;
     }
     /**
-     * Gets the domestic property value. This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
+     * Gets the domestic property value. This complex type defines the category policies related to domestic item returns.
      * @return a {@link ReturnPolicyDetails}
      */
     @jakarta.annotation.Nullable
@@ -110,7 +113,7 @@ public class ReturnPolicy implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the international property value. This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
+     * Gets the international property value. This complex type defines the category policies related to international item returns.
      * @return a {@link ReturnPolicyDetails}
      */
     @jakarta.annotation.Nullable
@@ -160,14 +163,14 @@ public class ReturnPolicy implements AdditionalDataHolder, Parsable {
         this.categoryTreeId = value;
     }
     /**
-     * Sets the domestic property value. This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
+     * Sets the domestic property value. This complex type defines the category policies related to domestic item returns.
      * @param value Value to set for the domestic property.
      */
     public void setDomestic(@jakarta.annotation.Nullable final ReturnPolicyDetails value) {
         this.domestic = value;
     }
     /**
-     * Sets the international property value. This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively).
+     * Sets the international property value. This complex type defines the category policies related to international item returns.
      * @param value Value to set for the international property.
      */
     public void setInternational(@jakarta.annotation.Nullable final ReturnPolicyDetails value) {

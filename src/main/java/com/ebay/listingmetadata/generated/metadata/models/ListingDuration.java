@@ -33,11 +33,11 @@ public class ListingDuration implements AdditionalDataHolder, Parsable {
     /**
      * This array defines the supported time duration options available for the listing type.
      */
-    private java.util.List<String> durationValues;
+    private java.util.List<DurationEnum> durationValues;
     /**
-     * The enumerated value returned in this field indicates the listing type for the duration value(s). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ListingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The enumerated value returned in this field indicates the listing type for the duration value(s).
      */
-    private String listingType;
+    private ListingTypeEnum listingType;
     /**
      * Instantiates a new {@link ListingDuration} and sets the default values.
      */
@@ -64,10 +64,10 @@ public class ListingDuration implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the durationValues property value. This array defines the supported time duration options available for the listing type.
-     * @return a {@link java.util.List<String>}
+     * @return a {@link java.util.List<DurationEnum>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<String> getDurationValues() {
+    public java.util.List<DurationEnum> getDurationValues() {
         return this.durationValues;
     }
     /**
@@ -77,16 +77,16 @@ public class ListingDuration implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("durationValues", (n) -> { this.setDurationValues(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("listingType", (n) -> { this.setListingType(n.getStringValue()); });
+        deserializerMap.put("durationValues", (n) -> { this.setDurationValues(n.getCollectionOfEnumValues(DurationEnum::forValue)); });
+        deserializerMap.put("listingType", (n) -> { this.setListingType(n.getEnumValue(ListingTypeEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the listingType property value. The enumerated value returned in this field indicates the listing type for the duration value(s). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ListingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the listingType property value. The enumerated value returned in this field indicates the listing type for the duration value(s).
+     * @return a {@link ListingTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getListingType() {
+    public ListingTypeEnum getListingType() {
         return this.listingType;
     }
     /**
@@ -95,8 +95,8 @@ public class ListingDuration implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeCollectionOfPrimitiveValues("durationValues", this.getDurationValues());
-        writer.writeStringValue("listingType", this.getListingType());
+        writer.writeCollectionOfEnumValues("durationValues", this.getDurationValues());
+        writer.writeEnumValue("listingType", this.getListingType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -110,14 +110,14 @@ public class ListingDuration implements AdditionalDataHolder, Parsable {
      * Sets the durationValues property value. This array defines the supported time duration options available for the listing type.
      * @param value Value to set for the durationValues property.
      */
-    public void setDurationValues(@jakarta.annotation.Nullable final java.util.List<String> value) {
+    public void setDurationValues(@jakarta.annotation.Nullable final java.util.List<DurationEnum> value) {
         this.durationValues = value;
     }
     /**
-     * Sets the listingType property value. The enumerated value returned in this field indicates the listing type for the duration value(s). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ListingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the listingType property value. The enumerated value returned in this field indicates the listing type for the duration value(s).
      * @param value Value to set for the listingType property.
      */
-    public void setListingType(@jakarta.annotation.Nullable final String value) {
+    public void setListingType(@jakarta.annotation.Nullable final ListingTypeEnum value) {
         this.listingType = value;
     }
 }

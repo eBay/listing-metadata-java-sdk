@@ -49,7 +49,7 @@ public class GetHandlingTimesRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/shipping/marketplace/{marketplace_id}/get_handling_times", rawUrl);
     }
     /**
-     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;a href=&quot;/api-docs/sell/account/resources/methods#s0-1-30-4-7-5-6-2[1]-h2-fulfillment_policy&quot;  target=&quot;_blank&quot;&gt;fulfillment_policy&lt;/a&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
+     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;b&gt;fulfillment_policy&lt;/b&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
      * @return a {@link ShippingHandlingTimeResponse}
      */
     @jakarta.annotation.Nullable
@@ -57,7 +57,7 @@ public class GetHandlingTimesRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;a href=&quot;/api-docs/sell/account/resources/methods#s0-1-30-4-7-5-6-2[1]-h2-fulfillment_policy&quot;  target=&quot;_blank&quot;&gt;fulfillment_policy&lt;/a&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
+     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;b&gt;fulfillment_policy&lt;/b&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ShippingHandlingTimeResponse}
      */
@@ -67,7 +67,7 @@ public class GetHandlingTimesRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ShippingHandlingTimeResponse::createFromDiscriminatorValue);
     }
     /**
-     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;a href=&quot;/api-docs/sell/account/resources/methods#s0-1-30-4-7-5-6-2[1]-h2-fulfillment_policy&quot;  target=&quot;_blank&quot;&gt;fulfillment_policy&lt;/a&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
+     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;b&gt;fulfillment_policy&lt;/b&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -75,7 +75,7 @@ public class GetHandlingTimesRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;a href=&quot;/api-docs/sell/account/resources/methods#s0-1-30-4-7-5-6-2[1]-h2-fulfillment_policy&quot;  target=&quot;_blank&quot;&gt;fulfillment_policy&lt;/a&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
+     * This method retrieves a list of supported handling times for the specified marketplace. The handling time returned specifies the maximum number of business days the eBay site allows for shipping an item to domestic buyers after receiving a cleared payment. Handling times apply to both domestic and international orders. If the handling time is 1 day, the seller commits to dropping the item off for shipment one business day after payment clears. &lt;p&gt;Manage handing times using business policies through the &lt;b&gt;fulfillment_policy&lt;/b&gt; resource of the &lt;b&gt;Account v1 API&lt;/b&gt;.&lt;/p&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

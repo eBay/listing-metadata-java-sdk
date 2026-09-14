@@ -18,16 +18,11 @@ import com.ebay.listingmetadata.configuration.ListingMetadataConfiguration;
 import com.ebay.listingmetadata.configuration.RequestOptions;
 import com.ebay.listingmetadata.configuration.TokenContext;
 import com.ebay.listingmetadata.generated.catalog.CatalogApiClient;
-import com.ebay.listingmetadata.generated.catalog.models.Product;
-import com.ebay.listingmetadata.generated.catalog.models.ProductSearchResponse;
+import com.ebay.listingmetadata.generated.catalog.models.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Client for the Commerce Catalog API.
- * Provides methods to retrieve and search for eBay catalog products.
- */
 public final class CatalogClient {
     private final CatalogApiClient kiota;
     private final ListingMetadataConfiguration config;
@@ -37,10 +32,6 @@ public final class CatalogClient {
         this.config = config;
     }
 
-    /**
-     * Merges default headers from config with per-call headers.
-     * Per-call headers override defaults.
-     */
     private Map<String, String> mergedHeaders(RequestOptions requestOptions) {
         Map<String, String> headers = new HashMap<>(config.getDefaultRequestOptions().getHeaders());
         if (requestOptions != null) {
@@ -49,81 +40,32 @@ public final class CatalogClient {
         return headers;
     }
 
-    /**
-     * Retrieve details of a catalog product by eBay product identifier (ePID).
-     *
-     * @param epid The eBay product ID
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return Product details
-     */
     public CompletableFuture<Product> getProductAsync(
-            String epid,
-            String accessToken,
-            RequestOptions requestOptions) {
-        Params.requireValid("epid", epid);
+            String epid, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.product().byEpid(epid).get(config -> {
+            return kiota.product().byEpid(Params.requireValid("epid", epid)).get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
             });
         }));
     }
 
-    /**
-     * Search for catalog products by keyword, category, GTIN, or MPN.
-     *
-     * @param aspectFilter Category and aspect value pairs to narrow down results
-     * @param categoryIds Comma-separated category IDs to filter results
-     * @param fieldgroups Type of information to return (ASPECT_REFINEMENTS, FULL, MATCHING_PRODUCTS)
-     * @param gtin Comma-separated GTINs (EAN, ISBN, UPC) to search for
-     * @param limit Number of product summaries to return (max 200; default 50)
-     * @param mpn Comma-separated Manufacturer Part Numbers to search for
-     * @param offset Number of items to skip (reserved for internal use)
-     * @param q Keywords to search for in product records
-     * @param accessToken Per-call token; overrides config fallback
-     * @param requestOptions Per-call headers; merged over defaults
-     * @return ProductSearchResponse with search results
-     */
     public CompletableFuture<ProductSearchResponse> searchAsync(
-            String aspectFilter,
-            String categoryIds,
-            String fieldgroups,
-            String gtin,
-            String limit,
-            String mpn,
-            String offset,
-            String q,
-            String accessToken,
-            RequestOptions requestOptions) {
+            String aspectFilter, String categoryIds, String fieldgroups, String gtin, String limit, String mpn, String offset, String q, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.productSummary().search().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
-                if (aspectFilter != null) {
-                    config.queryParameters.aspectFilter = aspectFilter;
-                }
-                if (categoryIds != null) {
-                    config.queryParameters.categoryIds = categoryIds;
-                }
-                if (fieldgroups != null) {
-                    config.queryParameters.fieldgroups = fieldgroups;
-                }
-                if (gtin != null) {
-                    config.queryParameters.gtin = gtin;
-                }
-                if (limit != null) {
-                    config.queryParameters.limit = limit;
-                }
-                if (mpn != null) {
-                    config.queryParameters.mpn = mpn;
-                }
-                if (offset != null) {
-                    config.queryParameters.offset = offset;
-                }
-                if (q != null) {
-                    config.queryParameters.q = q;
-                }
+                if (aspectFilter != null) config.queryParameters.aspectFilter = aspectFilter;
+                if (categoryIds != null) config.queryParameters.categoryIds = categoryIds;
+                if (fieldgroups != null) config.queryParameters.fieldgroups = fieldgroups;
+                if (gtin != null) config.queryParameters.gtin = gtin;
+                if (limit != null) config.queryParameters.limit = limit;
+                if (mpn != null) config.queryParameters.mpn = mpn;
+                if (offset != null) config.queryParameters.offset = offset;
+                if (q != null) config.queryParameters.q = q;
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
             });
         }));
     }

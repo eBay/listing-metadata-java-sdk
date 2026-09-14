@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * The packageLimits field is used to specify the physical constraints and measurement units of packages, ensuring compliance with various shipping requirements.
+ * This container provides name-value pairs that specify physical constraints and measurement units of packages for the &lt;b&gt;shippingCarrier&lt;/b&gt; and the corresponding &lt;b&gt;shippingService&lt;/b&gt;. An empty container is returned if the shipping service does not have any package limits defined.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PackageLimits implements AdditionalDataHolder, Parsable {
@@ -35,43 +35,43 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
      */
     private String dimensionUnit;
     /**
-     * The maximum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The maximum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double maxGirth;
     /**
-     * The maximum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The maximum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double maxHeight;
     /**
-     * The maximum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The maximum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double maxLength;
     /**
-     * The maximum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.weightUnit&quot;&gt;weightUnit&lt;/a&gt;.
+     * The maximum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.weightunit&quot;&gt;weightUnit&lt;/a&gt;.
      */
     private Double maxWeight;
     /**
-     * The maximum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The maximum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double maxWidth;
     /**
-     * The minimum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The minimum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double minGirth;
     /**
-     * The minimum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The minimum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double minHeight;
     /**
-     * The minimum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The minimum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double minLength;
     /**
-     * The minimum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.weightUnit&quot;&gt;weightUnit&lt;/a&gt;.
+     * The minimum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.weightunit&quot;&gt;weightUnit&lt;/a&gt;.
      */
     private Double minWeight;
     /**
-     * The minimum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * The minimum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      */
     private Double minWidth;
     /**
@@ -132,7 +132,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the maxGirth property value. The maximum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the maxGirth property value. The maximum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -140,7 +140,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.maxGirth;
     }
     /**
-     * Gets the maxHeight property value. The maximum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the maxHeight property value. The maximum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -148,7 +148,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.maxHeight;
     }
     /**
-     * Gets the maxLength property value. The maximum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the maxLength property value. The maximum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -156,7 +156,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.maxLength;
     }
     /**
-     * Gets the maxWeight property value. The maximum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.weightUnit&quot;&gt;weightUnit&lt;/a&gt;.
+     * Gets the maxWeight property value. The maximum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.weightunit&quot;&gt;weightUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -164,7 +164,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.maxWeight;
     }
     /**
-     * Gets the maxWidth property value. The maximum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the maxWidth property value. The maximum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -172,7 +172,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.maxWidth;
     }
     /**
-     * Gets the minGirth property value. The minimum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the minGirth property value. The minimum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -180,7 +180,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.minGirth;
     }
     /**
-     * Gets the minHeight property value. The minimum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the minHeight property value. The minimum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -188,7 +188,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.minHeight;
     }
     /**
-     * Gets the minLength property value. The minimum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the minLength property value. The minimum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -196,7 +196,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.minLength;
     }
     /**
-     * Gets the minWeight property value. The minimum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.weightUnit&quot;&gt;weightUnit&lt;/a&gt;.
+     * Gets the minWeight property value. The minimum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.weightunit&quot;&gt;weightUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -204,7 +204,7 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         return this.minWeight;
     }
     /**
-     * Gets the minWidth property value. The minimum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Gets the minWidth property value. The minimum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -254,70 +254,70 @@ public class PackageLimits implements AdditionalDataHolder, Parsable {
         this.dimensionUnit = value;
     }
     /**
-     * Sets the maxGirth property value. The maximum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the maxGirth property value. The maximum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the maxGirth property.
      */
     public void setMaxGirth(@jakarta.annotation.Nullable final Double value) {
         this.maxGirth = value;
     }
     /**
-     * Sets the maxHeight property value. The maximum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the maxHeight property value. The maximum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the maxHeight property.
      */
     public void setMaxHeight(@jakarta.annotation.Nullable final Double value) {
         this.maxHeight = value;
     }
     /**
-     * Sets the maxLength property value. The maximum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the maxLength property value. The maximum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the maxLength property.
      */
     public void setMaxLength(@jakarta.annotation.Nullable final Double value) {
         this.maxLength = value;
     }
     /**
-     * Sets the maxWeight property value. The maximum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.weightUnit&quot;&gt;weightUnit&lt;/a&gt;.
+     * Sets the maxWeight property value. The maximum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.weightunit&quot;&gt;weightUnit&lt;/a&gt;.
      * @param value Value to set for the maxWeight property.
      */
     public void setMaxWeight(@jakarta.annotation.Nullable final Double value) {
         this.maxWeight = value;
     }
     /**
-     * Sets the maxWidth property value. The maximum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the maxWidth property value. The maximum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the maxWidth property.
      */
     public void setMaxWidth(@jakarta.annotation.Nullable final Double value) {
         this.maxWidth = value;
     }
     /**
-     * Sets the minGirth property value. The minimum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the minGirth property value. The minimum girth allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the minGirth property.
      */
     public void setMinGirth(@jakarta.annotation.Nullable final Double value) {
         this.minGirth = value;
     }
     /**
-     * Sets the minHeight property value. The minimum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the minHeight property value. The minimum height allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the minHeight property.
      */
     public void setMinHeight(@jakarta.annotation.Nullable final Double value) {
         this.minHeight = value;
     }
     /**
-     * Sets the minLength property value. The minimum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the minLength property value. The minimum length allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the minLength property.
      */
     public void setMinLength(@jakarta.annotation.Nullable final Double value) {
         this.minLength = value;
     }
     /**
-     * Sets the minWeight property value. The minimum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.weightUnit&quot;&gt;weightUnit&lt;/a&gt;.
+     * Sets the minWeight property value. The minimum weight allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.weightunit&quot;&gt;weightUnit&lt;/a&gt;.
      * @param value Value to set for the minWeight property.
      */
     public void setMinWeight(@jakarta.annotation.Nullable final Double value) {
         this.minWeight = value;
     }
     /**
-     * Sets the minWidth property value. The minimum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingServices#response.shippingServices.packageLimits.dimensionUnit&quot;&gt;dimensionUnit&lt;/a&gt;.
+     * Sets the minWidth property value. The minimum width allowed for a package shipped through the corresponding shipping service, as measured in units of &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-shipping:marketplace-getshippingservices.packagelimits.dimensionunit&quot;&gt;dimensionUnit&lt;/a&gt;.
      * @param value Value to set for the minWidth property.
      */
     public void setMinWidth(@jakarta.annotation.Nullable final Double value) {

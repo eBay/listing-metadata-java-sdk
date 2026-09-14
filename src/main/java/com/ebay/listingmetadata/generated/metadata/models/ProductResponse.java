@@ -35,7 +35,7 @@ public class ProductResponse implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<ProductResponseCompatibilityDetails> compatibilityDetails;
     /**
-     * This type defines the pagination settings for a result set.
+     * This container returns the pagination settings for the result set.
      */
     private Pagination pagination;
     /**
@@ -82,7 +82,7 @@ public class ProductResponse implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the pagination property value. This type defines the pagination settings for a result set.
+     * Gets the pagination property value. This container returns the pagination settings for the result set.
      * @return a {@link Pagination}
      */
     @jakarta.annotation.Nullable
@@ -114,7 +114,7 @@ public class ProductResponse implements AdditionalDataHolder, Parsable {
         this.compatibilityDetails = value;
     }
     /**
-     * Sets the pagination property value. This type defines the pagination settings for a result set.
+     * Sets the pagination property value. This container returns the pagination settings for the result set.
      * @param value Value to set for the pagination property.
      */
     public void setPagination(@jakarta.annotation.Nullable final Pagination value) {

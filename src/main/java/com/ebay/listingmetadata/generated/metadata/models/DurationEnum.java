@@ -1,0 +1,54 @@
+// Copyright 2026 eBay Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package com.ebay.listingmetadata.generated.metadata.models;
+
+import com.microsoft.kiota.serialization.ValuedEnum;
+import java.util.Objects;
+
+/**
+ * This enumerated type defines the supported listing duration periods. | - **GTC**: This value indicates that the corresponding leaf category and listing type supports GTC (Good &apos;til Cancelled) listing duration. GTC is typically the only supported value for fixed-price listings. - **DAYS_1**: This enumerated value indicates that the listing is valid for 1 day.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_1&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_1&lt;/code&gt; as the value in the &lt;a href=&quot;/Devzone/XML/docs/Reference/eBay/AddItem.html#Request.Item.ListingType &quot; target=&quot;_blank&quot;&gt;ListingDuration&lt;/a&gt; field when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt; - **DAYS_3**: This value indicates that the corresponding leaf category and listing type supports a 3-day listing duration.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_3&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_3&lt;/code&gt; when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt; - **DAYS_5**: This value indicates that the corresponding leaf category and listing type supports a 5-day listing duration.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_5&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_5&lt;/code&gt; as the value in the &lt;a href=&quot;/Devzone/XML/docs/Reference/eBay/AddItem.html#Request.Item.ListingType &quot; target=&quot;_blank&quot;&gt;ListingDuration&lt;/a&gt; field when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt; - **DAYS_7**: This value indicates that the corresponding leaf category and listing type supports a 7-day listing duration. &lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_7&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_7&lt;/code&gt; as the value in the &lt;a href=&quot;/Devzone/XML/docs/Reference/eBay/AddItem.html#Request.Item.ListingType &quot; target=&quot;_blank&quot;&gt;ListingDuration&lt;/a&gt; field when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt; - **DAYS_10**: This value indicates that the corresponding leaf category and listing type supports a 10-day listing duration. &lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_10&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_10&lt;/code&gt; as the value in the &lt;a href=&quot;/Devzone/XML/docs/Reference/eBay/AddItem.html#Request.Item.ListingType &quot; target=&quot;_blank&quot;&gt;ListingDuration&lt;/a&gt; field when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt; - **DAYS_30**: This value indicates that the corresponding leaf category and listing type supports a 30-day listing duration. This is a typical listing duration for Classified Ad listings. &lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_30&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_30&lt;/code&gt; as the value in the &lt;a href=&quot;/Devzone/XML/docs/Reference/eBay/AddItem.html#Request.Item.ListingType &quot; target=&quot;_blank&quot;&gt;ListingDuration&lt;/a&gt; field when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt; - **DAYS_90**: This value indicates that the corresponding leaf category and listing type supports a 90-day listing duration. This is a typical listing duration for Classified Ad listings. &lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note&lt;/b&gt;: Legacy support: If &lt;code&gt;DAYS_90&lt;/code&gt; is supported for your listing category, use &lt;code&gt;Days_90&lt;/code&gt; as the value in the &lt;a href=&quot;/Devzone/XML/docs/Reference/eBay/AddItem.html#Request.Item.ListingType &quot; target=&quot;_blank&quot;&gt;ListingDuration&lt;/a&gt; field when creating/revising a listing with the &lt;b&gt;Trading API&lt;/b&gt;.&lt;/span&gt;
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public enum DurationEnum implements ValuedEnum {
+    GTC("GTC"),
+    DAYS_1("DAYS_1"),
+    DAYS_3("DAYS_3"),
+    DAYS_5("DAYS_5"),
+    DAYS_7("DAYS_7"),
+    DAYS_10("DAYS_10"),
+    DAYS_30("DAYS_30"),
+    DAYS_90("DAYS_90");
+    public final String value;
+    DurationEnum(final String value) {
+        this.value = value;
+    }
+    @jakarta.annotation.Nonnull
+    public String getValue() { return this.value; }
+    @jakarta.annotation.Nullable
+    public static DurationEnum forValue(@jakarta.annotation.Nonnull final String searchValue) {
+        Objects.requireNonNull(searchValue);
+        switch(searchValue) {
+            case "GTC": return GTC;
+            case "DAYS_1": return DAYS_1;
+            case "DAYS_3": return DAYS_3;
+            case "DAYS_5": return DAYS_5;
+            case "DAYS_7": return DAYS_7;
+            case "DAYS_10": return DAYS_10;
+            case "DAYS_30": return DAYS_30;
+            case "DAYS_90": return DAYS_90;
+            default: return null;
+        }
+    }
+}

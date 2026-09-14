@@ -31,7 +31,7 @@ public class ItemConditionDescriptor implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This type specifies the constraints on a condition descriptor, such as the maximum length, default condition descriptor value ID, cardinality, mode, usage, and applicable descriptor IDs.
+     * This container shows the constraints on a condition descriptor, such as the maximum length, default condition descriptor value ID, cardinality, mode, usage, and applicable descriptor IDs.
      */
     private ItemConditionDescriptorConstraint conditionDescriptorConstraint;
     /**
@@ -75,7 +75,7 @@ public class ItemConditionDescriptor implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the conditionDescriptorConstraint property value. This type specifies the constraints on a condition descriptor, such as the maximum length, default condition descriptor value ID, cardinality, mode, usage, and applicable descriptor IDs.
+     * Gets the conditionDescriptorConstraint property value. This container shows the constraints on a condition descriptor, such as the maximum length, default condition descriptor value ID, cardinality, mode, usage, and applicable descriptor IDs.
      * @return a {@link ItemConditionDescriptorConstraint}
      */
     @jakarta.annotation.Nullable
@@ -149,7 +149,7 @@ public class ItemConditionDescriptor implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the conditionDescriptorConstraint property value. This type specifies the constraints on a condition descriptor, such as the maximum length, default condition descriptor value ID, cardinality, mode, usage, and applicable descriptor IDs.
+     * Sets the conditionDescriptorConstraint property value. This container shows the constraints on a condition descriptor, such as the maximum length, default condition descriptor value ID, cardinality, mode, usage, and applicable descriptor IDs.
      * @param value Value to set for the conditionDescriptorConstraint property.
      */
     public void setConditionDescriptorConstraint(@jakarta.annotation.Nullable final ItemConditionDescriptorConstraint value) {

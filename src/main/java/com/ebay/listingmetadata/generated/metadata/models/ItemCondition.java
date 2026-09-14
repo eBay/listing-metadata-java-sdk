@@ -31,7 +31,7 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site.  &lt;br&gt;&lt;br&gt;Note that the display name can vary by category. For example, the description for condition ID &lt;code&gt;1000&lt;/code&gt; could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos;&gt;Item condition ID and name values&lt;/a&gt;.
+     * The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site.  &lt;br&gt;&lt;br&gt;Note that the display name can vary by category. For example, the description for condition ID &lt;code&gt;1000&lt;/code&gt; could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos; target=&apos;_blank&apos;&gt;Item condition ID and name values&lt;/a&gt;.
      */
     private String conditionDescription;
     /**
@@ -43,13 +43,13 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
      */
     private String conditionHelpText;
     /**
-     * The ID value of the selected item condition. For information on the supported condition ID values, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos;&gt;Item condition ID and name values&lt;/a&gt;.
+     * The ID value of the selected item condition. For information on the supported condition ID values, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos; target=&apos;_blank&apos;&gt;Item condition ID and name values&lt;/a&gt;.
      */
     private String conditionId;
     /**
-     * The value returned in this field indicates if there are any usage restrictions or requirements for the corresponding item condition in the corresponding category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, the only supported value is &apos;RESTRICTED&apos;, and this field will only be returned for the following conditions: 2000, 2010, 2020, 2030. Sellers must be pre-approved to use any of these item conditions.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:UsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The value returned in this field indicates if there are any usage restrictions or requirements for the corresponding item condition in the corresponding category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, the only supported value is &apos;RESTRICTED&apos;, and this field will only be returned for the following conditions: 2000, 2010, 2020, 2030. Sellers must be pre-approved to use any of these item conditions.&lt;/span&gt;
      */
-    private String usage;
+    private UsageEnum usage;
     /**
      * Instantiates a new {@link ItemCondition} and sets the default values.
      */
@@ -75,7 +75,7 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the conditionDescription property value. The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site.  &lt;br&gt;&lt;br&gt;Note that the display name can vary by category. For example, the description for condition ID &lt;code&gt;1000&lt;/code&gt; could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos;&gt;Item condition ID and name values&lt;/a&gt;.
+     * Gets the conditionDescription property value. The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site.  &lt;br&gt;&lt;br&gt;Note that the display name can vary by category. For example, the description for condition ID &lt;code&gt;1000&lt;/code&gt; could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos; target=&apos;_blank&apos;&gt;Item condition ID and name values&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -99,7 +99,7 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
         return this.conditionHelpText;
     }
     /**
-     * Gets the conditionId property value. The ID value of the selected item condition. For information on the supported condition ID values, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos;&gt;Item condition ID and name values&lt;/a&gt;.
+     * Gets the conditionId property value. The ID value of the selected item condition. For information on the supported condition ID values, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos; target=&apos;_blank&apos;&gt;Item condition ID and name values&lt;/a&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -117,15 +117,15 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
         deserializerMap.put("conditionDescriptors", (n) -> { this.setConditionDescriptors(n.getCollectionOfObjectValues(ItemConditionDescriptor::createFromDiscriminatorValue)); });
         deserializerMap.put("conditionHelpText", (n) -> { this.setConditionHelpText(n.getStringValue()); });
         deserializerMap.put("conditionId", (n) -> { this.setConditionId(n.getStringValue()); });
-        deserializerMap.put("usage", (n) -> { this.setUsage(n.getStringValue()); });
+        deserializerMap.put("usage", (n) -> { this.setUsage(n.getEnumValue(UsageEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the usage property value. The value returned in this field indicates if there are any usage restrictions or requirements for the corresponding item condition in the corresponding category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, the only supported value is &apos;RESTRICTED&apos;, and this field will only be returned for the following conditions: 2000, 2010, 2020, 2030. Sellers must be pre-approved to use any of these item conditions.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:UsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the usage property value. The value returned in this field indicates if there are any usage restrictions or requirements for the corresponding item condition in the corresponding category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, the only supported value is &apos;RESTRICTED&apos;, and this field will only be returned for the following conditions: 2000, 2010, 2020, 2030. Sellers must be pre-approved to use any of these item conditions.&lt;/span&gt;
+     * @return a {@link UsageEnum}
      */
     @jakarta.annotation.Nullable
-    public String getUsage() {
+    public UsageEnum getUsage() {
         return this.usage;
     }
     /**
@@ -138,7 +138,7 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
         writer.writeCollectionOfObjectValues("conditionDescriptors", this.getConditionDescriptors());
         writer.writeStringValue("conditionHelpText", this.getConditionHelpText());
         writer.writeStringValue("conditionId", this.getConditionId());
-        writer.writeStringValue("usage", this.getUsage());
+        writer.writeEnumValue("usage", this.getUsage());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -149,7 +149,7 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the conditionDescription property value. The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site.  &lt;br&gt;&lt;br&gt;Note that the display name can vary by category. For example, the description for condition ID &lt;code&gt;1000&lt;/code&gt; could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos;&gt;Item condition ID and name values&lt;/a&gt;.
+     * Sets the conditionDescription property value. The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site.  &lt;br&gt;&lt;br&gt;Note that the display name can vary by category. For example, the description for condition ID &lt;code&gt;1000&lt;/code&gt; could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos; target=&apos;_blank&apos;&gt;Item condition ID and name values&lt;/a&gt;.
      * @param value Value to set for the conditionDescription property.
      */
     public void setConditionDescription(@jakarta.annotation.Nullable final String value) {
@@ -170,17 +170,17 @@ public class ItemCondition implements AdditionalDataHolder, Parsable {
         this.conditionHelpText = value;
     }
     /**
-     * Sets the conditionId property value. The ID value of the selected item condition. For information on the supported condition ID values, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos;&gt;Item condition ID and name values&lt;/a&gt;.
+     * Sets the conditionId property value. The ID value of the selected item condition. For information on the supported condition ID values, see &lt;a href=&apos;/api-docs/sell/static/metadata/condition-id-values.html&apos; target=&apos;_blank&apos;&gt;Item condition ID and name values&lt;/a&gt;.
      * @param value Value to set for the conditionId property.
      */
     public void setConditionId(@jakarta.annotation.Nullable final String value) {
         this.conditionId = value;
     }
     /**
-     * Sets the usage property value. The value returned in this field indicates if there are any usage restrictions or requirements for the corresponding item condition in the corresponding category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, the only supported value is &apos;RESTRICTED&apos;, and this field will only be returned for the following conditions: 2000, 2010, 2020, 2030. Sellers must be pre-approved to use any of these item conditions.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:UsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the usage property value. The value returned in this field indicates if there are any usage restrictions or requirements for the corresponding item condition in the corresponding category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, the only supported value is &apos;RESTRICTED&apos;, and this field will only be returned for the following conditions: 2000, 2010, 2020, 2030. Sellers must be pre-approved to use any of these item conditions.&lt;/span&gt;
      * @param value Value to set for the usage property.
      */
-    public void setUsage(@jakarta.annotation.Nullable final String value) {
+    public void setUsage(@jakarta.annotation.Nullable final UsageEnum value) {
         this.usage = value;
     }
 }

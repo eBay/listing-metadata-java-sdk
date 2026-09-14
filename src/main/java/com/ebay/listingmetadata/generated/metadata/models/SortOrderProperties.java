@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type is used to define the property to be used in sorting. 
+ * This container is used to define the property to be used in the sorting.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SortOrderProperties implements AdditionalDataHolder, Parsable {

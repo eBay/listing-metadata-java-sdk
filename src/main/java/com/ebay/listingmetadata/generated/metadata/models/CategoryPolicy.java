@@ -47,9 +47,9 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private String categoryTreeId;
     /**
-     * This enumerated value indicates whether or not European Article Numbers (EANs) are supported/required when listing products in the category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates whether or not European Article Numbers (EANs) are supported/required when listing products in the category.
      */
-    private String eanSupport;
+    private ProductIdentiferEnabledEnum eanSupport;
     /**
      * If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. You can use the &lt;a href=&quot;/api-docs/sell/taxonomy/resources/category_tree/methods/getExpiredCategories&quot; target=&quot;_blank&quot;&gt;getExpiredCategories&lt;/a&gt; method (of the &lt;b&gt;Taxonomy API&lt;/b&gt;) to find the leaf category that replaced the expired category. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
      */
@@ -59,9 +59,9 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean intangibleEnabled;
     /**
-     * This enumerated value indicates whether or not International Standard Book Numbers (ISBNs) are supported/required when listing products in the specified category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates whether or not International Standard Book Numbers (ISBNs) are supported/required when listing products in the specified category.
      */
-    private String isbnSupport;
+    private ProductIdentiferEnabledEnum isbnSupport;
     /**
      * If this field (Lot Size Disabled) is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category does not support lot listings. A lot listing is a listing that features multiple related items that must be purchased by one buyer in one transaction. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
      */
@@ -81,7 +81,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
     /**
      * An array that indicates the acceptable offline payment methods that can be used when listing an item for sale in the corresponding category.
      */
-    private java.util.List<String> paymentMethods;
+    private java.util.List<PaymentEnum> paymentMethods;
     /**
      * If this field (Reduce Reserve Allowed) is &lt;code&gt;true&lt;/code&gt;, the corresponding leaf category allows the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and the corresponding leaf category on the site do not normally allow sellers to reduce an item&apos;s reserve price.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
      */
@@ -91,9 +91,9 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean reservePriceAllowed;
     /**
-     * This enumerated value indicates whether or not the category on the specified eBay site supports the use of Universal Product Codes (UPCs) to help create a listing. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates whether or not the category on the specified eBay site supports the use of Universal Product Codes (UPCs) to help create a listing.
      */
-    private String upcSupport;
+    private ProductIdentiferEnabledEnum upcSupport;
     /**
      * When returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates that the leaf category for the specified site is designated by eBay as a value category. Value categories can be used as a secondary category for a listing at no extra charge.
      */
@@ -159,11 +159,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.categoryTreeId;
     }
     /**
-     * Gets the eanSupport property value. This enumerated value indicates whether or not European Article Numbers (EANs) are supported/required when listing products in the category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the eanSupport property value. This enumerated value indicates whether or not European Article Numbers (EANs) are supported/required when listing products in the category.
+     * @return a {@link ProductIdentiferEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getEanSupport() {
+    public ProductIdentiferEnabledEnum getEanSupport() {
         return this.eanSupport;
     }
     /**
@@ -185,18 +185,18 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         deserializerMap.put("b2bVatEnabled", (n) -> { this.setB2bVatEnabled(n.getBooleanValue()); });
         deserializerMap.put("categoryId", (n) -> { this.setCategoryId(n.getStringValue()); });
         deserializerMap.put("categoryTreeId", (n) -> { this.setCategoryTreeId(n.getStringValue()); });
-        deserializerMap.put("eanSupport", (n) -> { this.setEanSupport(n.getStringValue()); });
+        deserializerMap.put("eanSupport", (n) -> { this.setEanSupport(n.getEnumValue(ProductIdentiferEnabledEnum::forValue)); });
         deserializerMap.put("expired", (n) -> { this.setExpired(n.getBooleanValue()); });
         deserializerMap.put("intangibleEnabled", (n) -> { this.setIntangibleEnabled(n.getBooleanValue()); });
-        deserializerMap.put("isbnSupport", (n) -> { this.setIsbnSupport(n.getStringValue()); });
+        deserializerMap.put("isbnSupport", (n) -> { this.setIsbnSupport(n.getEnumValue(ProductIdentiferEnabledEnum::forValue)); });
         deserializerMap.put("lsd", (n) -> { this.setLsd(n.getBooleanValue()); });
         deserializerMap.put("minimumReservePrice", (n) -> { this.setMinimumReservePrice(n.getDoubleValue()); });
         deserializerMap.put("orpa", (n) -> { this.setOrpa(n.getBooleanValue()); });
         deserializerMap.put("orra", (n) -> { this.setOrra(n.getBooleanValue()); });
-        deserializerMap.put("paymentMethods", (n) -> { this.setPaymentMethods(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("paymentMethods", (n) -> { this.setPaymentMethods(n.getCollectionOfEnumValues(PaymentEnum::forValue)); });
         deserializerMap.put("reduceReserveAllowed", (n) -> { this.setReduceReserveAllowed(n.getBooleanValue()); });
         deserializerMap.put("reservePriceAllowed", (n) -> { this.setReservePriceAllowed(n.getBooleanValue()); });
-        deserializerMap.put("upcSupport", (n) -> { this.setUpcSupport(n.getStringValue()); });
+        deserializerMap.put("upcSupport", (n) -> { this.setUpcSupport(n.getEnumValue(ProductIdentiferEnabledEnum::forValue)); });
         deserializerMap.put("valueCategory", (n) -> { this.setValueCategory(n.getBooleanValue()); });
         deserializerMap.put("virtual", (n) -> { this.setVirtual(n.getBooleanValue()); });
         return deserializerMap;
@@ -210,11 +210,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.intangibleEnabled;
     }
     /**
-     * Gets the isbnSupport property value. This enumerated value indicates whether or not International Standard Book Numbers (ISBNs) are supported/required when listing products in the specified category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the isbnSupport property value. This enumerated value indicates whether or not International Standard Book Numbers (ISBNs) are supported/required when listing products in the specified category.
+     * @return a {@link ProductIdentiferEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getIsbnSupport() {
+    public ProductIdentiferEnabledEnum getIsbnSupport() {
         return this.isbnSupport;
     }
     /**
@@ -251,10 +251,10 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the paymentMethods property value. An array that indicates the acceptable offline payment methods that can be used when listing an item for sale in the corresponding category.
-     * @return a {@link java.util.List<String>}
+     * @return a {@link java.util.List<PaymentEnum>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<String> getPaymentMethods() {
+    public java.util.List<PaymentEnum> getPaymentMethods() {
         return this.paymentMethods;
     }
     /**
@@ -274,11 +274,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.reservePriceAllowed;
     }
     /**
-     * Gets the upcSupport property value. This enumerated value indicates whether or not the category on the specified eBay site supports the use of Universal Product Codes (UPCs) to help create a listing. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the upcSupport property value. This enumerated value indicates whether or not the category on the specified eBay site supports the use of Universal Product Codes (UPCs) to help create a listing.
+     * @return a {@link ProductIdentiferEnabledEnum}
      */
     @jakarta.annotation.Nullable
-    public String getUpcSupport() {
+    public ProductIdentiferEnabledEnum getUpcSupport() {
         return this.upcSupport;
     }
     /**
@@ -307,18 +307,18 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         writer.writeBooleanValue("b2bVatEnabled", this.getB2bVatEnabled());
         writer.writeStringValue("categoryId", this.getCategoryId());
         writer.writeStringValue("categoryTreeId", this.getCategoryTreeId());
-        writer.writeStringValue("eanSupport", this.getEanSupport());
+        writer.writeEnumValue("eanSupport", this.getEanSupport());
         writer.writeBooleanValue("expired", this.getExpired());
         writer.writeBooleanValue("intangibleEnabled", this.getIntangibleEnabled());
-        writer.writeStringValue("isbnSupport", this.getIsbnSupport());
+        writer.writeEnumValue("isbnSupport", this.getIsbnSupport());
         writer.writeBooleanValue("lsd", this.getLsd());
         writer.writeDoubleValue("minimumReservePrice", this.getMinimumReservePrice());
         writer.writeBooleanValue("orpa", this.getOrpa());
         writer.writeBooleanValue("orra", this.getOrra());
-        writer.writeCollectionOfPrimitiveValues("paymentMethods", this.getPaymentMethods());
+        writer.writeCollectionOfEnumValues("paymentMethods", this.getPaymentMethods());
         writer.writeBooleanValue("reduceReserveAllowed", this.getReduceReserveAllowed());
         writer.writeBooleanValue("reservePriceAllowed", this.getReservePriceAllowed());
-        writer.writeStringValue("upcSupport", this.getUpcSupport());
+        writer.writeEnumValue("upcSupport", this.getUpcSupport());
         writer.writeBooleanValue("valueCategory", this.getValueCategory());
         writer.writeBooleanValue("virtual", this.getVirtual());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -359,10 +359,10 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.categoryTreeId = value;
     }
     /**
-     * Sets the eanSupport property value. This enumerated value indicates whether or not European Article Numbers (EANs) are supported/required when listing products in the category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the eanSupport property value. This enumerated value indicates whether or not European Article Numbers (EANs) are supported/required when listing products in the category.
      * @param value Value to set for the eanSupport property.
      */
-    public void setEanSupport(@jakarta.annotation.Nullable final String value) {
+    public void setEanSupport(@jakarta.annotation.Nullable final ProductIdentiferEnabledEnum value) {
         this.eanSupport = value;
     }
     /**
@@ -380,10 +380,10 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.intangibleEnabled = value;
     }
     /**
-     * Sets the isbnSupport property value. This enumerated value indicates whether or not International Standard Book Numbers (ISBNs) are supported/required when listing products in the specified category. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the isbnSupport property value. This enumerated value indicates whether or not International Standard Book Numbers (ISBNs) are supported/required when listing products in the specified category.
      * @param value Value to set for the isbnSupport property.
      */
-    public void setIsbnSupport(@jakarta.annotation.Nullable final String value) {
+    public void setIsbnSupport(@jakarta.annotation.Nullable final ProductIdentiferEnabledEnum value) {
         this.isbnSupport = value;
     }
     /**
@@ -418,7 +418,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      * Sets the paymentMethods property value. An array that indicates the acceptable offline payment methods that can be used when listing an item for sale in the corresponding category.
      * @param value Value to set for the paymentMethods property.
      */
-    public void setPaymentMethods(@jakarta.annotation.Nullable final java.util.List<String> value) {
+    public void setPaymentMethods(@jakarta.annotation.Nullable final java.util.List<PaymentEnum> value) {
         this.paymentMethods = value;
     }
     /**
@@ -436,10 +436,10 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.reservePriceAllowed = value;
     }
     /**
-     * Sets the upcSupport property value. This enumerated value indicates whether or not the category on the specified eBay site supports the use of Universal Product Codes (UPCs) to help create a listing. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/metadata/types/sel:ProductIdentiferEnabledEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the upcSupport property value. This enumerated value indicates whether or not the category on the specified eBay site supports the use of Universal Product Codes (UPCs) to help create a listing.
      * @param value Value to set for the upcSupport property.
      */
-    public void setUpcSupport(@jakarta.annotation.Nullable final String value) {
+    public void setUpcSupport(@jakarta.annotation.Nullable final ProductIdentiferEnabledEnum value) {
         this.upcSupport = value;
     }
     /**
