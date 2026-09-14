@@ -42,7 +42,7 @@ src/main/java/com/ebay/listingmetadata/
 <dependency>
     <groupId>com.ebay</groupId>
     <artifactId>listing-metadata-java-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
