@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type contains a summary of a specified product. The product summary includes information about the product&apos;s identifiers, product images, aspects, and the &lt;b&gt;getProduct&lt;/b&gt; URL for retrieving the product details.
+ * This type contains a summary of a specified product. The product summary includes information about the product&apos;s identifiers, product images, aspects, and the &lt;strong&gt;getProduct&lt;/strong&gt; URL for retrieving the product details.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProductSummary implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Contains information about additional images associated with this product. For the primary image, see the &lt;b&gt;image&lt;/b&gt; container.
+     * This array is returned if the category product has additional images besides the primary image returned in the &lt;strong&gt;image&lt;/strong&gt; container.
      */
     private java.util.List<Image> additionalImages;
     /**
@@ -51,11 +51,11 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
      */
     private String epid;
     /**
-     * A list of all GTINs that identify this product. This includes all of the values returned in the &lt;b&gt;ean&lt;/b&gt;, &lt;b&gt;isbn&lt;/b&gt;, and &lt;b&gt;upc&lt;/b&gt; fields.
+     * A list of all GTINs that identify this product. This includes all of the values returned in the &lt;strong&gt;ean&lt;/strong&gt;, &lt;strong&gt;isbn&lt;/strong&gt;, and &lt;strong&gt;upc&lt;/strong&gt; fields.
      */
     private java.util.List<String> gtin;
     /**
-     * This type contains information about a product image stored in eBay Picture Services (EPS).
+     * Contains information about the primary image of this product. For more images of this product, see the &lt;strong&gt;additionalImages&lt;/strong&gt; container.
      */
     private Image image;
     /**
@@ -67,7 +67,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> mpn;
     /**
-     * The URI of the &lt;b&gt;getProduct&lt;/b&gt; call request that retrieves this product&apos;s details.
+     * The URI of the &lt;strong&gt;getProduct&lt;/strong&gt; call request that retrieves this product&apos;s details.
      */
     private String productHref;
     /**
@@ -107,7 +107,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the additionalImages property value. Contains information about additional images associated with this product. For the primary image, see the &lt;b&gt;image&lt;/b&gt; container.
+     * Gets the additionalImages property value. This array is returned if the category product has additional images besides the primary image returned in the &lt;strong&gt;image&lt;/strong&gt; container.
      * @return a {@link java.util.List<Image>}
      */
     @jakarta.annotation.Nullable
@@ -169,7 +169,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the gtin property value. A list of all GTINs that identify this product. This includes all of the values returned in the &lt;b&gt;ean&lt;/b&gt;, &lt;b&gt;isbn&lt;/b&gt;, and &lt;b&gt;upc&lt;/b&gt; fields.
+     * Gets the gtin property value. A list of all GTINs that identify this product. This includes all of the values returned in the &lt;strong&gt;ean&lt;/strong&gt;, &lt;strong&gt;isbn&lt;/strong&gt;, and &lt;strong&gt;upc&lt;/strong&gt; fields.
      * @return a {@link java.util.List<String>}
      */
     @jakarta.annotation.Nullable
@@ -177,7 +177,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         return this.gtin;
     }
     /**
-     * Gets the image property value. This type contains information about a product image stored in eBay Picture Services (EPS).
+     * Gets the image property value. Contains information about the primary image of this product. For more images of this product, see the &lt;strong&gt;additionalImages&lt;/strong&gt; container.
      * @return a {@link Image}
      */
     @jakarta.annotation.Nullable
@@ -201,7 +201,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         return this.mpn;
     }
     /**
-     * Gets the productHref property value. The URI of the &lt;b&gt;getProduct&lt;/b&gt; call request that retrieves this product&apos;s details.
+     * Gets the productHref property value. The URI of the &lt;strong&gt;getProduct&lt;/strong&gt; call request that retrieves this product&apos;s details.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -261,7 +261,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the additionalImages property value. Contains information about additional images associated with this product. For the primary image, see the &lt;b&gt;image&lt;/b&gt; container.
+     * Sets the additionalImages property value. This array is returned if the category product has additional images besides the primary image returned in the &lt;strong&gt;image&lt;/strong&gt; container.
      * @param value Value to set for the additionalImages property.
      */
     public void setAdditionalImages(@jakarta.annotation.Nullable final java.util.List<Image> value) {
@@ -296,14 +296,14 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         this.epid = value;
     }
     /**
-     * Sets the gtin property value. A list of all GTINs that identify this product. This includes all of the values returned in the &lt;b&gt;ean&lt;/b&gt;, &lt;b&gt;isbn&lt;/b&gt;, and &lt;b&gt;upc&lt;/b&gt; fields.
+     * Sets the gtin property value. A list of all GTINs that identify this product. This includes all of the values returned in the &lt;strong&gt;ean&lt;/strong&gt;, &lt;strong&gt;isbn&lt;/strong&gt;, and &lt;strong&gt;upc&lt;/strong&gt; fields.
      * @param value Value to set for the gtin property.
      */
     public void setGtin(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.gtin = value;
     }
     /**
-     * Sets the image property value. This type contains information about a product image stored in eBay Picture Services (EPS).
+     * Sets the image property value. Contains information about the primary image of this product. For more images of this product, see the &lt;strong&gt;additionalImages&lt;/strong&gt; container.
      * @param value Value to set for the image property.
      */
     public void setImage(@jakarta.annotation.Nullable final Image value) {
@@ -324,7 +324,7 @@ public class ProductSummary implements AdditionalDataHolder, Parsable {
         this.mpn = value;
     }
     /**
-     * Sets the productHref property value. The URI of the &lt;b&gt;getProduct&lt;/b&gt; call request that retrieves this product&apos;s details.
+     * Sets the productHref property value. The URI of the &lt;strong&gt;getProduct&lt;/strong&gt; call request that retrieves this product&apos;s details.
      * @param value Value to set for the productHref property.
      */
     public void setProductHref(@jakarta.annotation.Nullable final String value) {

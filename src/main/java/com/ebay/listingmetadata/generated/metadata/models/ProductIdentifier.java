@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
+ * This type defines the supported product identifiers.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProductIdentifier implements AdditionalDataHolder, Parsable {

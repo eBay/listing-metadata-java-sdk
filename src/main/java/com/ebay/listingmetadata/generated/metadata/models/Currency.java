@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This field specifies the default currency used by the marketplace.
+ * The type defining valid currencies for the marketplace.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Currency implements AdditionalDataHolder, Parsable {

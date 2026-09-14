@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type contains the specifications for the collection of products that match the search or filter criteria of a &lt;b&gt;search&lt;/b&gt; call. A maximum of 200 product summaries is returned (the result set), fewer if you include the &lt;b&gt;limit&lt;/b&gt; query parameter in the request. 
+ * This type contains the specifications for the collection of products that match the search or filter criteria of a &lt;strong&gt;search&lt;/strong&gt; call. A maximum of 200 product summaries is returned (the result set), fewer if you include the &lt;strong&gt;limit&lt;/strong&gt; query parameter in the request. 
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
@@ -31,11 +31,11 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This field is reserved for internal or future use. &lt;!-- The URI of the &lt;b&gt;search&lt;/b&gt; method request that produced this result set. --&gt;
+     * This field is reserved for internal or future use. &lt;!-- The URI of the &lt;strong&gt;search&lt;/strong&gt; method request that produced this result set. --&gt;
      */
     private String href;
     /**
-     * The number of product summaries returned in the response. This is the &lt;i&gt;result set&lt;/i&gt;, a subset of the full collection of products that match the search or filter criteria of this call. If the &lt;b&gt;limit&lt;/b&gt; query parameter was included in the request, this field will have the same value. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;50&lt;/code&gt;
+     * The number of product summaries returned in the response. This is the &lt;i&gt;result set&lt;/i&gt;, a subset of the full collection of products that match the search or filter criteria of this call. If the &lt;strong&gt;limit&lt;/strong&gt; query parameter was included in the request, this field will have the same value. &lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;50&lt;/code&gt;
      */
     private Integer limit;
     /**
@@ -51,11 +51,11 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
      */
     private String prev;
     /**
-     * &lt;i&gt;Returned if&lt;/i&gt; the &lt;b&gt;fieldGroups&lt;/b&gt; query parameter was omitted from the request, or if it was included with a value of &lt;code&gt;MATCHING_PRODUCTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. This container provides an array of product summaries in the current result set for products that match the combination of the &lt;b&gt;q&lt;/b&gt;, &lt;b&gt;category_ids&lt;/b&gt;, and &lt;b&gt;aspect_filter&lt;/b&gt; parameters that were provided in the request. Each product summary includes information about the product&apos;s identifiers, product images, aspects, the product page URL, and the &lt;b&gt;getProduct&lt;/b&gt; URL for retrieving the product details.
+     * &lt;i&gt;Returned if&lt;/i&gt; the &lt;strong&gt;fieldGroups&lt;/strong&gt; query parameter was omitted from the request, or if it was included with a value of &lt;code&gt;MATCHING_PRODUCTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. This container provides an array of product summaries in the current result set for products that match the combination of the &lt;strong&gt;q&lt;/strong&gt;, &lt;strong&gt;category_ids&lt;/strong&gt;, and &lt;strong&gt;aspect_filter&lt;/strong&gt; parameters that were provided in the request. Each product summary includes information about the product&apos;s identifiers, product images, aspects, the product page URL, and the &lt;strong&gt;getProduct&lt;/strong&gt; URL for retrieving the product details.
      */
     private java.util.List<ProductSummary> productSummaries;
     /**
-     * This type identifies a product category and the aspects associated with that category. Each aspect distribution container returns the distribution of values that have been used for the aspect.
+     * &lt;i&gt;Returned only if&lt;/i&gt; the &lt;strong&gt;fieldGroups&lt;/strong&gt; query parameter was included in the request with a value of &lt;code&gt;ASPECT_REFINEMENTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; An aspect is a property of a category, used by sellers to provide details about the items they&apos;re listing. For example, the &lt;i&gt;Cell Phones &amp;amp; Smartphones&lt;/i&gt; category (#9355) includes a &lt;i&gt;Storage Capacity&lt;/i&gt; aspect. &lt;br /&gt;&lt;br /&gt; This container provides information about the distribution of values of a set of category aspects. The category aspects are those associated with the category that eBay determines is most likely to cover the products that match the search criteria.
      */
     private Refinement refinement;
     /**
@@ -104,7 +104,7 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the href property value. This field is reserved for internal or future use. &lt;!-- The URI of the &lt;b&gt;search&lt;/b&gt; method request that produced this result set. --&gt;
+     * Gets the href property value. This field is reserved for internal or future use. &lt;!-- The URI of the &lt;strong&gt;search&lt;/strong&gt; method request that produced this result set. --&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -112,7 +112,7 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
         return this.href;
     }
     /**
-     * Gets the limit property value. The number of product summaries returned in the response. This is the &lt;i&gt;result set&lt;/i&gt;, a subset of the full collection of products that match the search or filter criteria of this call. If the &lt;b&gt;limit&lt;/b&gt; query parameter was included in the request, this field will have the same value. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;50&lt;/code&gt;
+     * Gets the limit property value. The number of product summaries returned in the response. This is the &lt;i&gt;result set&lt;/i&gt;, a subset of the full collection of products that match the search or filter criteria of this call. If the &lt;strong&gt;limit&lt;/strong&gt; query parameter was included in the request, this field will have the same value. &lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;50&lt;/code&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -144,7 +144,7 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
         return this.prev;
     }
     /**
-     * Gets the productSummaries property value. &lt;i&gt;Returned if&lt;/i&gt; the &lt;b&gt;fieldGroups&lt;/b&gt; query parameter was omitted from the request, or if it was included with a value of &lt;code&gt;MATCHING_PRODUCTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. This container provides an array of product summaries in the current result set for products that match the combination of the &lt;b&gt;q&lt;/b&gt;, &lt;b&gt;category_ids&lt;/b&gt;, and &lt;b&gt;aspect_filter&lt;/b&gt; parameters that were provided in the request. Each product summary includes information about the product&apos;s identifiers, product images, aspects, the product page URL, and the &lt;b&gt;getProduct&lt;/b&gt; URL for retrieving the product details.
+     * Gets the productSummaries property value. &lt;i&gt;Returned if&lt;/i&gt; the &lt;strong&gt;fieldGroups&lt;/strong&gt; query parameter was omitted from the request, or if it was included with a value of &lt;code&gt;MATCHING_PRODUCTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. This container provides an array of product summaries in the current result set for products that match the combination of the &lt;strong&gt;q&lt;/strong&gt;, &lt;strong&gt;category_ids&lt;/strong&gt;, and &lt;strong&gt;aspect_filter&lt;/strong&gt; parameters that were provided in the request. Each product summary includes information about the product&apos;s identifiers, product images, aspects, the product page URL, and the &lt;strong&gt;getProduct&lt;/strong&gt; URL for retrieving the product details.
      * @return a {@link java.util.List<ProductSummary>}
      */
     @jakarta.annotation.Nullable
@@ -152,7 +152,7 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
         return this.productSummaries;
     }
     /**
-     * Gets the refinement property value. This type identifies a product category and the aspects associated with that category. Each aspect distribution container returns the distribution of values that have been used for the aspect.
+     * Gets the refinement property value. &lt;i&gt;Returned only if&lt;/i&gt; the &lt;strong&gt;fieldGroups&lt;/strong&gt; query parameter was included in the request with a value of &lt;code&gt;ASPECT_REFINEMENTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; An aspect is a property of a category, used by sellers to provide details about the items they&apos;re listing. For example, the &lt;i&gt;Cell Phones &amp;amp; Smartphones&lt;/i&gt; category (#9355) includes a &lt;i&gt;Storage Capacity&lt;/i&gt; aspect. &lt;br /&gt;&lt;br /&gt; This container provides information about the distribution of values of a set of category aspects. The category aspects are those associated with the category that eBay determines is most likely to cover the products that match the search criteria.
      * @return a {@link Refinement}
      */
     @jakarta.annotation.Nullable
@@ -191,14 +191,14 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the href property value. This field is reserved for internal or future use. &lt;!-- The URI of the &lt;b&gt;search&lt;/b&gt; method request that produced this result set. --&gt;
+     * Sets the href property value. This field is reserved for internal or future use. &lt;!-- The URI of the &lt;strong&gt;search&lt;/strong&gt; method request that produced this result set. --&gt;
      * @param value Value to set for the href property.
      */
     public void setHref(@jakarta.annotation.Nullable final String value) {
         this.href = value;
     }
     /**
-     * Sets the limit property value. The number of product summaries returned in the response. This is the &lt;i&gt;result set&lt;/i&gt;, a subset of the full collection of products that match the search or filter criteria of this call. If the &lt;b&gt;limit&lt;/b&gt; query parameter was included in the request, this field will have the same value. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;50&lt;/code&gt;
+     * Sets the limit property value. The number of product summaries returned in the response. This is the &lt;i&gt;result set&lt;/i&gt;, a subset of the full collection of products that match the search or filter criteria of this call. If the &lt;strong&gt;limit&lt;/strong&gt; query parameter was included in the request, this field will have the same value. &lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;50&lt;/code&gt;
      * @param value Value to set for the limit property.
      */
     public void setLimit(@jakarta.annotation.Nullable final Integer value) {
@@ -226,14 +226,14 @@ public class ProductSearchResponse implements AdditionalDataHolder, Parsable {
         this.prev = value;
     }
     /**
-     * Sets the productSummaries property value. &lt;i&gt;Returned if&lt;/i&gt; the &lt;b&gt;fieldGroups&lt;/b&gt; query parameter was omitted from the request, or if it was included with a value of &lt;code&gt;MATCHING_PRODUCTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. This container provides an array of product summaries in the current result set for products that match the combination of the &lt;b&gt;q&lt;/b&gt;, &lt;b&gt;category_ids&lt;/b&gt;, and &lt;b&gt;aspect_filter&lt;/b&gt; parameters that were provided in the request. Each product summary includes information about the product&apos;s identifiers, product images, aspects, the product page URL, and the &lt;b&gt;getProduct&lt;/b&gt; URL for retrieving the product details.
+     * Sets the productSummaries property value. &lt;i&gt;Returned if&lt;/i&gt; the &lt;strong&gt;fieldGroups&lt;/strong&gt; query parameter was omitted from the request, or if it was included with a value of &lt;code&gt;MATCHING_PRODUCTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. This container provides an array of product summaries in the current result set for products that match the combination of the &lt;strong&gt;q&lt;/strong&gt;, &lt;strong&gt;category_ids&lt;/strong&gt;, and &lt;strong&gt;aspect_filter&lt;/strong&gt; parameters that were provided in the request. Each product summary includes information about the product&apos;s identifiers, product images, aspects, the product page URL, and the &lt;strong&gt;getProduct&lt;/strong&gt; URL for retrieving the product details.
      * @param value Value to set for the productSummaries property.
      */
     public void setProductSummaries(@jakarta.annotation.Nullable final java.util.List<ProductSummary> value) {
         this.productSummaries = value;
     }
     /**
-     * Sets the refinement property value. This type identifies a product category and the aspects associated with that category. Each aspect distribution container returns the distribution of values that have been used for the aspect.
+     * Sets the refinement property value. &lt;i&gt;Returned only if&lt;/i&gt; the &lt;strong&gt;fieldGroups&lt;/strong&gt; query parameter was included in the request with a value of &lt;code&gt;ASPECT_REFINEMENTS&lt;/code&gt; or &lt;code&gt;FULL&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; An aspect is a property of a category, used by sellers to provide details about the items they&apos;re listing. For example, the &lt;i&gt;Cell Phones &amp;amp; Smartphones&lt;/i&gt; category (#9355) includes a &lt;i&gt;Storage Capacity&lt;/i&gt; aspect. &lt;br /&gt;&lt;br /&gt; This container provides information about the distribution of values of a set of category aspects. The category aspects are those associated with the category that eBay determines is most likely to cover the products that match the search criteria.
      * @param value Value to set for the refinement property.
      */
     public void setRefinement(@jakarta.annotation.Nullable final Refinement value) {

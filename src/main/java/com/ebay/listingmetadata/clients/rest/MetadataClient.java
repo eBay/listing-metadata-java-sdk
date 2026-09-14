@@ -22,6 +22,8 @@ import com.ebay.listingmetadata.generated.metadata.models.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.io.InputStream;
+import com.microsoft.kiota.serialization.UntypedNode;
 
 public final class MetadataClient {
     private final MetadataApiClient kiota;

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the minimum starting prices for the supported types of eBay listings
+ * This type defines the minimum starting prices for the supported types of eBay listings.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Pa
      */
     private Map<String, Object> additionalData;
     /**
-     * The description of the listing type for which the pricing data is intended, such as &quot;Pricing for the auction-like listings&quot;.
+     * The description of the listing type for which the pricing data is intended.
      */
     private String description;
     /**
@@ -39,7 +39,7 @@ public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Pa
      */
     private ListingTypeEnum listingType;
     /**
-     * The minimum percentage value that a Buy It Now price for an auction listing must be above the starting bid price for the same listing.&lt;br&gt;&lt;br&gt;This field is only returned and applicable for auction listings.
+     * The minimum percentage value that a Buy It Now price for an auction listing must be above the starting bid price.
      */
     private String minBuyItNowPricePercent;
     /**
@@ -71,7 +71,7 @@ public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Pa
         return this.additionalData;
     }
     /**
-     * Gets the description property value. The description of the listing type for which the pricing data is intended, such as &quot;Pricing for the auction-like listings&quot;.
+     * Gets the description property value. The description of the listing type for which the pricing data is intended.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -100,7 +100,7 @@ public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Pa
         return this.listingType;
     }
     /**
-     * Gets the minBuyItNowPricePercent property value. The minimum percentage value that a Buy It Now price for an auction listing must be above the starting bid price for the same listing.&lt;br&gt;&lt;br&gt;This field is only returned and applicable for auction listings.
+     * Gets the minBuyItNowPricePercent property value. The minimum percentage value that a Buy It Now price for an auction listing must be above the starting bid price.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Pa
         this.additionalData = value;
     }
     /**
-     * Sets the description property value. The description of the listing type for which the pricing data is intended, such as &quot;Pricing for the auction-like listings&quot;.
+     * Sets the description property value. The description of the listing type for which the pricing data is intended.
      * @param value Value to set for the description property.
      */
     public void setDescription(@jakarta.annotation.Nullable final String value) {
@@ -149,7 +149,7 @@ public class MinimumListingPricePoliciesType implements AdditionalDataHolder, Pa
         this.listingType = value;
     }
     /**
-     * Sets the minBuyItNowPricePercent property value. The minimum percentage value that a Buy It Now price for an auction listing must be above the starting bid price for the same listing.&lt;br&gt;&lt;br&gt;This field is only returned and applicable for auction listings.
+     * Sets the minBuyItNowPricePercent property value. The minimum percentage value that a Buy It Now price for an auction listing must be above the starting bid price.
      * @param value Value to set for the minBuyItNowPricePercent property.
      */
     public void setMinBuyItNowPricePercent(@jakarta.annotation.Nullable final String value) {

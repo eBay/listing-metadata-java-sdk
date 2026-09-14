@@ -55,11 +55,11 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
      */
     private ClassifiedAdBestOfferEnabledEnum classifiedAdBestOfferEnabled;
     /**
-     * Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
+     * Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for For Sale By Owner listings.
      */
     private Boolean classifiedAdCompanyNameEnabled;
     /**
-     * Indicates whether this category supports including an address in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
+     * Indicates whether this category supports including an address in the seller&apos;s contact information. This element is for For Sale By Owner listings.
      */
     private Boolean classifiedAdContactByAddressEnabled;
     /**
@@ -71,7 +71,7 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean classifiedAdContactByPhoneEnabled;
     /**
-     * Indicates whether counter offers are allowed on Best offers for the category.
+     * Indicates whether counter offers are allowed on Best Offers for most categories.
      */
     private Boolean classifiedAdCounterOfferEnabled;
     /**
@@ -167,7 +167,7 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         return this.classifiedAdBestOfferEnabled;
     }
     /**
-     * Gets the classifiedAdCompanyNameEnabled property value. Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
+     * Gets the classifiedAdCompanyNameEnabled property value. Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for For Sale By Owner listings.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -175,7 +175,7 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         return this.classifiedAdCompanyNameEnabled;
     }
     /**
-     * Gets the classifiedAdContactByAddressEnabled property value. Indicates whether this category supports including an address in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
+     * Gets the classifiedAdContactByAddressEnabled property value. Indicates whether this category supports including an address in the seller&apos;s contact information. This element is for For Sale By Owner listings.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -199,7 +199,7 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         return this.classifiedAdContactByPhoneEnabled;
     }
     /**
-     * Gets the classifiedAdCounterOfferEnabled property value. Indicates whether counter offers are allowed on Best offers for the category.
+     * Gets the classifiedAdCounterOfferEnabled property value. Indicates whether counter offers are allowed on Best Offers for most categories.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -345,14 +345,14 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         this.classifiedAdBestOfferEnabled = value;
     }
     /**
-     * Sets the classifiedAdCompanyNameEnabled property value. Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
+     * Sets the classifiedAdCompanyNameEnabled property value. Indicates whether this category supports including a company name in the seller&apos;s contact information. This element is for For Sale By Owner listings.
      * @param value Value to set for the classifiedAdCompanyNameEnabled property.
      */
     public void setClassifiedAdCompanyNameEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.classifiedAdCompanyNameEnabled = value;
     }
     /**
-     * Sets the classifiedAdContactByAddressEnabled property value. Indicates whether this category supports including an address in the seller&apos;s contact information. This element is for &lt;b&gt;For Sale By Owner&lt;/b&gt; listings. 
+     * Sets the classifiedAdContactByAddressEnabled property value. Indicates whether this category supports including an address in the seller&apos;s contact information. This element is for For Sale By Owner listings.
      * @param value Value to set for the classifiedAdContactByAddressEnabled property.
      */
     public void setClassifiedAdContactByAddressEnabled(@jakarta.annotation.Nullable final Boolean value) {
@@ -373,7 +373,7 @@ public class ClassifiedAdPolicy implements AdditionalDataHolder, Parsable {
         this.classifiedAdContactByPhoneEnabled = value;
     }
     /**
-     * Sets the classifiedAdCounterOfferEnabled property value. Indicates whether counter offers are allowed on Best offers for the category.
+     * Sets the classifiedAdCounterOfferEnabled property value. Indicates whether counter offers are allowed on Best Offers for most categories.
      * @param value Value to set for the classifiedAdCounterOfferEnabled property.
      */
     public void setClassifiedAdCounterOfferEnabled(@jakarta.annotation.Nullable final Boolean value) {

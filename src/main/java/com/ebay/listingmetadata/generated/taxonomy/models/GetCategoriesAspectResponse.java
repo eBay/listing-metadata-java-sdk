@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * The base response type of the &lt;b&gt;fetchItemAspects&lt;/b&gt; method.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class GetCategoriesAspectResponse implements AdditionalDataHolder, Parsable {
     /**

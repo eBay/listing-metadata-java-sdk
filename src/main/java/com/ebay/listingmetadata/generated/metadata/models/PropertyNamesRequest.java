@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the properties used to retrieve compatibility property names.
+ * This type defines the request fields for the &lt;b&gt;getCompatibilityPropertyNames&lt;/b&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PropertyNamesRequest implements AdditionalDataHolder, Parsable {

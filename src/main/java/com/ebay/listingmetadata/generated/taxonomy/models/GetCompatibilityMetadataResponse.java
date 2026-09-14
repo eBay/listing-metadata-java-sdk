@@ -31,7 +31,7 @@ public class GetCompatibilityMetadataResponse implements AdditionalDataHolder, P
      */
     private Map<String, Object> additionalData;
     /**
-     * This container consists of an array of all compatible vehicle properties applicable to the specified eBay marketplace and eBay category ID.
+     * An array of all compatible vehicle properties applicable to the specified eBay marketplace and eBay category ID.
      */
     private java.util.List<CompatibilityProperty> compatibilityProperties;
     /**
@@ -59,7 +59,7 @@ public class GetCompatibilityMetadataResponse implements AdditionalDataHolder, P
         return this.additionalData;
     }
     /**
-     * Gets the compatibilityProperties property value. This container consists of an array of all compatible vehicle properties applicable to the specified eBay marketplace and eBay category ID.
+     * Gets the compatibilityProperties property value. An array of all compatible vehicle properties applicable to the specified eBay marketplace and eBay category ID.
      * @return a {@link java.util.List<CompatibilityProperty>}
      */
     @jakarta.annotation.Nullable
@@ -93,7 +93,7 @@ public class GetCompatibilityMetadataResponse implements AdditionalDataHolder, P
         this.additionalData = value;
     }
     /**
-     * Sets the compatibilityProperties property value. This container consists of an array of all compatible vehicle properties applicable to the specified eBay marketplace and eBay category ID.
+     * Sets the compatibilityProperties property value. An array of all compatible vehicle properties applicable to the specified eBay marketplace and eBay category ID.
      * @param value Value to set for the compatibilityProperties property.
      */
     public void setCompatibilityProperties(@jakarta.annotation.Nullable final java.util.List<CompatibilityProperty> value) {

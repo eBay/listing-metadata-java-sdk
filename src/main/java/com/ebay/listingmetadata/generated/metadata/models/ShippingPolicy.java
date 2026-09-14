@@ -39,7 +39,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
      */
     private String categoryTreeId;
     /**
-     * Indicates if the Global Shipping Program (GSP) is supported for the category. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;GSP is only supported by the eBay UK marketplace (&lt;code&gt;EBAY_GB&lt;/code&gt;).&lt;/span&gt;&lt;/p&gt;
+     * Indicates if the Global Shipping Program (GSP) is supported for the category.
      */
     private Boolean globalShippingEnabled;
     /**
@@ -125,7 +125,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the globalShippingEnabled property value. Indicates if the Global Shipping Program (GSP) is supported for the category. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;GSP is only supported by the eBay UK marketplace (&lt;code&gt;EBAY_GB&lt;/code&gt;).&lt;/span&gt;&lt;/p&gt;
+     * Gets the globalShippingEnabled property value. Indicates if the Global Shipping Program (GSP) is supported for the category.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -219,7 +219,7 @@ public class ShippingPolicy implements AdditionalDataHolder, Parsable {
         this.categoryTreeId = value;
     }
     /**
-     * Sets the globalShippingEnabled property value. Indicates if the Global Shipping Program (GSP) is supported for the category. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;GSP is only supported by the eBay UK marketplace (&lt;code&gt;EBAY_GB&lt;/code&gt;).&lt;/span&gt;&lt;/p&gt;
+     * Sets the globalShippingEnabled property value. Indicates if the Global Shipping Program (GSP) is supported for the category.
      * @param value Value to set for the globalShippingEnabled property.
      */
     public void setGlobalShippingEnabled(@jakarta.annotation.Nullable final Boolean value) {

@@ -31,7 +31,7 @@ public class CategorySuggestion implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This type contains information about a particular eBay category.
+     * Contains details about the suggested category.
      */
     private Category category;
     /**
@@ -71,7 +71,7 @@ public class CategorySuggestion implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the category property value. This type contains information about a particular eBay category.
+     * Gets the category property value. Contains details about the suggested category.
      * @return a {@link Category}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class CategorySuggestion implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the category property value. This type contains information about a particular eBay category.
+     * Sets the category property value. Contains details about the suggested category.
      * @param value Value to set for the category property.
      */
     public void setCategory(@jakarta.annotation.Nullable final Category value) {

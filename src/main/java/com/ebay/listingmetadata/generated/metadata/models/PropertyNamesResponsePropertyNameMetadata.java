@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * The metadata for a property.
+ * This type defines the property name metadata.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PropertyNamesResponsePropertyNameMetadata implements AdditionalDataHolder, Parsable {

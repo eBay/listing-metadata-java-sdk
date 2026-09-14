@@ -31,11 +31,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category supports immediate payment for listings. The immediate payment feature is applicable to fixed-price listings, to auction listings with the &apos;Buy It Now&apos; option enabled, and for a motor vehicle listing that requires an initial deposit. If the immediate payment feature is enabled for a listing, the buyer must pay immediately after clicking the &apos;Buy it Now&apos; button. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * If this field is returned as true, the corresponding category supports immediate payment for listings. The immediate payment feature is applicable to fixed-price listings, to auction listings with the Buy It Now option enabled, and for a motor vehicle listing that requires an initial deposit. If the immediate payment feature is enabled for a listing, the buyer must pay immediately after clicking the &apos;Buy it Now&apos; button. This field is only returned when true.
      */
     private Boolean autoPayEnabled;
     /**
-     * If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category supports business-to-business (B2B) VAT listings. If this field is not present, the category does not have B2B VAT listings. This feature is applicable to the eBay Germany (DE), Austria (AT), and Switzerland (CH) sites only.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * If this field is returned as true, the corresponding category supports business-to-business (B2B) VAT listings. If this field is not present, the category does not B2B VAT listings. This field is not returned when false. This feature is applicable to the eBay Germany (DE), Austria (AT), and Switzerland (CH) sites only.
      */
     private Boolean b2bVatEnabled;
     /**
@@ -51,11 +51,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private ProductIdentiferEnabledEnum eanSupport;
     /**
-     * If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. You can use the &lt;a href=&quot;/api-docs/sell/taxonomy/resources/category_tree/methods/getExpiredCategories&quot; target=&quot;_blank&quot;&gt;getExpiredCategories&lt;/a&gt; method (of the &lt;b&gt;Taxonomy API&lt;/b&gt;) to find the leaf category that replaced the expired category. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * If this field is returned as true, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. This field is not returned when false.
      */
     private Boolean expired;
     /**
-     * If this field is returned as &lt;code&gt;true&lt;/code&gt;, the category supports the listing of intangible goods or services.
+     * If this field is returned as true, the category supports the listing of intangible goods or services.
      */
     private Boolean intangibleEnabled;
     /**
@@ -67,11 +67,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean lsd;
     /**
-     * Indicates the Minimum Reserve Price for an auction listing in this category. If there is no Minimum Reserve Price, a value of &lt;code&gt;0.0&lt;/code&gt; is returned in this field.
+     * Indicates the Minimum Reserve Price for an auction listing in this category. If there is no Minimum Reserve Price, a value of 0.0 is returned in this field.
      */
     private Double minimumReservePrice;
     /**
-     * This field (Override Reserve Price Allowed) is returned as &lt;code&gt;true&lt;/code&gt; if the eBay marketplace&apos;s default policy is to allow reserve prices for auction listings, but the corresponding category does not allow a reserve price. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;This field is not returned if the marketplace does not permit reserve prices.&lt;/span&gt;&lt;/p&gt;
+     * This field (Override Reserve Price Allowed) is returned as true if the eBay marketplace&apos;s default policy is to allow reserve prices for auction listings, but the corresponding category does not allow a reserve price. This field is not returned if the marketplace does not permit reserve prices.
      */
     private Boolean orpa;
     /**
@@ -83,11 +83,11 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<PaymentEnum> paymentMethods;
     /**
-     * If this field (Reduce Reserve Allowed) is &lt;code&gt;true&lt;/code&gt;, the corresponding leaf category allows the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and the corresponding leaf category on the site do not normally allow sellers to reduce an item&apos;s reserve price.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * If true, ReduceReserveAllowed indicates that all categories on the site allow the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and all categories on the site do not normally allow sellers to reduce an item&apos;s reserve price. The Category ORRA (override reduce reserve price) field can override (or toggle) the reserve price reduction setting for a given category.
      */
     private Boolean reduceReserveAllowed;
     /**
-     * This field indicates whether reserve prices are allowed for auction listings in this category. This field returns as &lt;code&gt;true&lt;/code&gt; when the category supports reserve prices, or &lt;code&gt;false&lt;/code&gt; if the eBay marketplace does not permit reserve prices or the category override blocks reserve prices (&lt;b&gt;orpa&lt;/b&gt; is &lt;code&gt;true&lt;/code&gt;).
+     * This field indicates whether reserve prices are allowed for auction listings in this category. This field returns as true when the category supports reserve prices, or false if the eBay marketplace does not permit reserve prices or the category override blocks reserve prices (orpa is true).
      */
     private Boolean reservePriceAllowed;
     /**
@@ -99,7 +99,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
      */
     private Boolean valueCategory;
     /**
-     * If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is an eBay virtual category, a category in which items may not be listed.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * If this field is returned as true, the corresponding category is an eBay virtual category, a category in which items may not be listed. This field is not returned when false.
      */
     private Boolean virtual;
     /**
@@ -127,7 +127,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the autoPayEnabled property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category supports immediate payment for listings. The immediate payment feature is applicable to fixed-price listings, to auction listings with the &apos;Buy It Now&apos; option enabled, and for a motor vehicle listing that requires an initial deposit. If the immediate payment feature is enabled for a listing, the buyer must pay immediately after clicking the &apos;Buy it Now&apos; button. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Gets the autoPayEnabled property value. If this field is returned as true, the corresponding category supports immediate payment for listings. The immediate payment feature is applicable to fixed-price listings, to auction listings with the Buy It Now option enabled, and for a motor vehicle listing that requires an initial deposit. If the immediate payment feature is enabled for a listing, the buyer must pay immediately after clicking the &apos;Buy it Now&apos; button. This field is only returned when true.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.autoPayEnabled;
     }
     /**
-     * Gets the b2bVatEnabled property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category supports business-to-business (B2B) VAT listings. If this field is not present, the category does not have B2B VAT listings. This feature is applicable to the eBay Germany (DE), Austria (AT), and Switzerland (CH) sites only.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Gets the b2bVatEnabled property value. If this field is returned as true, the corresponding category supports business-to-business (B2B) VAT listings. If this field is not present, the category does not B2B VAT listings. This field is not returned when false. This feature is applicable to the eBay Germany (DE), Austria (AT), and Switzerland (CH) sites only.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -167,7 +167,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.eanSupport;
     }
     /**
-     * Gets the expired property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. You can use the &lt;a href=&quot;/api-docs/sell/taxonomy/resources/category_tree/methods/getExpiredCategories&quot; target=&quot;_blank&quot;&gt;getExpiredCategories&lt;/a&gt; method (of the &lt;b&gt;Taxonomy API&lt;/b&gt;) to find the leaf category that replaced the expired category. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Gets the expired property value. If this field is returned as true, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. This field is not returned when false.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -202,7 +202,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the intangibleEnabled property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the category supports the listing of intangible goods or services.
+     * Gets the intangibleEnabled property value. If this field is returned as true, the category supports the listing of intangible goods or services.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -226,7 +226,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.lsd;
     }
     /**
-     * Gets the minimumReservePrice property value. Indicates the Minimum Reserve Price for an auction listing in this category. If there is no Minimum Reserve Price, a value of &lt;code&gt;0.0&lt;/code&gt; is returned in this field.
+     * Gets the minimumReservePrice property value. Indicates the Minimum Reserve Price for an auction listing in this category. If there is no Minimum Reserve Price, a value of 0.0 is returned in this field.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -234,7 +234,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.minimumReservePrice;
     }
     /**
-     * Gets the orpa property value. This field (Override Reserve Price Allowed) is returned as &lt;code&gt;true&lt;/code&gt; if the eBay marketplace&apos;s default policy is to allow reserve prices for auction listings, but the corresponding category does not allow a reserve price. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;This field is not returned if the marketplace does not permit reserve prices.&lt;/span&gt;&lt;/p&gt;
+     * Gets the orpa property value. This field (Override Reserve Price Allowed) is returned as true if the eBay marketplace&apos;s default policy is to allow reserve prices for auction listings, but the corresponding category does not allow a reserve price. This field is not returned if the marketplace does not permit reserve prices.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -258,7 +258,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.paymentMethods;
     }
     /**
-     * Gets the reduceReserveAllowed property value. If this field (Reduce Reserve Allowed) is &lt;code&gt;true&lt;/code&gt;, the corresponding leaf category allows the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and the corresponding leaf category on the site do not normally allow sellers to reduce an item&apos;s reserve price.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Gets the reduceReserveAllowed property value. If true, ReduceReserveAllowed indicates that all categories on the site allow the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and all categories on the site do not normally allow sellers to reduce an item&apos;s reserve price. The Category ORRA (override reduce reserve price) field can override (or toggle) the reserve price reduction setting for a given category.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -266,7 +266,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.reduceReserveAllowed;
     }
     /**
-     * Gets the reservePriceAllowed property value. This field indicates whether reserve prices are allowed for auction listings in this category. This field returns as &lt;code&gt;true&lt;/code&gt; when the category supports reserve prices, or &lt;code&gt;false&lt;/code&gt; if the eBay marketplace does not permit reserve prices or the category override blocks reserve prices (&lt;b&gt;orpa&lt;/b&gt; is &lt;code&gt;true&lt;/code&gt;).
+     * Gets the reservePriceAllowed property value. This field indicates whether reserve prices are allowed for auction listings in this category. This field returns as true when the category supports reserve prices, or false if the eBay marketplace does not permit reserve prices or the category override blocks reserve prices (orpa is true).
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -290,7 +290,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         return this.valueCategory;
     }
     /**
-     * Gets the virtual property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is an eBay virtual category, a category in which items may not be listed.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Gets the virtual property value. If this field is returned as true, the corresponding category is an eBay virtual category, a category in which items may not be listed. This field is not returned when false.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -331,14 +331,14 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the autoPayEnabled property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category supports immediate payment for listings. The immediate payment feature is applicable to fixed-price listings, to auction listings with the &apos;Buy It Now&apos; option enabled, and for a motor vehicle listing that requires an initial deposit. If the immediate payment feature is enabled for a listing, the buyer must pay immediately after clicking the &apos;Buy it Now&apos; button. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Sets the autoPayEnabled property value. If this field is returned as true, the corresponding category supports immediate payment for listings. The immediate payment feature is applicable to fixed-price listings, to auction listings with the Buy It Now option enabled, and for a motor vehicle listing that requires an initial deposit. If the immediate payment feature is enabled for a listing, the buyer must pay immediately after clicking the &apos;Buy it Now&apos; button. This field is only returned when true.
      * @param value Value to set for the autoPayEnabled property.
      */
     public void setAutoPayEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.autoPayEnabled = value;
     }
     /**
-     * Sets the b2bVatEnabled property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category supports business-to-business (B2B) VAT listings. If this field is not present, the category does not have B2B VAT listings. This feature is applicable to the eBay Germany (DE), Austria (AT), and Switzerland (CH) sites only.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Sets the b2bVatEnabled property value. If this field is returned as true, the corresponding category supports business-to-business (B2B) VAT listings. If this field is not present, the category does not B2B VAT listings. This field is not returned when false. This feature is applicable to the eBay Germany (DE), Austria (AT), and Switzerland (CH) sites only.
      * @param value Value to set for the b2bVatEnabled property.
      */
     public void setB2bVatEnabled(@jakarta.annotation.Nullable final Boolean value) {
@@ -366,14 +366,14 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.eanSupport = value;
     }
     /**
-     * Sets the expired property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. You can use the &lt;a href=&quot;/api-docs/sell/taxonomy/resources/category_tree/methods/getExpiredCategories&quot; target=&quot;_blank&quot;&gt;getExpiredCategories&lt;/a&gt; method (of the &lt;b&gt;Taxonomy API&lt;/b&gt;) to find the leaf category that replaced the expired category. &lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Sets the expired property value. If this field is returned as true, the corresponding category is no longer a valid eBay category on the site, and items may not be listed in this category. This field is not returned when false.
      * @param value Value to set for the expired property.
      */
     public void setExpired(@jakarta.annotation.Nullable final Boolean value) {
         this.expired = value;
     }
     /**
-     * Sets the intangibleEnabled property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the category supports the listing of intangible goods or services.
+     * Sets the intangibleEnabled property value. If this field is returned as true, the category supports the listing of intangible goods or services.
      * @param value Value to set for the intangibleEnabled property.
      */
     public void setIntangibleEnabled(@jakarta.annotation.Nullable final Boolean value) {
@@ -394,14 +394,14 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.lsd = value;
     }
     /**
-     * Sets the minimumReservePrice property value. Indicates the Minimum Reserve Price for an auction listing in this category. If there is no Minimum Reserve Price, a value of &lt;code&gt;0.0&lt;/code&gt; is returned in this field.
+     * Sets the minimumReservePrice property value. Indicates the Minimum Reserve Price for an auction listing in this category. If there is no Minimum Reserve Price, a value of 0.0 is returned in this field.
      * @param value Value to set for the minimumReservePrice property.
      */
     public void setMinimumReservePrice(@jakarta.annotation.Nullable final Double value) {
         this.minimumReservePrice = value;
     }
     /**
-     * Sets the orpa property value. This field (Override Reserve Price Allowed) is returned as &lt;code&gt;true&lt;/code&gt; if the eBay marketplace&apos;s default policy is to allow reserve prices for auction listings, but the corresponding category does not allow a reserve price. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;This field is not returned if the marketplace does not permit reserve prices.&lt;/span&gt;&lt;/p&gt;
+     * Sets the orpa property value. This field (Override Reserve Price Allowed) is returned as true if the eBay marketplace&apos;s default policy is to allow reserve prices for auction listings, but the corresponding category does not allow a reserve price. This field is not returned if the marketplace does not permit reserve prices.
      * @param value Value to set for the orpa property.
      */
     public void setOrpa(@jakarta.annotation.Nullable final Boolean value) {
@@ -422,14 +422,14 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.paymentMethods = value;
     }
     /**
-     * Sets the reduceReserveAllowed property value. If this field (Reduce Reserve Allowed) is &lt;code&gt;true&lt;/code&gt;, the corresponding leaf category allows the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and the corresponding leaf category on the site do not normally allow sellers to reduce an item&apos;s reserve price.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Sets the reduceReserveAllowed property value. If true, ReduceReserveAllowed indicates that all categories on the site allow the seller to reduce an item&apos;s reserve price. If false, this field is not returned in the response and all categories on the site do not normally allow sellers to reduce an item&apos;s reserve price. The Category ORRA (override reduce reserve price) field can override (or toggle) the reserve price reduction setting for a given category.
      * @param value Value to set for the reduceReserveAllowed property.
      */
     public void setReduceReserveAllowed(@jakarta.annotation.Nullable final Boolean value) {
         this.reduceReserveAllowed = value;
     }
     /**
-     * Sets the reservePriceAllowed property value. This field indicates whether reserve prices are allowed for auction listings in this category. This field returns as &lt;code&gt;true&lt;/code&gt; when the category supports reserve prices, or &lt;code&gt;false&lt;/code&gt; if the eBay marketplace does not permit reserve prices or the category override blocks reserve prices (&lt;b&gt;orpa&lt;/b&gt; is &lt;code&gt;true&lt;/code&gt;).
+     * Sets the reservePriceAllowed property value. This field indicates whether reserve prices are allowed for auction listings in this category. This field returns as true when the category supports reserve prices, or false if the eBay marketplace does not permit reserve prices or the category override blocks reserve prices (orpa is true).
      * @param value Value to set for the reservePriceAllowed property.
      */
     public void setReservePriceAllowed(@jakarta.annotation.Nullable final Boolean value) {
@@ -450,7 +450,7 @@ public class CategoryPolicy implements AdditionalDataHolder, Parsable {
         this.valueCategory = value;
     }
     /**
-     * Sets the virtual property value. If this field is returned as &lt;code&gt;true&lt;/code&gt;, the corresponding category is an eBay virtual category, a category in which items may not be listed.&lt;p&gt;This field is only returned when &lt;code&gt;true&lt;/code&gt; (not returned when false).&lt;/p&gt;
+     * Sets the virtual property value. If this field is returned as true, the corresponding category is an eBay virtual category, a category in which items may not be listed. This field is not returned when false.
      * @param value Value to set for the virtual property.
      */
     public void setVirtual(@jakarta.annotation.Nullable final Boolean value) {

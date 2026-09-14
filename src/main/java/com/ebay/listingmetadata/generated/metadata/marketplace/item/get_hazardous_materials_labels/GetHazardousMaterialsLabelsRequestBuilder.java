@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.metadata.marketplace.item.get_hazardous_materials_labels;
 
+import com.ebay.listingmetadata.generated.metadata.models.Error;
 import com.ebay.listingmetadata.generated.metadata.models.HazardousMaterialDetailsResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -51,6 +52,9 @@ public class GetHazardousMaterialsLabelsRequestBuilder extends BaseRequestBuilde
     /**
      * This method returns hazardous materials label information for the specified eBay marketplace. The information includes IDs, descriptions, and URLs (as applicable) for the available signal words, statements, and pictograms. The returned statements are localized for the default language of the marketplace. If a marketplace does not support hazardous materials label information, no response payload is returned, but only a &lt;b&gt;204 No content&lt;/b&gt; status code.&lt;p&gt;This information is used by the seller to add hazardous materials label related information to their listings (see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html&apos;&gt;Specifying hazardous material related information&lt;/a&gt;).&lt;/p&gt;
      * @return a {@link HazardousMaterialDetailsResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public HazardousMaterialDetailsResponse get() {
@@ -60,11 +64,18 @@ public class GetHazardousMaterialsLabelsRequestBuilder extends BaseRequestBuilde
      * This method returns hazardous materials label information for the specified eBay marketplace. The information includes IDs, descriptions, and URLs (as applicable) for the available signal words, statements, and pictograms. The returned statements are localized for the default language of the marketplace. If a marketplace does not support hazardous materials label information, no response payload is returned, but only a &lt;b&gt;204 No content&lt;/b&gt; status code.&lt;p&gt;This information is used by the seller to add hazardous materials label related information to their listings (see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html&apos;&gt;Specifying hazardous material related information&lt;/a&gt;).&lt;/p&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link HazardousMaterialDetailsResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public HazardousMaterialDetailsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, HazardousMaterialDetailsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, HazardousMaterialDetailsResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns hazardous materials label information for the specified eBay marketplace. The information includes IDs, descriptions, and URLs (as applicable) for the available signal words, statements, and pictograms. The returned statements are localized for the default language of the marketplace. If a marketplace does not support hazardous materials label information, no response payload is returned, but only a &lt;b&gt;204 No content&lt;/b&gt; status code.&lt;p&gt;This information is used by the seller to add hazardous materials label related information to their listings (see &lt;a href=&apos;/api-docs/sell/static/metadata/feature-regulatorhazmatcontainer.html&apos;&gt;Specifying hazardous material related information&lt;/a&gt;).&lt;/p&gt;

@@ -31,7 +31,7 @@ public class AspectValue implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The localized value of this aspect.&lt;br&gt;&lt;br&gt;          &lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This value is always localized for the specified marketplace. &lt;/span&gt;
+     * The localized value of this aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This value is always localized for the specified marketplace. &lt;/span&gt;
      */
     private String localizedValue;
     /**
@@ -74,7 +74,7 @@ public class AspectValue implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the localizedValue property value. The localized value of this aspect.&lt;br&gt;&lt;br&gt;          &lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This value is always localized for the specified marketplace. &lt;/span&gt;
+     * Gets the localizedValue property value. The localized value of this aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This value is always localized for the specified marketplace. &lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,7 +107,7 @@ public class AspectValue implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the localizedValue property value. The localized value of this aspect.&lt;br&gt;&lt;br&gt;          &lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This value is always localized for the specified marketplace. &lt;/span&gt;
+     * Sets the localizedValue property value. The localized value of this aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This value is always localized for the specified marketplace. &lt;/span&gt;
      * @param value Value to set for the localizedValue property.
      */
     public void setLocalizedValue(@jakarta.annotation.Nullable final String value) {

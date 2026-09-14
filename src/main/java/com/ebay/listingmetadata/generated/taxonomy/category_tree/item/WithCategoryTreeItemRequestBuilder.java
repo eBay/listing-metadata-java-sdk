@@ -22,6 +22,7 @@ import com.ebay.listingmetadata.generated.taxonomy.category_tree.item.get_compat
 import com.ebay.listingmetadata.generated.taxonomy.category_tree.item.get_expired_categories.GetExpiredCategoriesRequestBuilder;
 import com.ebay.listingmetadata.generated.taxonomy.category_tree.item.get_item_aspects_for_category.GetItemAspectsForCategoryRequestBuilder;
 import com.ebay.listingmetadata.generated.taxonomy.models.CategoryTree;
+import com.ebay.listingmetadata.generated.taxonomy.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -112,25 +113,32 @@ public class WithCategoryTreeItemRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/category_tree/{category_tree_id}", rawUrl);
     }
     /**
-     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @return a {@link CategoryTree}
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public CategoryTree get() {
         return get(null);
     }
     /**
-     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CategoryTree}
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public CategoryTree get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CategoryTree::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CategoryTree::createFromDiscriminatorValue);
     }
     /**
-     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -138,7 +146,7 @@ public class WithCategoryTreeItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the complete category tree that is identified by the &lt;b&gt;category_tree_id&lt;/b&gt; parameter. The value of &lt;b&gt;category_tree_id&lt;/b&gt; was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; method in the &lt;b&gt;categoryTreeId&lt;/b&gt; field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

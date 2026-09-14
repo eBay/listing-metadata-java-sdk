@@ -31,7 +31,7 @@ public class Refinement implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Contains information about one or more aspects that are associated with the category identified by &lt;b&gt;dominantCategoryId&lt;/b&gt;.
+     * This array contains information about one or more aspects that are associated with the category identified by &lt;strong&gt;dominantCategoryId&lt;/strong&gt;.
      */
     private java.util.List<AspectDistribution> aspectDistributions;
     /**
@@ -63,7 +63,7 @@ public class Refinement implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the aspectDistributions property value. Contains information about one or more aspects that are associated with the category identified by &lt;b&gt;dominantCategoryId&lt;/b&gt;.
+     * Gets the aspectDistributions property value. This array contains information about one or more aspects that are associated with the category identified by &lt;strong&gt;dominantCategoryId&lt;/strong&gt;.
      * @return a {@link java.util.List<AspectDistribution>}
      */
     @jakarta.annotation.Nullable
@@ -107,7 +107,7 @@ public class Refinement implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the aspectDistributions property value. Contains information about one or more aspects that are associated with the category identified by &lt;b&gt;dominantCategoryId&lt;/b&gt;.
+     * Sets the aspectDistributions property value. This array contains information about one or more aspects that are associated with the category identified by &lt;strong&gt;dominantCategoryId&lt;/strong&gt;.
      * @param value Value to set for the aspectDistributions property.
      */
     public void setAspectDistributions(@jakarta.annotation.Nullable final java.util.List<AspectDistribution> value) {

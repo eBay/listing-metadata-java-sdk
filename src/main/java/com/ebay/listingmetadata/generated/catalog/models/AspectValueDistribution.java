@@ -31,15 +31,15 @@ public class AspectValueDistribution implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The localized value of the category aspect identified by &lt;b&gt;refinement.aspectDistributions.localizedAspectName&lt;/b&gt;.
+     * The localized value of the category aspect identified by &lt;strong&gt;refinement.aspectDistributions.localizedAspectName&lt;/strong&gt;.
      */
     private String localizedAspectValue;
     /**
-     * The number of times the value of &lt;b&gt;localizedAspectValue&lt;/b&gt; has been used for eBay product listings. By comparing this quantity to the &lt;b&gt;matchCount&lt;/b&gt; for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the &lt;b&gt;search&lt;/b&gt; call&apos;s &lt;b&gt;aspect_filter&lt;/b&gt; parameter to refine your search.
+     * The number of times the value of &lt;strong&gt;localizedAspectValue&lt;/strong&gt; has been used for eBay product listings. By comparing this quantity to the &lt;strong&gt;matchCount&lt;/strong&gt; for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the &lt;strong&gt;search&lt;/strong&gt; call&apos;s &lt;strong&gt;aspect_filter&lt;/strong&gt; parameter to refine your search.
      */
     private Integer matchCount;
     /**
-     * A HATEOAS reference that further refines the search with this particular &lt;b&gt;localizedAspectValue&lt;/b&gt;.
+     * A HATEOAS reference that further refines the search with this particular &lt;strong&gt;localizedAspectValue&lt;/strong&gt;.
      */
     private String refinementHref;
     /**
@@ -79,7 +79,7 @@ public class AspectValueDistribution implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the localizedAspectValue property value. The localized value of the category aspect identified by &lt;b&gt;refinement.aspectDistributions.localizedAspectName&lt;/b&gt;.
+     * Gets the localizedAspectValue property value. The localized value of the category aspect identified by &lt;strong&gt;refinement.aspectDistributions.localizedAspectName&lt;/strong&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -87,7 +87,7 @@ public class AspectValueDistribution implements AdditionalDataHolder, Parsable {
         return this.localizedAspectValue;
     }
     /**
-     * Gets the matchCount property value. The number of times the value of &lt;b&gt;localizedAspectValue&lt;/b&gt; has been used for eBay product listings. By comparing this quantity to the &lt;b&gt;matchCount&lt;/b&gt; for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the &lt;b&gt;search&lt;/b&gt; call&apos;s &lt;b&gt;aspect_filter&lt;/b&gt; parameter to refine your search.
+     * Gets the matchCount property value. The number of times the value of &lt;strong&gt;localizedAspectValue&lt;/strong&gt; has been used for eBay product listings. By comparing this quantity to the &lt;strong&gt;matchCount&lt;/strong&gt; for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the &lt;strong&gt;search&lt;/strong&gt; call&apos;s &lt;strong&gt;aspect_filter&lt;/strong&gt; parameter to refine your search.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class AspectValueDistribution implements AdditionalDataHolder, Parsable {
         return this.matchCount;
     }
     /**
-     * Gets the refinementHref property value. A HATEOAS reference that further refines the search with this particular &lt;b&gt;localizedAspectValue&lt;/b&gt;.
+     * Gets the refinementHref property value. A HATEOAS reference that further refines the search with this particular &lt;strong&gt;localizedAspectValue&lt;/strong&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -121,21 +121,21 @@ public class AspectValueDistribution implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the localizedAspectValue property value. The localized value of the category aspect identified by &lt;b&gt;refinement.aspectDistributions.localizedAspectName&lt;/b&gt;.
+     * Sets the localizedAspectValue property value. The localized value of the category aspect identified by &lt;strong&gt;refinement.aspectDistributions.localizedAspectName&lt;/strong&gt;.
      * @param value Value to set for the localizedAspectValue property.
      */
     public void setLocalizedAspectValue(@jakarta.annotation.Nullable final String value) {
         this.localizedAspectValue = value;
     }
     /**
-     * Sets the matchCount property value. The number of times the value of &lt;b&gt;localizedAspectValue&lt;/b&gt; has been used for eBay product listings. By comparing this quantity to the &lt;b&gt;matchCount&lt;/b&gt; for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the &lt;b&gt;search&lt;/b&gt; call&apos;s &lt;b&gt;aspect_filter&lt;/b&gt; parameter to refine your search.
+     * Sets the matchCount property value. The number of times the value of &lt;strong&gt;localizedAspectValue&lt;/strong&gt; has been used for eBay product listings. By comparing this quantity to the &lt;strong&gt;matchCount&lt;/strong&gt; for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the &lt;strong&gt;search&lt;/strong&gt; call&apos;s &lt;strong&gt;aspect_filter&lt;/strong&gt; parameter to refine your search.
      * @param value Value to set for the matchCount property.
      */
     public void setMatchCount(@jakarta.annotation.Nullable final Integer value) {
         this.matchCount = value;
     }
     /**
-     * Sets the refinementHref property value. A HATEOAS reference that further refines the search with this particular &lt;b&gt;localizedAspectValue&lt;/b&gt;.
+     * Sets the refinementHref property value. A HATEOAS reference that further refines the search with this particular &lt;strong&gt;localizedAspectValue&lt;/strong&gt;.
      * @param value Value to set for the refinementHref property.
      */
     public void setRefinementHref(@jakarta.annotation.Nullable final String value) {

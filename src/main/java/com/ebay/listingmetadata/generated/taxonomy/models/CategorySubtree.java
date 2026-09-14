@@ -31,7 +31,7 @@ public class CategorySubtree implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified &lt;b&gt;Category&lt;/b&gt;, down to the leaf nodes. It is a recursive structure.
+     * Contains details of all nodes of the category subtree hierarchy below a specified node. This is a recursive structure.
      */
     private CategoryTreeNode categorySubtreeNode;
     /**
@@ -67,7 +67,7 @@ public class CategorySubtree implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the categorySubtreeNode property value. This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified &lt;b&gt;Category&lt;/b&gt;, down to the leaf nodes. It is a recursive structure.
+     * Gets the categorySubtreeNode property value. Contains details of all nodes of the category subtree hierarchy below a specified node. This is a recursive structure.
      * @return a {@link CategoryTreeNode}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class CategorySubtree implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the categorySubtreeNode property value. This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified &lt;b&gt;Category&lt;/b&gt;, down to the leaf nodes. It is a recursive structure.
+     * Sets the categorySubtreeNode property value. Contains details of all nodes of the category subtree hierarchy below a specified node. This is a recursive structure.
      * @param value Value to set for the categorySubtreeNode property.
      */
     public void setCategorySubtreeNode(@jakarta.annotation.Nullable final CategoryTreeNode value) {

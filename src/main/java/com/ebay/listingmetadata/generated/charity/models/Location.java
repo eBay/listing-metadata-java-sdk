@@ -28,11 +28,11 @@ public class Location implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The physical location of the item.
+     * The address of the charitable organization.
      */
     private Address address;
     /**
-     * Defines the format of a geographic coordinate.
+     * The geo-coordinates of the charitable organization.
      */
     private GeoCoordinates geoCoordinates;
     /**
@@ -60,7 +60,7 @@ public class Location implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the address property value. The physical location of the item.
+     * Gets the address property value. The address of the charitable organization.
      * @return a {@link Address}
      */
     @jakarta.annotation.Nullable
@@ -79,7 +79,7 @@ public class Location implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the geoCoordinates property value. Defines the format of a geographic coordinate.
+     * Gets the geoCoordinates property value. The geo-coordinates of the charitable organization.
      * @return a {@link GeoCoordinates}
      */
     @jakarta.annotation.Nullable
@@ -104,14 +104,14 @@ public class Location implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the address property value. The physical location of the item.
+     * Sets the address property value. The address of the charitable organization.
      * @param value Value to set for the address property.
      */
     public void setAddress(@jakarta.annotation.Nullable final Address value) {
         this.address = value;
     }
     /**
-     * Sets the geoCoordinates property value. Defines the format of a geographic coordinate.
+     * Sets the geoCoordinates property value. The geo-coordinates of the charitable organization.
      * @param value Value to set for the geoCoordinates property.
      */
     public void setGeoCoordinates(@jakarta.annotation.Nullable final GeoCoordinates value) {

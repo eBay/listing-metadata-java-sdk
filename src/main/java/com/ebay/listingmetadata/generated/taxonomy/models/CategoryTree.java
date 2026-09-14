@@ -33,7 +33,7 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
     /**
      * A list of one or more identifiers of the eBay marketplaces that use this category tree.
      */
-    private java.util.List<String> applicableMarketplaceIds;
+    private java.util.List<MarketplaceIdEnum> applicableMarketplaceIds;
     /**
      * The unique identifier of this eBay category tree.
      */
@@ -43,7 +43,7 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
      */
     private String categoryTreeVersion;
     /**
-     * This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified &lt;b&gt;Category&lt;/b&gt;, down to the leaf nodes. It is a recursive structure.
+     * Contains details of all nodes of the category tree hierarchy, starting with the root node and down to the leaf nodes. This is a recursive structure.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of a full default category tree includes the &lt;b&gt;categoryId&lt;/b&gt; field, but its value should not be relied upon. It provides no useful information for application development.&lt;/span&gt;
      */
     private CategoryTreeNode rootCategoryNode;
     /**
@@ -72,10 +72,10 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the applicableMarketplaceIds property value. A list of one or more identifiers of the eBay marketplaces that use this category tree.
-     * @return a {@link java.util.List<String>}
+     * @return a {@link java.util.List<MarketplaceIdEnum>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<String> getApplicableMarketplaceIds() {
+    public java.util.List<MarketplaceIdEnum> getApplicableMarketplaceIds() {
         return this.applicableMarketplaceIds;
     }
     /**
@@ -101,14 +101,14 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("applicableMarketplaceIds", (n) -> { this.setApplicableMarketplaceIds(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("applicableMarketplaceIds", (n) -> { this.setApplicableMarketplaceIds(n.getCollectionOfEnumValues(MarketplaceIdEnum::forValue)); });
         deserializerMap.put("categoryTreeId", (n) -> { this.setCategoryTreeId(n.getStringValue()); });
         deserializerMap.put("categoryTreeVersion", (n) -> { this.setCategoryTreeVersion(n.getStringValue()); });
         deserializerMap.put("rootCategoryNode", (n) -> { this.setRootCategoryNode(n.getObjectValue(CategoryTreeNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the rootCategoryNode property value. This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified &lt;b&gt;Category&lt;/b&gt;, down to the leaf nodes. It is a recursive structure.
+     * Gets the rootCategoryNode property value. Contains details of all nodes of the category tree hierarchy, starting with the root node and down to the leaf nodes. This is a recursive structure.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of a full default category tree includes the &lt;b&gt;categoryId&lt;/b&gt; field, but its value should not be relied upon. It provides no useful information for application development.&lt;/span&gt;
      * @return a {@link CategoryTreeNode}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeCollectionOfPrimitiveValues("applicableMarketplaceIds", this.getApplicableMarketplaceIds());
+        writer.writeCollectionOfEnumValues("applicableMarketplaceIds", this.getApplicableMarketplaceIds());
         writer.writeStringValue("categoryTreeId", this.getCategoryTreeId());
         writer.writeStringValue("categoryTreeVersion", this.getCategoryTreeVersion());
         writer.writeObjectValue("rootCategoryNode", this.getRootCategoryNode());
@@ -138,7 +138,7 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
      * Sets the applicableMarketplaceIds property value. A list of one or more identifiers of the eBay marketplaces that use this category tree.
      * @param value Value to set for the applicableMarketplaceIds property.
      */
-    public void setApplicableMarketplaceIds(@jakarta.annotation.Nullable final java.util.List<String> value) {
+    public void setApplicableMarketplaceIds(@jakarta.annotation.Nullable final java.util.List<MarketplaceIdEnum> value) {
         this.applicableMarketplaceIds = value;
     }
     /**
@@ -156,7 +156,7 @@ public class CategoryTree implements AdditionalDataHolder, Parsable {
         this.categoryTreeVersion = value;
     }
     /**
-     * Sets the rootCategoryNode property value. This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified &lt;b&gt;Category&lt;/b&gt;, down to the leaf nodes. It is a recursive structure.
+     * Sets the rootCategoryNode property value. Contains details of all nodes of the category tree hierarchy, starting with the root node and down to the leaf nodes. This is a recursive structure.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of a full default category tree includes the &lt;b&gt;categoryId&lt;/b&gt; field, but its value should not be relied upon. It provides no useful information for application development.&lt;/span&gt;
      * @param value Value to set for the rootCategoryNode property.
      */
     public void setRootCategoryNode(@jakarta.annotation.Nullable final CategoryTreeNode value) {

@@ -22,9 +22,9 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public enum GenericUsageEnum implements ValuedEnum {
+    REQUIRED("REQUIRED"),
     OPTIONAL("OPTIONAL"),
-    RECOMMENDED("RECOMMENDED"),
-    REQUIRED("REQUIRED");
+    RECOMMENDED("RECOMMENDED");
     public final String value;
     GenericUsageEnum(final String value) {
         this.value = value;
@@ -35,9 +35,9 @@ public enum GenericUsageEnum implements ValuedEnum {
     public static GenericUsageEnum forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
+            case "REQUIRED": return REQUIRED;
             case "OPTIONAL": return OPTIONAL;
             case "RECOMMENDED": return RECOMMENDED;
-            case "REQUIRED": return REQUIRED;
             default: return null;
         }
     }

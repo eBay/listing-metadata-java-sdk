@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the properties and specifications to use to search for compatibilities.
+ * This type provides the properties and specifications to use to search for compatibilities.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SpecificationRequest implements AdditionalDataHolder, Parsable {

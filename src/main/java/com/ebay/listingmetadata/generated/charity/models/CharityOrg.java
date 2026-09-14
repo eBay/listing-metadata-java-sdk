@@ -39,7 +39,7 @@ public class CharityOrg implements AdditionalDataHolder, Parsable {
      */
     private String description;
     /**
-     * The location property
+     * The location details of the charitable organization.
      */
     private Location location;
     /**
@@ -120,7 +120,7 @@ public class CharityOrg implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the location property value. The location property
+     * Gets the location property value. The location details of the charitable organization.
      * @return a {@link Location}
      */
     @jakarta.annotation.Nullable
@@ -205,7 +205,7 @@ public class CharityOrg implements AdditionalDataHolder, Parsable {
         this.description = value;
     }
     /**
-     * Sets the location property value. The location property
+     * Sets the location property value. The location details of the charitable organization.
      * @param value Value to set for the location property.
      */
     public void setLocation(@jakarta.annotation.Nullable final Location value) {
