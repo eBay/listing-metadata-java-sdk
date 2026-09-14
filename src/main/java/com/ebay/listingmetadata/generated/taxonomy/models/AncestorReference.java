@@ -43,7 +43,7 @@ public class AncestorReference implements AdditionalDataHolder, Parsable {
      */
     private String categorySubtreeNodeHref;
     /**
-     * The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;&lt;b&gt;0&lt;/b&gt;&lt;/code&gt;. &lt;/span&gt;
+     * The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;0&lt;/code&gt;. &lt;/span&gt;
      */
     private Integer categoryTreeNodeLevel;
     /**
@@ -95,7 +95,7 @@ public class AncestorReference implements AdditionalDataHolder, Parsable {
         return this.categorySubtreeNodeHref;
     }
     /**
-     * Gets the categoryTreeNodeLevel property value. The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;&lt;b&gt;0&lt;/b&gt;&lt;/code&gt;. &lt;/span&gt;
+     * Gets the categoryTreeNodeLevel property value. The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;0&lt;/code&gt;. &lt;/span&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -156,7 +156,7 @@ public class AncestorReference implements AdditionalDataHolder, Parsable {
         this.categorySubtreeNodeHref = value;
     }
     /**
-     * Sets the categoryTreeNodeLevel property value. The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;&lt;b&gt;0&lt;/b&gt;&lt;/code&gt;. &lt;/span&gt;
+     * Sets the categoryTreeNodeLevel property value. The absolute level of the ancestor category node in the hierarchy of its category tree.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The root node of any full category tree is always at level &lt;code&gt;0&lt;/code&gt;. &lt;/span&gt;
      * @param value Value to set for the categoryTreeNodeLevel property.
      */
     public void setCategoryTreeNodeLevel(@jakarta.annotation.Nullable final Integer value) {

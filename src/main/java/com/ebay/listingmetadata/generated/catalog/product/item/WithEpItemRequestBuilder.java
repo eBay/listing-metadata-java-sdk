@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.catalog.product.item;
 
+import com.ebay.listingmetadata.generated.catalog.models.Error;
 import com.ebay.listingmetadata.generated.catalog.models.Product;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -49,25 +50,38 @@ public class WithEpItemRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/product/{epid}", rawUrl);
     }
     /**
-     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;b&gt;search&lt;/b&gt; method to identify candidate products on which to base the listing, then use the &lt;b&gt;getProduct&lt;/b&gt; method to present the full details of those candidate products to the seller to make a a final selection.
+     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;strong&gt;search&lt;/strong&gt; method to identify candidate products on which to base the listing, then use the &lt;strong&gt;getProduct&lt;/strong&gt; method to present the full details of those candidate products to the seller to make a a final selection.
      * @return a {@link Product}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public Product get() {
         return get(null);
     }
     /**
-     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;b&gt;search&lt;/b&gt; method to identify candidate products on which to base the listing, then use the &lt;b&gt;getProduct&lt;/b&gt; method to present the full details of those candidate products to the seller to make a a final selection.
+     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;strong&gt;search&lt;/strong&gt; method to identify candidate products on which to base the listing, then use the &lt;strong&gt;getProduct&lt;/strong&gt; method to present the full details of those candidate products to the seller to make a a final selection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Product}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public Product get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Product::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("403", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Product::createFromDiscriminatorValue);
     }
     /**
-     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;b&gt;search&lt;/b&gt; method to identify candidate products on which to base the listing, then use the &lt;b&gt;getProduct&lt;/b&gt; method to present the full details of those candidate products to the seller to make a a final selection.
+     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;strong&gt;search&lt;/strong&gt; method to identify candidate products on which to base the listing, then use the &lt;strong&gt;getProduct&lt;/strong&gt; method to present the full details of those candidate products to the seller to make a a final selection.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -75,7 +89,7 @@ public class WithEpItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;b&gt;search&lt;/b&gt; method to identify candidate products on which to base the listing, then use the &lt;b&gt;getProduct&lt;/b&gt; method to present the full details of those candidate products to the seller to make a a final selection.
+     * This method retrieves details of the catalog product identified by the eBay product identifier (ePID) specified in the request. These details include the product&apos;s title and description, aspects and their values, associated images, applicable category IDs, and any recognized identifiers that apply to the product. &lt;br /&gt;&lt;br /&gt; For a new listing, you can use the &lt;strong&gt;search&lt;/strong&gt; method to identify candidate products on which to base the listing, then use the &lt;strong&gt;getProduct&lt;/strong&gt; method to present the full details of those candidate products to the seller to make a a final selection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

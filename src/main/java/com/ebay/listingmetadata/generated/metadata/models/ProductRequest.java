@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines properties for which to find compatibilities.
+ * This type defines the request fields for the &lt;b&gt;getProductCompatibilities&lt;/b&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProductRequest implements AdditionalDataHolder, Parsable {

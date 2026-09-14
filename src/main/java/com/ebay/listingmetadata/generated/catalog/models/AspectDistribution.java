@@ -31,11 +31,11 @@ public class AspectDistribution implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Contains information about one or more values of the category aspect identified by &lt;b&gt;localizedAspectName&lt;/b&gt;. 
+     * Contains information about one or more values of the category aspect identified by &lt;strong&gt;localizedAspectName&lt;/strong&gt;. 
      */
     private java.util.List<AspectValueDistribution> aspectValueDistributions;
     /**
-     * The localized name of an aspect that is associated with the category identified by &lt;b&gt;dominantCategoryId&lt;/b&gt;.
+     * The localized name of an aspect that is associated with the category identified by &lt;strong&gt;dominantCategoryId&lt;/strong&gt;.
      */
     private String localizedAspectName;
     /**
@@ -63,7 +63,7 @@ public class AspectDistribution implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the aspectValueDistributions property value. Contains information about one or more values of the category aspect identified by &lt;b&gt;localizedAspectName&lt;/b&gt;. 
+     * Gets the aspectValueDistributions property value. Contains information about one or more values of the category aspect identified by &lt;strong&gt;localizedAspectName&lt;/strong&gt;. 
      * @return a {@link java.util.List<AspectValueDistribution>}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class AspectDistribution implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the localizedAspectName property value. The localized name of an aspect that is associated with the category identified by &lt;b&gt;dominantCategoryId&lt;/b&gt;.
+     * Gets the localizedAspectName property value. The localized name of an aspect that is associated with the category identified by &lt;strong&gt;dominantCategoryId&lt;/strong&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class AspectDistribution implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the aspectValueDistributions property value. Contains information about one or more values of the category aspect identified by &lt;b&gt;localizedAspectName&lt;/b&gt;. 
+     * Sets the aspectValueDistributions property value. Contains information about one or more values of the category aspect identified by &lt;strong&gt;localizedAspectName&lt;/strong&gt;. 
      * @param value Value to set for the aspectValueDistributions property.
      */
     public void setAspectValueDistributions(@jakarta.annotation.Nullable final java.util.List<AspectValueDistribution> value) {
         this.aspectValueDistributions = value;
     }
     /**
-     * Sets the localizedAspectName property value. The localized name of an aspect that is associated with the category identified by &lt;b&gt;dominantCategoryId&lt;/b&gt;.
+     * Sets the localizedAspectName property value. The localized name of an aspect that is associated with the category identified by &lt;strong&gt;dominantCategoryId&lt;/strong&gt;.
      * @param value Value to set for the localizedAspectName property.
      */
     public void setLocalizedAspectName(@jakarta.annotation.Nullable final String value) {

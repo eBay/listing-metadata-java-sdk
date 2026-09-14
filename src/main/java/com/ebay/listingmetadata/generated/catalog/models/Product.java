@@ -31,7 +31,7 @@ public class Product implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Contains information about  additional images associated with this product. For the primary image, see the &lt;b&gt;image&lt;/b&gt; container.
+     * This array is returned if the category product has additional images besides the primary image returned in the &lt;strong&gt;image&lt;/strong&gt; container.
      */
     private java.util.List<Image> additionalImages;
     /**
@@ -63,7 +63,7 @@ public class Product implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> gtin;
     /**
-     * This type contains information about a product image stored in eBay Picture Services (EPS).
+     * Contains information about the primary image of this product. For more images of this product, see the &lt;strong&gt;additionalImages&lt;/strong&gt; container.
      */
     private Image image;
     /**
@@ -75,11 +75,11 @@ public class Product implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> mpn;
     /**
-     * A list of category IDs (other than the value of &lt;b&gt;primaryCategoryId&lt;/b&gt;) for all the leaf categories to which this product might belong.
+     * A list of category IDs (other than the value of &lt;strong&gt;primaryCategoryId&lt;/strong&gt;) for all the leaf categories to which this product might belong.
      */
     private java.util.List<String> otherApplicableCategoryIds;
     /**
-     * The identifier of the leaf category that eBay recommends using to list this product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see &lt;b&gt;otherApplicableCategoryIds&lt;/b&gt;.
+     * The identifier of the leaf category that eBay recommends using to list this product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see &lt;strong&gt;otherApplicableCategoryIds&lt;/strong&gt;.
      */
     private String primaryCategoryId;
     /**
@@ -123,7 +123,7 @@ public class Product implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the additionalImages property value. Contains information about  additional images associated with this product. For the primary image, see the &lt;b&gt;image&lt;/b&gt; container.
+     * Gets the additionalImages property value. This array is returned if the category product has additional images besides the primary image returned in the &lt;strong&gt;image&lt;/strong&gt; container.
      * @return a {@link java.util.List<Image>}
      */
     @jakarta.annotation.Nullable
@@ -213,7 +213,7 @@ public class Product implements AdditionalDataHolder, Parsable {
         return this.gtin;
     }
     /**
-     * Gets the image property value. This type contains information about a product image stored in eBay Picture Services (EPS).
+     * Gets the image property value. Contains information about the primary image of this product. For more images of this product, see the &lt;strong&gt;additionalImages&lt;/strong&gt; container.
      * @return a {@link Image}
      */
     @jakarta.annotation.Nullable
@@ -237,7 +237,7 @@ public class Product implements AdditionalDataHolder, Parsable {
         return this.mpn;
     }
     /**
-     * Gets the otherApplicableCategoryIds property value. A list of category IDs (other than the value of &lt;b&gt;primaryCategoryId&lt;/b&gt;) for all the leaf categories to which this product might belong.
+     * Gets the otherApplicableCategoryIds property value. A list of category IDs (other than the value of &lt;strong&gt;primaryCategoryId&lt;/strong&gt;) for all the leaf categories to which this product might belong.
      * @return a {@link java.util.List<String>}
      */
     @jakarta.annotation.Nullable
@@ -245,7 +245,7 @@ public class Product implements AdditionalDataHolder, Parsable {
         return this.otherApplicableCategoryIds;
     }
     /**
-     * Gets the primaryCategoryId property value. The identifier of the leaf category that eBay recommends using to list this product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see &lt;b&gt;otherApplicableCategoryIds&lt;/b&gt;.
+     * Gets the primaryCategoryId property value. The identifier of the leaf category that eBay recommends using to list this product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see &lt;strong&gt;otherApplicableCategoryIds&lt;/strong&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -317,7 +317,7 @@ public class Product implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the additionalImages property value. Contains information about  additional images associated with this product. For the primary image, see the &lt;b&gt;image&lt;/b&gt; container.
+     * Sets the additionalImages property value. This array is returned if the category product has additional images besides the primary image returned in the &lt;strong&gt;image&lt;/strong&gt; container.
      * @param value Value to set for the additionalImages property.
      */
     public void setAdditionalImages(@jakarta.annotation.Nullable final java.util.List<Image> value) {
@@ -373,7 +373,7 @@ public class Product implements AdditionalDataHolder, Parsable {
         this.gtin = value;
     }
     /**
-     * Sets the image property value. This type contains information about a product image stored in eBay Picture Services (EPS).
+     * Sets the image property value. Contains information about the primary image of this product. For more images of this product, see the &lt;strong&gt;additionalImages&lt;/strong&gt; container.
      * @param value Value to set for the image property.
      */
     public void setImage(@jakarta.annotation.Nullable final Image value) {
@@ -394,14 +394,14 @@ public class Product implements AdditionalDataHolder, Parsable {
         this.mpn = value;
     }
     /**
-     * Sets the otherApplicableCategoryIds property value. A list of category IDs (other than the value of &lt;b&gt;primaryCategoryId&lt;/b&gt;) for all the leaf categories to which this product might belong.
+     * Sets the otherApplicableCategoryIds property value. A list of category IDs (other than the value of &lt;strong&gt;primaryCategoryId&lt;/strong&gt;) for all the leaf categories to which this product might belong.
      * @param value Value to set for the otherApplicableCategoryIds property.
      */
     public void setOtherApplicableCategoryIds(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.otherApplicableCategoryIds = value;
     }
     /**
-     * Sets the primaryCategoryId property value. The identifier of the leaf category that eBay recommends using to list this product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see &lt;b&gt;otherApplicableCategoryIds&lt;/b&gt;.
+     * Sets the primaryCategoryId property value. The identifier of the leaf category that eBay recommends using to list this product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see &lt;strong&gt;otherApplicableCategoryIds&lt;/strong&gt;.
      * @param value Value to set for the primaryCategoryId property.
      */
     public void setPrimaryCategoryId(@jakarta.annotation.Nullable final String value) {

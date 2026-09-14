@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the category ID and property name for which to retrieve values.
+ * This type defines the request fields used in the &lt;b&gt;getCompatibilityPropertyValues&lt;/b&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PropertyValuesRequest implements AdditionalDataHolder, Parsable {

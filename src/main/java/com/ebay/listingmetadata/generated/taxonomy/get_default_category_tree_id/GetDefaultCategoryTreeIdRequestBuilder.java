@@ -15,6 +15,7 @@
 package com.ebay.listingmetadata.generated.taxonomy.get_default_category_tree_id;
 
 import com.ebay.listingmetadata.generated.taxonomy.models.BaseCategoryTree;
+import com.ebay.listingmetadata.generated.taxonomy.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -52,6 +53,8 @@ public class GetDefaultCategoryTreeIdRequestBuilder extends BaseRequestBuilder {
     /**
      * A given eBay marketplace might use multiple category trees, but one of those trees is considered to be the default for that marketplace. This call retrieves a reference to the default category tree associated with the specified eBay marketplace ID. The response includes only the tree&apos;s unique identifier and version, which you can use to retrieve more details about the tree, its structure, and its individual category nodes.
      * @return a {@link BaseCategoryTree}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public BaseCategoryTree get() {
@@ -61,11 +64,16 @@ public class GetDefaultCategoryTreeIdRequestBuilder extends BaseRequestBuilder {
      * A given eBay marketplace might use multiple category trees, but one of those trees is considered to be the default for that marketplace. This call retrieves a reference to the default category tree associated with the specified eBay marketplace ID. The response includes only the tree&apos;s unique identifier and version, which you can use to retrieve more details about the tree, its structure, and its individual category nodes.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link BaseCategoryTree}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public BaseCategoryTree get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, BaseCategoryTree::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, BaseCategoryTree::createFromDiscriminatorValue);
     }
     /**
      * A given eBay marketplace might use multiple category trees, but one of those trees is considered to be the default for that marketplace. This call retrieves a reference to the default category tree associated with the specified eBay marketplace ID. The response includes only the tree&apos;s unique identifier and version, which you can use to retrieve more details about the tree, its structure, and its individual category nodes.
@@ -103,7 +111,7 @@ public class GetDefaultCategoryTreeIdRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         /**
-         * The unique identifier of the eBay marketplace for which the category tree ID is requested. For a list of supported marketplace IDs, see &lt;a href=&quot;/api-docs/commerce/taxonomy/static/supportedmarketplaces.html&quot;&gt;Marketplaces with Default Category Trees&lt;/a&gt;.
+         * The unique identifier of the eBay marketplace for which the category tree ID is requested. For a list of supported marketplace IDs, see &lt;a href=&quot;/api-docs/commerce/taxonomy/static/supportedmarketplaces.html&quot; target=&quot;_blank&quot;&gt;Marketplaces with Default Category Trees&lt;/a&gt;.
          */
         @jakarta.annotation.Nullable
         public String marketplaceId;

@@ -15,6 +15,7 @@
 package com.ebay.listingmetadata.generated.metadata.marketplace.item.get_category_policies;
 
 import com.ebay.listingmetadata.generated.metadata.models.CategoryPolicyResponse;
+import com.ebay.listingmetadata.generated.metadata.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -52,6 +53,9 @@ public class GetCategoryPoliciesRequestBuilder extends BaseRequestBuilder {
     /**
      * This method returns eBay category policy metadata for all leaf categories on the specified marketplace.&lt;p&gt;By default, this method returns metadata on all leaf categories. You can limit the size of the result set by using the &lt;b&gt;filter&lt;/b&gt; query parameter to specify only the leaf category IDs you want to review.&lt;/p&gt;&lt;p&gt;If you specify a valid marketplace ID but that marketplace does not contain policy information, or if you filter out all results, a successful call returns a &lt;b&gt;204 No content&lt;/b&gt; status code with an empty response body.&lt;/p&gt;
      * @return a {@link CategoryPolicyResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public CategoryPolicyResponse get() {
@@ -61,11 +65,18 @@ public class GetCategoryPoliciesRequestBuilder extends BaseRequestBuilder {
      * This method returns eBay category policy metadata for all leaf categories on the specified marketplace.&lt;p&gt;By default, this method returns metadata on all leaf categories. You can limit the size of the result set by using the &lt;b&gt;filter&lt;/b&gt; query parameter to specify only the leaf category IDs you want to review.&lt;/p&gt;&lt;p&gt;If you specify a valid marketplace ID but that marketplace does not contain policy information, or if you filter out all results, a successful call returns a &lt;b&gt;204 No content&lt;/b&gt; status code with an empty response body.&lt;/p&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CategoryPolicyResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public CategoryPolicyResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CategoryPolicyResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CategoryPolicyResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns eBay category policy metadata for all leaf categories on the specified marketplace.&lt;p&gt;By default, this method returns metadata on all leaf categories. You can limit the size of the result set by using the &lt;b&gt;filter&lt;/b&gt; query parameter to specify only the leaf category IDs you want to review.&lt;/p&gt;&lt;p&gt;If you specify a valid marketplace ID but that marketplace does not contain policy information, or if you filter out all results, a successful call returns a &lt;b&gt;204 No content&lt;/b&gt; status code with an empty response body.&lt;/p&gt;

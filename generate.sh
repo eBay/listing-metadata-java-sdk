@@ -20,22 +20,22 @@ echo "Generating Listing Metadata Java SDK with Kiota..."
 rm -rf src/main/java/com/ebay/listingmetadata/generated
 
 echo "Generating CatalogApiClient..."
-kiota generate -l java -d specs/openapi/catalog.yaml \
+kiota generate -l java -d specs/openapi/catalog.json \
   -c CatalogApiClient -n com.ebay.listingmetadata.generated.catalog \
   -o src/main/java/com/ebay/listingmetadata/generated/catalog --ebc --co
 
 echo "Generating CharityApiClient..."
-kiota generate -l java -d specs/openapi/charity.yaml \
+kiota generate -l java -d specs/openapi/charity.json \
   -c CharityApiClient -n com.ebay.listingmetadata.generated.charity \
   -o src/main/java/com/ebay/listingmetadata/generated/charity --ebc --co
 
 echo "Generating MetadataApiClient..."
-kiota generate -l java -d specs/openapi/metadata.yaml \
+kiota generate -l java -d specs/openapi/metadata.json \
   -c MetadataApiClient -n com.ebay.listingmetadata.generated.metadata \
   -o src/main/java/com/ebay/listingmetadata/generated/metadata --ebc --co
 
 echo "Generating TaxonomyApiClient..."
-kiota generate -l java -d specs/openapi/taxonomy.yaml \
+kiota generate -l java -d specs/openapi/taxonomy.json \
   -c TaxonomyApiClient -n com.ebay.listingmetadata.generated.taxonomy \
   -o src/main/java/com/ebay/listingmetadata/generated/taxonomy --ebc --co
 

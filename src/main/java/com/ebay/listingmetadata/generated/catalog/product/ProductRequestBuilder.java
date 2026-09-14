@@ -26,7 +26,7 @@ import java.util.Objects;
 public class ProductRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.listingmetadata.generated.catalog.product.item collection
-     * @param epid The eBay product identifier (ePID) of the product being requested. This value can be discovered by issuing the &lt;b&gt;search&lt;/b&gt; method and examining the value of the &lt;b&gt;productSummaries.epid&lt;/b&gt; field for the desired returned product summary.
+     * @param epid The eBay product identifier (ePID) of the product being requested. This value can be discovered by issuing the &lt;strong&gt;search&lt;/strong&gt; method and examining the value of the &lt;strong&gt;productSummaries.epid&lt;/strong&gt; field for the desired returned product summary.
      * @return a {@link WithEpItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

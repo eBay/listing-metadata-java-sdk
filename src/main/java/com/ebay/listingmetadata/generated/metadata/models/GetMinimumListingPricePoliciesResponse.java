@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the response container for the &lt;b&gt;getMinimumListingPricePolicies&lt;/b&gt; method.
+ * This type defines the response container for the getMinimumListingPricePolicies method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class GetMinimumListingPricePoliciesResponse implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class GetMinimumListingPricePoliciesResponse implements AdditionalDataHol
      */
     private Map<String, Object> additionalData;
     /**
-     * This array returns a list of minimum listing price policies for supported types of listings on the specific marketplace
+     * This array returns a list of minimum listing price policies for supported types of listings on the specific marketplace.
      */
     private java.util.List<MinimumListingPricePoliciesType> minimumListingPricePolicies;
     /**
@@ -69,7 +69,7 @@ public class GetMinimumListingPricePoliciesResponse implements AdditionalDataHol
         return deserializerMap;
     }
     /**
-     * Gets the minimumListingPricePolicies property value. This array returns a list of minimum listing price policies for supported types of listings on the specific marketplace
+     * Gets the minimumListingPricePolicies property value. This array returns a list of minimum listing price policies for supported types of listings on the specific marketplace.
      * @return a {@link java.util.List<MinimumListingPricePoliciesType>}
      */
     @jakarta.annotation.Nullable
@@ -93,7 +93,7 @@ public class GetMinimumListingPricePoliciesResponse implements AdditionalDataHol
         this.additionalData = value;
     }
     /**
-     * Sets the minimumListingPricePolicies property value. This array returns a list of minimum listing price policies for supported types of listings on the specific marketplace
+     * Sets the minimumListingPricePolicies property value. This array returns a list of minimum listing price policies for supported types of listings on the specific marketplace.
      * @param value Value to set for the minimumListingPricePolicies property.
      */
     public void setMinimumListingPricePolicies(@jakarta.annotation.Nullable final java.util.List<MinimumListingPricePoliciesType> value) {

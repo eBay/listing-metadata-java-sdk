@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.metadata.marketplace.item.get_minimum_listing_price_policies;
 
+import com.ebay.listingmetadata.generated.metadata.models.Error;
 import com.ebay.listingmetadata.generated.metadata.models.GetMinimumListingPricePoliciesResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -51,6 +52,9 @@ public class GetMinimumListingPricePoliciesRequestBuilder extends BaseRequestBui
     /**
      * This method returns minimum listing price policies for supported types of listings on a specific marketplace. This includes the minimum start price for auction listings, the minimum sale price for fixed-price listings, and the minimum percentage value that a Buy It Now or auction listing must be above the minimum start price for the same listing.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The only applicable listing type values for this method are &lt;code&gt;AUCTION&lt;/code&gt; and &lt;code&gt;FIXED_PRICE_ITEM&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;The identifier of the eBay marketplace for which to retrieve supported minimum listing price policies is passed through the &lt;b&gt;marketplace_id&lt;/b&gt; path parameter.
      * @return a {@link GetMinimumListingPricePoliciesResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public GetMinimumListingPricePoliciesResponse get() {
@@ -60,11 +64,18 @@ public class GetMinimumListingPricePoliciesRequestBuilder extends BaseRequestBui
      * This method returns minimum listing price policies for supported types of listings on a specific marketplace. This includes the minimum start price for auction listings, the minimum sale price for fixed-price listings, and the minimum percentage value that a Buy It Now or auction listing must be above the minimum start price for the same listing.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The only applicable listing type values for this method are &lt;code&gt;AUCTION&lt;/code&gt; and &lt;code&gt;FIXED_PRICE_ITEM&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;The identifier of the eBay marketplace for which to retrieve supported minimum listing price policies is passed through the &lt;b&gt;marketplace_id&lt;/b&gt; path parameter.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetMinimumListingPricePoliciesResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public GetMinimumListingPricePoliciesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetMinimumListingPricePoliciesResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, GetMinimumListingPricePoliciesResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns minimum listing price policies for supported types of listings on a specific marketplace. This includes the minimum start price for auction listings, the minimum sale price for fixed-price listings, and the minimum percentage value that a Buy It Now or auction listing must be above the minimum start price for the same listing.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The only applicable listing type values for this method are &lt;code&gt;AUCTION&lt;/code&gt; and &lt;code&gt;FIXED_PRICE_ITEM&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;The identifier of the eBay marketplace for which to retrieve supported minimum listing price policies is passed through the &lt;b&gt;marketplace_id&lt;/b&gt; path parameter.

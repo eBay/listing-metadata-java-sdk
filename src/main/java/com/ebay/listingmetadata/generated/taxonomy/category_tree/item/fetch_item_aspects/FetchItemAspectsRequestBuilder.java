@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.taxonomy.category_tree.item.fetch_item_aspects;
 
+import com.ebay.listingmetadata.generated.taxonomy.models.Error;
 import com.ebay.listingmetadata.generated.taxonomy.models.GetCategoriesAspectResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -51,6 +52,9 @@ public class FetchItemAspectsRequestBuilder extends BaseRequestBuilder {
     /**
      * This method returns a complete list of aspects for all of the leaf categories that belong to an eBay marketplace. The eBay marketplace is specified through the &lt;b&gt;category_tree_id&lt;/b&gt; URI parameter.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; A successful call returns a payload as a gzipped JSON file sent as a binary file using the content-type:application/octet-stream in the response. This file may be large (over 100 MB, compressed). Extract the JSON file from the compressed file with a utility that handles .gz or .gzip. The open source &lt;a href=&quot;https://github.com/eBay/taxonomy-sdk &quot; target=&quot;_blank&quot;&gt;Taxonomy SDK&lt;/a&gt; can be used to compare the aspect metadata that is returned in this response. The &lt;b&gt;Taxonomy SDK&lt;/b&gt; uses this call to surface changes (new, modified, and removed entities) between an updated version of a bulk downloaded file relative to a previous version.&lt;/span&gt;
      * @return a {@link GetCategoriesAspectResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public GetCategoriesAspectResponse get() {
@@ -60,11 +64,18 @@ public class FetchItemAspectsRequestBuilder extends BaseRequestBuilder {
      * This method returns a complete list of aspects for all of the leaf categories that belong to an eBay marketplace. The eBay marketplace is specified through the &lt;b&gt;category_tree_id&lt;/b&gt; URI parameter.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; A successful call returns a payload as a gzipped JSON file sent as a binary file using the content-type:application/octet-stream in the response. This file may be large (over 100 MB, compressed). Extract the JSON file from the compressed file with a utility that handles .gz or .gzip. The open source &lt;a href=&quot;https://github.com/eBay/taxonomy-sdk &quot; target=&quot;_blank&quot;&gt;Taxonomy SDK&lt;/a&gt; can be used to compare the aspect metadata that is returned in this response. The &lt;b&gt;Taxonomy SDK&lt;/b&gt; uses this call to surface changes (new, modified, and removed entities) between an updated version of a bulk downloaded file relative to a previous version.&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetCategoriesAspectResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public GetCategoriesAspectResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetCategoriesAspectResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, GetCategoriesAspectResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns a complete list of aspects for all of the leaf categories that belong to an eBay marketplace. The eBay marketplace is specified through the &lt;b&gt;category_tree_id&lt;/b&gt; URI parameter.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; A successful call returns a payload as a gzipped JSON file sent as a binary file using the content-type:application/octet-stream in the response. This file may be large (over 100 MB, compressed). Extract the JSON file from the compressed file with a utility that handles .gz or .gzip. The open source &lt;a href=&quot;https://github.com/eBay/taxonomy-sdk &quot; target=&quot;_blank&quot;&gt;Taxonomy SDK&lt;/a&gt; can be used to compare the aspect metadata that is returned in this response. The &lt;b&gt;Taxonomy SDK&lt;/b&gt; uses this call to surface changes (new, modified, and removed entities) between an updated version of a bulk downloaded file relative to a previous version.&lt;/span&gt;

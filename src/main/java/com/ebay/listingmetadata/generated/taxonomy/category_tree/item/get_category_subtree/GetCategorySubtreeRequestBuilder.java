@@ -15,6 +15,7 @@
 package com.ebay.listingmetadata.generated.taxonomy.category_tree.item.get_category_subtree;
 
 import com.ebay.listingmetadata.generated.taxonomy.models.CategorySubtree;
+import com.ebay.listingmetadata.generated.taxonomy.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -50,25 +51,35 @@ public class GetCategorySubtreeRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/category_tree/{category_tree_id}/get_category_subtree?category_id={category_id}", rawUrl);
     }
     /**
-     * This call retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @return a {@link CategorySubtree}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public CategorySubtree get() {
         return get(null);
     }
     /**
-     * This call retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CategorySubtree}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public CategorySubtree get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CategorySubtree::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CategorySubtree::createFromDiscriminatorValue);
     }
     /**
-     * This call retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -76,7 +87,7 @@ public class GetCategorySubtreeRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This call retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -98,7 +109,7 @@ public class GetCategorySubtreeRequestBuilder extends BaseRequestBuilder {
         return new GetCategorySubtreeRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * This call retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;&amp;nbsp;&amp;nbsp;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
+     * This method retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the &lt;b&gt;category_tree_id&lt;/b&gt; parameter, which was returned by the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; call in the &lt;b&gt;categoryTreeId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This method can return a very large payload, so gzip compression is supported. To enable gzip compression, include the &lt;code&gt;Accept-Encoding&lt;/code&gt; header and set its value to &lt;code&gt;gzip&lt;/code&gt; as shown below: &lt;br&gt;&lt;br&gt;&lt;code&gt;Accept-Encoding: gzip&lt;/code&gt;&lt;/span&gt;
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {

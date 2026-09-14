@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.metadata.marketplace.item.get_currencies;
 
+import com.ebay.listingmetadata.generated.metadata.models.Error;
 import com.ebay.listingmetadata.generated.metadata.models.GetCurrenciesResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -51,6 +52,9 @@ public class GetCurrenciesRequestBuilder extends BaseRequestBuilder {
     /**
      * This method returns the default currency used by the eBay marketplace specified in the request. This is the currency that the seller should use when providing price data for this marketplace through listing APIs.
      * @return a {@link GetCurrenciesResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public GetCurrenciesResponse get() {
@@ -60,11 +64,18 @@ public class GetCurrenciesRequestBuilder extends BaseRequestBuilder {
      * This method returns the default currency used by the eBay marketplace specified in the request. This is the currency that the seller should use when providing price data for this marketplace through listing APIs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetCurrenciesResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public GetCurrenciesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetCurrenciesResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, GetCurrenciesResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns the default currency used by the eBay marketplace specified in the request. This is the currency that the seller should use when providing price data for this marketplace through listing APIs.

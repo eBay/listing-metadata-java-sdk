@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type defines information about a category and the aspects used to describe items in that category.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CategoryAspect implements AdditionalDataHolder, Parsable {
     /**
@@ -32,7 +35,7 @@ public class CategoryAspect implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<Aspect> aspects;
     /**
-     * This type contains information about a particular eBay category.
+     * The details that are appropriate or necessary to accurately define the category.
      */
     private Category category;
     /**
@@ -68,7 +71,7 @@ public class CategoryAspect implements AdditionalDataHolder, Parsable {
         return this.aspects;
     }
     /**
-     * Gets the category property value. This type contains information about a particular eBay category.
+     * Gets the category property value. The details that are appropriate or necessary to accurately define the category.
      * @return a {@link Category}
      */
     @jakarta.annotation.Nullable
@@ -111,7 +114,7 @@ public class CategoryAspect implements AdditionalDataHolder, Parsable {
         this.aspects = value;
     }
     /**
-     * Sets the category property value. This type contains information about a particular eBay category.
+     * Sets the category property value. The details that are appropriate or necessary to accurately define the category.
      * @param value Value to set for the category property.
      */
     public void setCategory(@jakarta.annotation.Nullable final Category value) {

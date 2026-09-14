@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
+ * This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class DisabledProductFilter implements AdditionalDataHolder, Parsable {

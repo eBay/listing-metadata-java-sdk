@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Returns the applicable max cap per shipping cost for shipping service group1.
+ * The type that defines the fields for the currency and a monetary amount.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Amount implements AdditionalDataHolder, Parsable {

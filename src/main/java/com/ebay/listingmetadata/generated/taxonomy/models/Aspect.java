@@ -31,7 +31,7 @@ public class Aspect implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This type contains information about the formatting, occurrence, and support of an aspect.
+     * Information about the formatting, occurrence, and support of this aspect.
      */
     private AspectConstraint aspectConstraint;
     /**
@@ -43,7 +43,7 @@ public class Aspect implements AdditionalDataHolder, Parsable {
      */
     private String localizedAspectName;
     /**
-     * The relevance of this aspect. This field is returned if eBay has data on how many searches have been performed for listings in the category using this item aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This container is restricted to applications that have been granted permission to access this feature. You must submit an &lt;a href=&quot;https://developer.ebay.com/my/support/tickets?tab=app-check &quot;&gt;App Check ticket&lt;/a&gt; to request this access. In the App Check form, add a note to the &lt;b&gt;Application Title/Summary&lt;/b&gt; and/or &lt;b&gt;Application Details&lt;/b&gt; fields that you want access to &apos;Buyer Demand Data&apos; in the Taxonomy API.&lt;/span&gt;
+     * The relevance of this aspect. This field is returned if eBay has data on how many searches have been performed for listings in the category using this item aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This container is restricted to applications that have been granted permission to access this feature. You must submit an &lt;a href=&quot;https://developer.ebay.com/my/support/tickets?tab=app-check &quot; target=&quot;_blank&quot;&gt;App Check ticket&lt;/a&gt; to request this access. In the App Check form, add a note to the &lt;b&gt;Application Title/Summary&lt;/b&gt; and/or &lt;b&gt;Application Details&lt;/b&gt; fields that you want access to &apos;Buyer Demand Data&apos; in the Taxonomy API.&lt;/span&gt;
      */
     private RelevanceIndicator relevanceIndicator;
     /**
@@ -71,7 +71,7 @@ public class Aspect implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the aspectConstraint property value. This type contains information about the formatting, occurrence, and support of an aspect.
+     * Gets the aspectConstraint property value. Information about the formatting, occurrence, and support of this aspect.
      * @return a {@link AspectConstraint}
      */
     @jakarta.annotation.Nullable
@@ -108,7 +108,7 @@ public class Aspect implements AdditionalDataHolder, Parsable {
         return this.localizedAspectName;
     }
     /**
-     * Gets the relevanceIndicator property value. The relevance of this aspect. This field is returned if eBay has data on how many searches have been performed for listings in the category using this item aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This container is restricted to applications that have been granted permission to access this feature. You must submit an &lt;a href=&quot;https://developer.ebay.com/my/support/tickets?tab=app-check &quot;&gt;App Check ticket&lt;/a&gt; to request this access. In the App Check form, add a note to the &lt;b&gt;Application Title/Summary&lt;/b&gt; and/or &lt;b&gt;Application Details&lt;/b&gt; fields that you want access to &apos;Buyer Demand Data&apos; in the Taxonomy API.&lt;/span&gt;
+     * Gets the relevanceIndicator property value. The relevance of this aspect. This field is returned if eBay has data on how many searches have been performed for listings in the category using this item aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This container is restricted to applications that have been granted permission to access this feature. You must submit an &lt;a href=&quot;https://developer.ebay.com/my/support/tickets?tab=app-check &quot; target=&quot;_blank&quot;&gt;App Check ticket&lt;/a&gt; to request this access. In the App Check form, add a note to the &lt;b&gt;Application Title/Summary&lt;/b&gt; and/or &lt;b&gt;Application Details&lt;/b&gt; fields that you want access to &apos;Buyer Demand Data&apos; in the Taxonomy API.&lt;/span&gt;
      * @return a {@link RelevanceIndicator}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class Aspect implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the aspectConstraint property value. This type contains information about the formatting, occurrence, and support of an aspect.
+     * Sets the aspectConstraint property value. Information about the formatting, occurrence, and support of this aspect.
      * @param value Value to set for the aspectConstraint property.
      */
     public void setAspectConstraint(@jakarta.annotation.Nullable final AspectConstraint value) {
@@ -156,7 +156,7 @@ public class Aspect implements AdditionalDataHolder, Parsable {
         this.localizedAspectName = value;
     }
     /**
-     * Sets the relevanceIndicator property value. The relevance of this aspect. This field is returned if eBay has data on how many searches have been performed for listings in the category using this item aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This container is restricted to applications that have been granted permission to access this feature. You must submit an &lt;a href=&quot;https://developer.ebay.com/my/support/tickets?tab=app-check &quot;&gt;App Check ticket&lt;/a&gt; to request this access. In the App Check form, add a note to the &lt;b&gt;Application Title/Summary&lt;/b&gt; and/or &lt;b&gt;Application Details&lt;/b&gt; fields that you want access to &apos;Buyer Demand Data&apos; in the Taxonomy API.&lt;/span&gt;
+     * Sets the relevanceIndicator property value. The relevance of this aspect. This field is returned if eBay has data on how many searches have been performed for listings in the category using this item aspect.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This container is restricted to applications that have been granted permission to access this feature. You must submit an &lt;a href=&quot;https://developer.ebay.com/my/support/tickets?tab=app-check &quot; target=&quot;_blank&quot;&gt;App Check ticket&lt;/a&gt; to request this access. In the App Check form, add a note to the &lt;b&gt;Application Title/Summary&lt;/b&gt; and/or &lt;b&gt;Application Details&lt;/b&gt; fields that you want access to &apos;Buyer Demand Data&apos; in the Taxonomy API.&lt;/span&gt;
      * @param value Value to set for the relevanceIndicator property.
      */
     public void setRelevanceIndicator(@jakarta.annotation.Nullable final RelevanceIndicator value) {

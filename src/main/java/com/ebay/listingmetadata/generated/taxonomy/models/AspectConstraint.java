@@ -31,17 +31,17 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Indicates additional data type requirements for the aspect. For example, &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; indicates that the aspect value must be in numeric range format.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Currently only &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; is supported.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectAdvancedDataTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Indicates additional data type requirements for the aspect. For example, &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; indicates that the aspect value must be in numeric range format.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Currently only &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; is supported.&lt;/span&gt;
      */
-    private String aspectAdvancedDataType;
+    private AspectAdvancedDataTypeEnum aspectAdvancedDataType;
     /**
-     * This value indicate if the aspect identified by the &lt;b&gt;aspects.localizedAspectName&lt;/b&gt; field is a product aspect (relevant to catalog products in the category) or an item/instance aspect, which is an aspect whose value will vary based on a particular instance of the product.
+     * This value indicates if the aspect identified by the &lt;b&gt;aspects.localizedAspectName&lt;/b&gt; field is a product aspect (relevant to catalog products in the category) or an item/instance aspect, which is an aspect whose value will vary based on a particular instance of the product.
      */
-    private java.util.List<String> aspectApplicableTo;
+    private java.util.List<AspectApplicableToEnum> aspectApplicableTo;
     /**
-     * The data type of this aspect. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectDataTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The data type of this aspect.
      */
-    private String aspectDataType;
+    private AspectDataTypeEnum aspectDataType;
     /**
      * A value of &lt;code&gt;true&lt;/code&gt; indicates that this aspect can be used to help identify item variations.
      */
@@ -55,25 +55,25 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
      */
     private Integer aspectMaxLength;
     /**
-     * The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options).  For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectModeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options). 
      */
-    private String aspectMode;
+    private AspectModeEnum aspectMode;
     /**
      * A value of &lt;code&gt;true&lt;/code&gt; indicates that this aspect is required when offering items in the specified category.
      */
     private Boolean aspectRequired;
     /**
-     * The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This field is always returned, even for hard-mandated/required aspects (where &lt;code&gt;&lt;strong&gt;aspectRequired&lt;/strong&gt;: true&lt;/code&gt;). The value returned for required aspects will be &lt;code&gt;RECOMMENDED&lt;/code&gt;, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. &lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This field is always returned, even for hard-mandated/required aspects (where &lt;strong&gt;aspectRequired&lt;/strong&gt;: &lt;code&gt;true&lt;/code&gt;). The value returned for required aspects will be &lt;code&gt;RECOMMENDED&lt;/code&gt;, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. &lt;/span&gt;
      */
-    private String aspectUsage;
+    private AspectUsageEnum aspectUsage;
     /**
      * The expected date after which the aspect will be required.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; The value returned in this field specifies only an approximate date, which may not reflect the actual date after which the aspect is required.&lt;/span&gt;
      */
     private String expectedRequiredByDate;
     /**
-     * Indicates whether this aspect can accept single or multiple values for items in the specified category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Up to 30 values can be supplied for aspects that accept multiple values.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:ItemToAspectCardinalityEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Indicates whether this aspect can accept single or multiple values for items in the specified category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Up to 30 values can be supplied for aspects that accept multiple values.&lt;/span&gt;
      */
-    private String itemToAspectCardinality;
+    private ItemToAspectCardinalityEnum itemToAspectCardinality;
     /**
      * Instantiates a new {@link AspectConstraint} and sets the default values.
      */
@@ -99,27 +99,27 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the aspectAdvancedDataType property value. Indicates additional data type requirements for the aspect. For example, &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; indicates that the aspect value must be in numeric range format.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Currently only &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; is supported.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectAdvancedDataTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the aspectAdvancedDataType property value. Indicates additional data type requirements for the aspect. For example, &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; indicates that the aspect value must be in numeric range format.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Currently only &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; is supported.&lt;/span&gt;
+     * @return a {@link AspectAdvancedDataTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getAspectAdvancedDataType() {
+    public AspectAdvancedDataTypeEnum getAspectAdvancedDataType() {
         return this.aspectAdvancedDataType;
     }
     /**
-     * Gets the aspectApplicableTo property value. This value indicate if the aspect identified by the &lt;b&gt;aspects.localizedAspectName&lt;/b&gt; field is a product aspect (relevant to catalog products in the category) or an item/instance aspect, which is an aspect whose value will vary based on a particular instance of the product.
-     * @return a {@link java.util.List<String>}
+     * Gets the aspectApplicableTo property value. This value indicates if the aspect identified by the &lt;b&gt;aspects.localizedAspectName&lt;/b&gt; field is a product aspect (relevant to catalog products in the category) or an item/instance aspect, which is an aspect whose value will vary based on a particular instance of the product.
+     * @return a {@link java.util.List<AspectApplicableToEnum>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<String> getAspectApplicableTo() {
+    public java.util.List<AspectApplicableToEnum> getAspectApplicableTo() {
         return this.aspectApplicableTo;
     }
     /**
-     * Gets the aspectDataType property value. The data type of this aspect. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectDataTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the aspectDataType property value. The data type of this aspect.
+     * @return a {@link AspectDataTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getAspectDataType() {
+    public AspectDataTypeEnum getAspectDataType() {
         return this.aspectDataType;
     }
     /**
@@ -147,11 +147,11 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         return this.aspectMaxLength;
     }
     /**
-     * Gets the aspectMode property value. The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options).  For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectModeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the aspectMode property value. The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options). 
+     * @return a {@link AspectModeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getAspectMode() {
+    public AspectModeEnum getAspectMode() {
         return this.aspectMode;
     }
     /**
@@ -163,11 +163,11 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         return this.aspectRequired;
     }
     /**
-     * Gets the aspectUsage property value. The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This field is always returned, even for hard-mandated/required aspects (where &lt;code&gt;&lt;strong&gt;aspectRequired&lt;/strong&gt;: true&lt;/code&gt;). The value returned for required aspects will be &lt;code&gt;RECOMMENDED&lt;/code&gt;, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. &lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the aspectUsage property value. The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This field is always returned, even for hard-mandated/required aspects (where &lt;strong&gt;aspectRequired&lt;/strong&gt;: &lt;code&gt;true&lt;/code&gt;). The value returned for required aspects will be &lt;code&gt;RECOMMENDED&lt;/code&gt;, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. &lt;/span&gt;
+     * @return a {@link AspectUsageEnum}
      */
     @jakarta.annotation.Nullable
-    public String getAspectUsage() {
+    public AspectUsageEnum getAspectUsage() {
         return this.aspectUsage;
     }
     /**
@@ -185,25 +185,25 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
-        deserializerMap.put("aspectAdvancedDataType", (n) -> { this.setAspectAdvancedDataType(n.getStringValue()); });
-        deserializerMap.put("aspectApplicableTo", (n) -> { this.setAspectApplicableTo(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("aspectDataType", (n) -> { this.setAspectDataType(n.getStringValue()); });
+        deserializerMap.put("aspectAdvancedDataType", (n) -> { this.setAspectAdvancedDataType(n.getEnumValue(AspectAdvancedDataTypeEnum::forValue)); });
+        deserializerMap.put("aspectApplicableTo", (n) -> { this.setAspectApplicableTo(n.getCollectionOfEnumValues(AspectApplicableToEnum::forValue)); });
+        deserializerMap.put("aspectDataType", (n) -> { this.setAspectDataType(n.getEnumValue(AspectDataTypeEnum::forValue)); });
         deserializerMap.put("aspectEnabledForVariations", (n) -> { this.setAspectEnabledForVariations(n.getBooleanValue()); });
         deserializerMap.put("aspectFormat", (n) -> { this.setAspectFormat(n.getStringValue()); });
         deserializerMap.put("aspectMaxLength", (n) -> { this.setAspectMaxLength(n.getIntegerValue()); });
-        deserializerMap.put("aspectMode", (n) -> { this.setAspectMode(n.getStringValue()); });
+        deserializerMap.put("aspectMode", (n) -> { this.setAspectMode(n.getEnumValue(AspectModeEnum::forValue)); });
         deserializerMap.put("aspectRequired", (n) -> { this.setAspectRequired(n.getBooleanValue()); });
-        deserializerMap.put("aspectUsage", (n) -> { this.setAspectUsage(n.getStringValue()); });
+        deserializerMap.put("aspectUsage", (n) -> { this.setAspectUsage(n.getEnumValue(AspectUsageEnum::forValue)); });
         deserializerMap.put("expectedRequiredByDate", (n) -> { this.setExpectedRequiredByDate(n.getStringValue()); });
-        deserializerMap.put("itemToAspectCardinality", (n) -> { this.setItemToAspectCardinality(n.getStringValue()); });
+        deserializerMap.put("itemToAspectCardinality", (n) -> { this.setItemToAspectCardinality(n.getEnumValue(ItemToAspectCardinalityEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the itemToAspectCardinality property value. Indicates whether this aspect can accept single or multiple values for items in the specified category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Up to 30 values can be supplied for aspects that accept multiple values.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:ItemToAspectCardinalityEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the itemToAspectCardinality property value. Indicates whether this aspect can accept single or multiple values for items in the specified category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Up to 30 values can be supplied for aspects that accept multiple values.&lt;/span&gt;
+     * @return a {@link ItemToAspectCardinalityEnum}
      */
     @jakarta.annotation.Nullable
-    public String getItemToAspectCardinality() {
+    public ItemToAspectCardinalityEnum getItemToAspectCardinality() {
         return this.itemToAspectCardinality;
     }
     /**
@@ -212,17 +212,17 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("aspectAdvancedDataType", this.getAspectAdvancedDataType());
-        writer.writeCollectionOfPrimitiveValues("aspectApplicableTo", this.getAspectApplicableTo());
-        writer.writeStringValue("aspectDataType", this.getAspectDataType());
+        writer.writeEnumValue("aspectAdvancedDataType", this.getAspectAdvancedDataType());
+        writer.writeCollectionOfEnumValues("aspectApplicableTo", this.getAspectApplicableTo());
+        writer.writeEnumValue("aspectDataType", this.getAspectDataType());
         writer.writeBooleanValue("aspectEnabledForVariations", this.getAspectEnabledForVariations());
         writer.writeStringValue("aspectFormat", this.getAspectFormat());
         writer.writeIntegerValue("aspectMaxLength", this.getAspectMaxLength());
-        writer.writeStringValue("aspectMode", this.getAspectMode());
+        writer.writeEnumValue("aspectMode", this.getAspectMode());
         writer.writeBooleanValue("aspectRequired", this.getAspectRequired());
-        writer.writeStringValue("aspectUsage", this.getAspectUsage());
+        writer.writeEnumValue("aspectUsage", this.getAspectUsage());
         writer.writeStringValue("expectedRequiredByDate", this.getExpectedRequiredByDate());
-        writer.writeStringValue("itemToAspectCardinality", this.getItemToAspectCardinality());
+        writer.writeEnumValue("itemToAspectCardinality", this.getItemToAspectCardinality());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -233,24 +233,24 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the aspectAdvancedDataType property value. Indicates additional data type requirements for the aspect. For example, &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; indicates that the aspect value must be in numeric range format.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Currently only &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; is supported.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectAdvancedDataTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the aspectAdvancedDataType property value. Indicates additional data type requirements for the aspect. For example, &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; indicates that the aspect value must be in numeric range format.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Currently only &lt;code&gt;NUMERIC_RANGE&lt;/code&gt; is supported.&lt;/span&gt;
      * @param value Value to set for the aspectAdvancedDataType property.
      */
-    public void setAspectAdvancedDataType(@jakarta.annotation.Nullable final String value) {
+    public void setAspectAdvancedDataType(@jakarta.annotation.Nullable final AspectAdvancedDataTypeEnum value) {
         this.aspectAdvancedDataType = value;
     }
     /**
-     * Sets the aspectApplicableTo property value. This value indicate if the aspect identified by the &lt;b&gt;aspects.localizedAspectName&lt;/b&gt; field is a product aspect (relevant to catalog products in the category) or an item/instance aspect, which is an aspect whose value will vary based on a particular instance of the product.
+     * Sets the aspectApplicableTo property value. This value indicates if the aspect identified by the &lt;b&gt;aspects.localizedAspectName&lt;/b&gt; field is a product aspect (relevant to catalog products in the category) or an item/instance aspect, which is an aspect whose value will vary based on a particular instance of the product.
      * @param value Value to set for the aspectApplicableTo property.
      */
-    public void setAspectApplicableTo(@jakarta.annotation.Nullable final java.util.List<String> value) {
+    public void setAspectApplicableTo(@jakarta.annotation.Nullable final java.util.List<AspectApplicableToEnum> value) {
         this.aspectApplicableTo = value;
     }
     /**
-     * Sets the aspectDataType property value. The data type of this aspect. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectDataTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the aspectDataType property value. The data type of this aspect.
      * @param value Value to set for the aspectDataType property.
      */
-    public void setAspectDataType(@jakarta.annotation.Nullable final String value) {
+    public void setAspectDataType(@jakarta.annotation.Nullable final AspectDataTypeEnum value) {
         this.aspectDataType = value;
     }
     /**
@@ -275,10 +275,10 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         this.aspectMaxLength = value;
     }
     /**
-     * Sets the aspectMode property value. The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options).  For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectModeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the aspectMode property value. The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options). 
      * @param value Value to set for the aspectMode property.
      */
-    public void setAspectMode(@jakarta.annotation.Nullable final String value) {
+    public void setAspectMode(@jakarta.annotation.Nullable final AspectModeEnum value) {
         this.aspectMode = value;
     }
     /**
@@ -289,10 +289,10 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         this.aspectRequired = value;
     }
     /**
-     * Sets the aspectUsage property value. The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This field is always returned, even for hard-mandated/required aspects (where &lt;code&gt;&lt;strong&gt;aspectRequired&lt;/strong&gt;: true&lt;/code&gt;). The value returned for required aspects will be &lt;code&gt;RECOMMENDED&lt;/code&gt;, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. &lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:AspectUsageEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the aspectUsage property value. The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; This field is always returned, even for hard-mandated/required aspects (where &lt;strong&gt;aspectRequired&lt;/strong&gt;: &lt;code&gt;true&lt;/code&gt;). The value returned for required aspects will be &lt;code&gt;RECOMMENDED&lt;/code&gt;, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. &lt;/span&gt;
      * @param value Value to set for the aspectUsage property.
      */
-    public void setAspectUsage(@jakarta.annotation.Nullable final String value) {
+    public void setAspectUsage(@jakarta.annotation.Nullable final AspectUsageEnum value) {
         this.aspectUsage = value;
     }
     /**
@@ -303,10 +303,10 @@ public class AspectConstraint implements AdditionalDataHolder, Parsable {
         this.expectedRequiredByDate = value;
     }
     /**
-     * Sets the itemToAspectCardinality property value. Indicates whether this aspect can accept single or multiple values for items in the specified category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Up to 30 values can be supplied for aspects that accept multiple values.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/taxonomy/types/txn:ItemToAspectCardinalityEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the itemToAspectCardinality property value. Indicates whether this aspect can accept single or multiple values for items in the specified category.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt; &lt;strong&gt;Note:&lt;/strong&gt; Up to 30 values can be supplied for aspects that accept multiple values.&lt;/span&gt;
      * @param value Value to set for the itemToAspectCardinality property.
      */
-    public void setItemToAspectCardinality(@jakarta.annotation.Nullable final String value) {
+    public void setItemToAspectCardinality(@jakarta.annotation.Nullable final ItemToAspectCardinalityEnum value) {
         this.itemToAspectCardinality = value;
     }
 }

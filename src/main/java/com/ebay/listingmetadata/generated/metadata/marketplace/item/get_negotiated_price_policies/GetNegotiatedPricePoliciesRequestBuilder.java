@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.metadata.marketplace.item.get_negotiated_price_policies;
 
+import com.ebay.listingmetadata.generated.metadata.models.Error;
 import com.ebay.listingmetadata.generated.metadata.models.NegotiatedPricePolicyResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -52,6 +53,9 @@ public class GetNegotiatedPricePoliciesRequestBuilder extends BaseRequestBuilder
     /**
      * This method returns the eBay policies that define the supported negotiated price features (like &quot;best offer&quot;) for the categories of a specific marketplace.  &lt;br&gt;&lt;br&gt;By default, this method returns the entire category tree for the specified marketplace. You can limit the size of the result set by using the &lt;b&gt;filter&lt;/b&gt; query parameter to specify only the category IDs you want to review.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#478415&quot;&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/span&gt; This method can potentially return a very large response payload. eBay recommends that the response payload be compressed by passing in the &lt;b&gt;Accept-Encoding&lt;/b&gt; request header and setting the value to &lt;code&gt;gzip&lt;/code&gt;.&lt;/span&gt;
      * @return a {@link NegotiatedPricePolicyResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public NegotiatedPricePolicyResponse get() {
@@ -61,11 +65,18 @@ public class GetNegotiatedPricePoliciesRequestBuilder extends BaseRequestBuilder
      * This method returns the eBay policies that define the supported negotiated price features (like &quot;best offer&quot;) for the categories of a specific marketplace.  &lt;br&gt;&lt;br&gt;By default, this method returns the entire category tree for the specified marketplace. You can limit the size of the result set by using the &lt;b&gt;filter&lt;/b&gt; query parameter to specify only the category IDs you want to review.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#478415&quot;&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/span&gt; This method can potentially return a very large response payload. eBay recommends that the response payload be compressed by passing in the &lt;b&gt;Accept-Encoding&lt;/b&gt; request header and setting the value to &lt;code&gt;gzip&lt;/code&gt;.&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link NegotiatedPricePolicyResponse}
+     * @throws java.util.List<Error> When receiving a 400 status code
+     * @throws java.util.List<Error> When receiving a 404 status code
+     * @throws java.util.List<Error> When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public NegotiatedPricePolicyResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, NegotiatedPricePolicyResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, NegotiatedPricePolicyResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns the eBay policies that define the supported negotiated price features (like &quot;best offer&quot;) for the categories of a specific marketplace.  &lt;br&gt;&lt;br&gt;By default, this method returns the entire category tree for the specified marketplace. You can limit the size of the result set by using the &lt;b&gt;filter&lt;/b&gt; query parameter to specify only the category IDs you want to review.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#478415&quot;&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/span&gt; This method can potentially return a very large response payload. eBay recommends that the response payload be compressed by passing in the &lt;b&gt;Accept-Encoding&lt;/b&gt; request header and setting the value to &lt;code&gt;gzip&lt;/code&gt;.&lt;/span&gt;

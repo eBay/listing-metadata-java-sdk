@@ -26,7 +26,7 @@ import java.util.Objects;
 public class CategoryTreeRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.listingmetadata.generated.taxonomy.category_tree.item collection
-     * @param category_tree_id The unique identifier of the eBay category tree. The category tree ID for an eBay marketplace can be retrieved using the &lt;b&gt;getDefaultCategoryTreeId&lt;/b&gt; method.
+     * @param category_tree_id The unique identifier of the eBay category tree. The category tree ID for an eBay marketplace can be retrieved using the &lt;a href=&quot;/develop/api/sell/taxonomy_api#sell-taxonomy_api-category_tree-getdefaultcategorytreeid&quot; &gt;getDefaultCategoryTreeId&lt;/a&gt; method.
      * @return a {@link WithCategoryTreeItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

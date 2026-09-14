@@ -35,9 +35,9 @@ public class Address implements AdditionalDataHolder, Parsable {
      */
     private String city;
     /**
-     * The two-letter &lt;a href=&quot;https://www.iso.org/iso-3166-country-codes.html &quot;&gt;ISO 3166&lt;/a&gt; standard of the country of the address. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/charity/types/bas:CountryCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The two-letter &lt;a href=&quot;https://www.iso.org/iso-3166-country-codes.html &quot;&gt;ISO 3166&lt;/a&gt; standard of the country of the address.
      */
-    private String country;
+    private CountryCodeEnum country;
     /**
      * The postal code of the charitable organization.
      */
@@ -79,11 +79,11 @@ public class Address implements AdditionalDataHolder, Parsable {
         return this.city;
     }
     /**
-     * Gets the country property value. The two-letter &lt;a href=&quot;https://www.iso.org/iso-3166-country-codes.html &quot;&gt;ISO 3166&lt;/a&gt; standard of the country of the address. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/charity/types/bas:CountryCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the country property value. The two-letter &lt;a href=&quot;https://www.iso.org/iso-3166-country-codes.html &quot;&gt;ISO 3166&lt;/a&gt; standard of the country of the address.
+     * @return a {@link CountryCodeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getCountry() {
+    public CountryCodeEnum getCountry() {
         return this.country;
     }
     /**
@@ -94,7 +94,7 @@ public class Address implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("city", (n) -> { this.setCity(n.getStringValue()); });
-        deserializerMap.put("country", (n) -> { this.setCountry(n.getStringValue()); });
+        deserializerMap.put("country", (n) -> { this.setCountry(n.getEnumValue(CountryCodeEnum::forValue)); });
         deserializerMap.put("postalCode", (n) -> { this.setPostalCode(n.getStringValue()); });
         deserializerMap.put("stateOrProvince", (n) -> { this.setStateOrProvince(n.getStringValue()); });
         return deserializerMap;
@@ -122,7 +122,7 @@ public class Address implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("city", this.getCity());
-        writer.writeStringValue("country", this.getCountry());
+        writer.writeEnumValue("country", this.getCountry());
         writer.writeStringValue("postalCode", this.getPostalCode());
         writer.writeStringValue("stateOrProvince", this.getStateOrProvince());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -142,10 +142,10 @@ public class Address implements AdditionalDataHolder, Parsable {
         this.city = value;
     }
     /**
-     * Sets the country property value. The two-letter &lt;a href=&quot;https://www.iso.org/iso-3166-country-codes.html &quot;&gt;ISO 3166&lt;/a&gt; standard of the country of the address. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/charity/types/bas:CountryCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the country property value. The two-letter &lt;a href=&quot;https://www.iso.org/iso-3166-country-codes.html &quot;&gt;ISO 3166&lt;/a&gt; standard of the country of the address.
      * @param value Value to set for the country property.
      */
-    public void setCountry(@jakarta.annotation.Nullable final String value) {
+    public void setCountry(@jakarta.annotation.Nullable final CountryCodeEnum value) {
         this.country = value;
     }
     /**

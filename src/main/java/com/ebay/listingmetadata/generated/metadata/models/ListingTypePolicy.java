@@ -47,7 +47,7 @@ public class ListingTypePolicy implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<ListingDuration> listingDurations;
     /**
-     * A true value in this field indicates that items listed in the category (specified in the &lt;b&gt;listingTypePolicies.categoryId&lt;/b&gt; field) may be enabled with the &apos;Click and Collect&apos; feature. With the &apos;Click and Collect&apos; feature, a buyer can purchase certain items on an eBay site and collect them at a local store. Buyers are notified by eBay once their items are available. A false value in this field indicates that items listed in the category are not eligible for the &apos;Click and Collect&apos; feature.
+     * A true value in this field indicates that items listed in the category (specified in the Category.CategoryID field) may be enabled with the &apos;Click and Collect&apos; feature. With the &apos;Click and Collect&apos; feature, a buyer can purchase certain items on an eBay site and collect them at a local store. Buyers are notified by eBay once their items are available. A false value in this field indicates that items listed in the category are not eligible for the &apos;Click and Collect&apos; feature.
      */
     private Boolean pickupDropOffEnabled;
     /**
@@ -121,7 +121,7 @@ public class ListingTypePolicy implements AdditionalDataHolder, Parsable {
         return this.listingDurations;
     }
     /**
-     * Gets the pickupDropOffEnabled property value. A true value in this field indicates that items listed in the category (specified in the &lt;b&gt;listingTypePolicies.categoryId&lt;/b&gt; field) may be enabled with the &apos;Click and Collect&apos; feature. With the &apos;Click and Collect&apos; feature, a buyer can purchase certain items on an eBay site and collect them at a local store. Buyers are notified by eBay once their items are available. A false value in this field indicates that items listed in the category are not eligible for the &apos;Click and Collect&apos; feature.
+     * Gets the pickupDropOffEnabled property value. A true value in this field indicates that items listed in the category (specified in the Category.CategoryID field) may be enabled with the &apos;Click and Collect&apos; feature. With the &apos;Click and Collect&apos; feature, a buyer can purchase certain items on an eBay site and collect them at a local store. Buyers are notified by eBay once their items are available. A false value in this field indicates that items listed in the category are not eligible for the &apos;Click and Collect&apos; feature.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -177,7 +177,7 @@ public class ListingTypePolicy implements AdditionalDataHolder, Parsable {
         this.listingDurations = value;
     }
     /**
-     * Sets the pickupDropOffEnabled property value. A true value in this field indicates that items listed in the category (specified in the &lt;b&gt;listingTypePolicies.categoryId&lt;/b&gt; field) may be enabled with the &apos;Click and Collect&apos; feature. With the &apos;Click and Collect&apos; feature, a buyer can purchase certain items on an eBay site and collect them at a local store. Buyers are notified by eBay once their items are available. A false value in this field indicates that items listed in the category are not eligible for the &apos;Click and Collect&apos; feature.
+     * Sets the pickupDropOffEnabled property value. A true value in this field indicates that items listed in the category (specified in the Category.CategoryID field) may be enabled with the &apos;Click and Collect&apos; feature. With the &apos;Click and Collect&apos; feature, a buyer can purchase certain items on an eBay site and collect them at a local store. Buyers are notified by eBay once their items are available. A false value in this field indicates that items listed in the category are not eligible for the &apos;Click and Collect&apos; feature.
      * @param value Value to set for the pickupDropOffEnabled property.
      */
     public void setPickupDropOffEnabled(@jakarta.annotation.Nullable final Boolean value) {
