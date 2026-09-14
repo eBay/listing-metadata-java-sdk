@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.configuration;
 
+import jakarta.annotation.Nullable;
 import java.net.URI;
 import java.util.Set;
 import java.util.HashSet;
@@ -29,7 +30,7 @@ public final class ListingMetadataConfiguration {
     private final String taxonomyBaseUrl;
     private final String metadataBaseUrl;
 
-    private String accessToken;  // static fallback; per-call token takes precedence
+    private @Nullable String accessToken;  // static fallback; per-call token takes precedence
     private boolean diagnosticLogging = false;
 
     /**
@@ -89,8 +90,8 @@ public final class ListingMetadataConfiguration {
      * Prefer per-call token injection via {@code TokenContext.runWith()} for sensitive
      * multi-tenant scenarios.</p>
      */
-    public void setAccessToken(String accessToken) { this.accessToken = accessToken; }
-    public String getAccessToken() { return accessToken; }
+    public void setAccessToken(@Nullable String accessToken) { this.accessToken = accessToken; }
+    public @Nullable String getAccessToken() { return accessToken; }
 
     public boolean isDiagnosticLogging() { return diagnosticLogging; }
     public void setDiagnosticLogging(boolean diagnosticLogging) { this.diagnosticLogging = diagnosticLogging; }
