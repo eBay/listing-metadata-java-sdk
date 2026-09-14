@@ -2,11 +2,61 @@
 
 ## 0.2.0 (09/14/2026)
 
-Consolidated experimental release.
+### Breaking changes
 
-- REST clients: `CatalogClient`, `CharityClient`, `MetadataClient`, `TaxonomyClient`.
-- Includes the current API definitions, regenerated clients, and wrapper updates.
-- Preserves existing wrapper parameter order where signatures allow it.
-- Aligns wrapper query parameter types with the generated Kiota clients.
+#### Changed signatures
 
-This entry establishes the consolidated experimental baseline.
+`CatalogClient`:
+
+| Operation | Previous parameters | Current parameters |
+| --- | --- | --- |
+| `getProductAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `searchAsync` | `(String, String, String, String, String, String, String, String, String, RequestOptions)` | `(String, String, String, String, String, String, String, String, String, String, RequestOptions)` |
+
+`CharityClient`:
+
+| Operation | Previous parameters | Current parameters |
+| --- | --- | --- |
+| `getCharityOrgAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getCharityOrgsAsync` | `(String, String, String, String, String, RequestOptions)` | `(String, String, String, String, String, String, RequestOptions)` |
+
+`MetadataClient`:
+
+| Operation | Previous parameters | Current parameters |
+| --- | --- | --- |
+| `getAutomotivePartsCompatibilityPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getCategoryPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getClassifiedAdPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getCompatibilitiesBySpecificationAsync` | `(SpecificationRequest, String, RequestOptions)` | `(SpecificationRequest, String, String, RequestOptions)` |
+| `getCompatibilityPropertyNamesAsync` | `(PropertyNamesRequest, String, RequestOptions)` | `(PropertyNamesRequest, String, String, RequestOptions)` |
+| `getCompatibilityPropertyValuesAsync` | `(PropertyValuesRequest, String, RequestOptions)` | `(PropertyValuesRequest, String, String, RequestOptions)` |
+| `getCurrenciesAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getExcludeShippingLocationsAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getExtendedProducerResponsibilityPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
+| `getHandlingTimesAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getHazardousMaterialsLabelsAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getItemConditionPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
+| `getListingStructurePoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
+| `getListingTypePoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getMotorsListingPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getMultiCompatibilityPropertyValuesAsync` | `(MultiCompatibilityPropertyValuesRequest, String, RequestOptions)` | `(MultiCompatibilityPropertyValuesRequest, String, String, RequestOptions)` |
+| `getNegotiatedPricePoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
+| `getProductCompatibilitiesAsync` | `(ProductRequest, String, RequestOptions)` | `(ProductRequest, String, String, RequestOptions)` |
+| `getRegulatoryPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getReturnPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
+| `getShippingCarriersAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getShippingLocationsAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getShippingPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getShippingServicesAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getSiteVisibilityPoliciesAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+
+`TaxonomyClient`:
+
+| Operation | Previous parameters | Current parameters |
+| --- | --- | --- |
+| `getCategorySubtreeAsync` | `(String, String, String, RequestOptions)` | `(String, String, String, String, RequestOptions)` |
+| `getCategoryTreeAsync` | `(String, String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+
+### Added
+
+- `MetadataClient.getMinimumListingPricePoliciesAsync`.
