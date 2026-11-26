@@ -35,7 +35,7 @@ public class PropertyFilterInner implements AdditionalDataHolder, Parsable {
      */
     private String propertyName;
     /**
-     * The value for the property specified in the &lt;b&gt;properyName&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;For example, if the &lt;b&gt;propertyName&lt;/b&gt; is &lt;code&gt;Make&lt;/code&gt;, then the &lt;b&gt;propertyValue&lt;/b&gt; will be the specific make of the vehicle, such as &lt;code&gt;Toyota&lt;/code&gt;. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; to retrieve valid property values associated with a specified property name.
+     * The value for the property specified in the &lt;b&gt;propertyName&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;For example, if the &lt;b&gt;propertyName&lt;/b&gt; is &lt;code&gt;Make&lt;/code&gt;, then the &lt;b&gt;propertyValue&lt;/b&gt; will be the specific make of the vehicle, such as &lt;code&gt;Toyota&lt;/code&gt;. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; to retrieve valid property values associated with a specified property name.
      */
     private String propertyValue;
     /**
@@ -92,7 +92,7 @@ public class PropertyFilterInner implements AdditionalDataHolder, Parsable {
         return this.propertyName;
     }
     /**
-     * Gets the propertyValue property value. The value for the property specified in the &lt;b&gt;properyName&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;For example, if the &lt;b&gt;propertyName&lt;/b&gt; is &lt;code&gt;Make&lt;/code&gt;, then the &lt;b&gt;propertyValue&lt;/b&gt; will be the specific make of the vehicle, such as &lt;code&gt;Toyota&lt;/code&gt;. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; to retrieve valid property values associated with a specified property name.
+     * Gets the propertyValue property value. The value for the property specified in the &lt;b&gt;propertyName&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;For example, if the &lt;b&gt;propertyName&lt;/b&gt; is &lt;code&gt;Make&lt;/code&gt;, then the &lt;b&gt;propertyValue&lt;/b&gt; will be the specific make of the vehicle, such as &lt;code&gt;Toyota&lt;/code&gt;. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; to retrieve valid property values associated with a specified property name.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -142,7 +142,7 @@ public class PropertyFilterInner implements AdditionalDataHolder, Parsable {
         this.propertyName = value;
     }
     /**
-     * Sets the propertyValue property value. The value for the property specified in the &lt;b&gt;properyName&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;For example, if the &lt;b&gt;propertyName&lt;/b&gt; is &lt;code&gt;Make&lt;/code&gt;, then the &lt;b&gt;propertyValue&lt;/b&gt; will be the specific make of the vehicle, such as &lt;code&gt;Toyota&lt;/code&gt;. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; to retrieve valid property values associated with a specified property name.
+     * Sets the propertyValue property value. The value for the property specified in the &lt;b&gt;propertyName&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;For example, if the &lt;b&gt;propertyName&lt;/b&gt; is &lt;code&gt;Make&lt;/code&gt;, then the &lt;b&gt;propertyValue&lt;/b&gt; will be the specific make of the vehicle, such as &lt;code&gt;Toyota&lt;/code&gt;. Use the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; to retrieve valid property values associated with a specified property name.
      * @param value Value to set for the propertyValue property.
      */
     public void setPropertyValue(@jakarta.annotation.Nullable final String value) {

@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.metadata.compatibilities.get_compatibilities_by_specification;
 
+import com.ebay.listingmetadata.generated.metadata.models.ErrorMessage;
 import com.ebay.listingmetadata.generated.metadata.models.SpecificationRequest;
 import com.ebay.listingmetadata.generated.metadata.models.SpecificationResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -53,6 +54,8 @@ public class GetCompatibilitiesBySpecificationRequestBuilder extends BaseRequest
      * This method is used to retrieve all compatible application name-value pairs for a part based on the provided specification(s).&lt;br&gt;&lt;br&gt;The part&apos;s relevant dimensions and/or characteristics can be provided through the &lt;b&gt;specifications&lt;/b&gt; container. For example, when retrieving compatible application name-value pairs for a tire, the tire&apos;s dimensions (such as the section width or rim diameter) should be provided.&lt;br&gt;&lt;br&gt;By default, all compatible application name-value pairs for the specifications are returned. You can limit the size of the result set by using the &lt;b&gt;compatibilityPropertyFilters&lt;/b&gt; array to specify the properties (such as make, model, year, or trim) you wish to be included in the response.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertynames&quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; and &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; methods can be used to retrieve valid property names and values that can be used as the name-value pairs to define specifications.&lt;/span&gt;
      * @param body This type defines the properties and specifications to use to search for compatibilities.
      * @return a {@link SpecificationResponse}
+     * @throws ErrorMessage When receiving a 400 status code
+     * @throws ErrorMessage When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SpecificationResponse post(@jakarta.annotation.Nonnull final SpecificationRequest body) {
@@ -63,12 +66,17 @@ public class GetCompatibilitiesBySpecificationRequestBuilder extends BaseRequest
      * @param body This type defines the properties and specifications to use to search for compatibilities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SpecificationResponse}
+     * @throws ErrorMessage When receiving a 400 status code
+     * @throws ErrorMessage When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SpecificationResponse post(@jakarta.annotation.Nonnull final SpecificationRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, SpecificationResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", ErrorMessage::createFromDiscriminatorValue);
+        errorMapping.put("500", ErrorMessage::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, SpecificationResponse::createFromDiscriminatorValue);
     }
     /**
      * This method is used to retrieve all compatible application name-value pairs for a part based on the provided specification(s).&lt;br&gt;&lt;br&gt;The part&apos;s relevant dimensions and/or characteristics can be provided through the &lt;b&gt;specifications&lt;/b&gt; container. For example, when retrieving compatible application name-value pairs for a tire, the tire&apos;s dimensions (such as the section width or rim diameter) should be provided.&lt;br&gt;&lt;br&gt;By default, all compatible application name-value pairs for the specifications are returned. You can limit the size of the result set by using the &lt;b&gt;compatibilityPropertyFilters&lt;/b&gt; array to specify the properties (such as make, model, year, or trim) you wish to be included in the response.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertynames&quot;&gt;getCompatibilityPropertyNames&lt;/a&gt; and &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot;&gt;getCompatibilityPropertyValues&lt;/a&gt; methods can be used to retrieve valid property names and values that can be used as the name-value pairs to define specifications.&lt;/span&gt;

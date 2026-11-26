@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the fields used in the &lt;b&gt;getCompatibilitiesBySpecification&lt;/b&gt; response.
+ * This type defines the fields used in the &lt;b&gt;getCompatibilitiesBySpecification&lt;/b&gt; response.&lt;br&gt;&lt;br&gt;&lt;b&gt;pagination:&lt;/b&gt; &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SpecificationResponse implements AdditionalDataHolder, Parsable {
@@ -33,9 +33,9 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
     /**
      * This container returns the list of all compatible application name-value pairs for the given filter criteria.
      */
-    private java.util.List<Compatibility> compatibilityDetails;
+    private java.util.List<Compatibility> compatibilities;
     /**
-     * &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
+     * This type defines the pagination settings for a result set.
      */
     private Pagination pagination;
     /**
@@ -63,12 +63,12 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the compatibilityDetails property value. This container returns the list of all compatible application name-value pairs for the given filter criteria.
+     * Gets the compatibilities property value. This container returns the list of all compatible application name-value pairs for the given filter criteria.
      * @return a {@link java.util.List<Compatibility>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<Compatibility> getCompatibilityDetails() {
-        return this.compatibilityDetails;
+    public java.util.List<Compatibility> getCompatibilities() {
+        return this.compatibilities;
     }
     /**
      * The deserialization information for the current model
@@ -77,12 +77,12 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("compatibilityDetails", (n) -> { this.setCompatibilityDetails(n.getCollectionOfObjectValues(Compatibility::createFromDiscriminatorValue)); });
+        deserializerMap.put("compatibilities", (n) -> { this.setCompatibilities(n.getCollectionOfObjectValues(Compatibility::createFromDiscriminatorValue)); });
         deserializerMap.put("pagination", (n) -> { this.setPagination(n.getObjectValue(Pagination::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the pagination property value. &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
+     * Gets the pagination property value. This type defines the pagination settings for a result set.
      * @return a {@link Pagination}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeCollectionOfObjectValues("compatibilityDetails", this.getCompatibilityDetails());
+        writer.writeCollectionOfObjectValues("compatibilities", this.getCompatibilities());
         writer.writeObjectValue("pagination", this.getPagination());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,14 +107,14 @@ public class SpecificationResponse implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the compatibilityDetails property value. This container returns the list of all compatible application name-value pairs for the given filter criteria.
-     * @param value Value to set for the compatibilityDetails property.
+     * Sets the compatibilities property value. This container returns the list of all compatible application name-value pairs for the given filter criteria.
+     * @param value Value to set for the compatibilities property.
      */
-    public void setCompatibilityDetails(@jakarta.annotation.Nullable final java.util.List<Compatibility> value) {
-        this.compatibilityDetails = value;
+    public void setCompatibilities(@jakarta.annotation.Nullable final java.util.List<Compatibility> value) {
+        this.compatibilities = value;
     }
     /**
-     * Sets the pagination property value. &lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; Not currently returned. For future use. &lt;/p&gt;&lt;/div&gt; &lt;!-- This container returns the pagination settings for the result set.--&gt;
+     * Sets the pagination property value. This type defines the pagination settings for a result set.
      * @param value Value to set for the pagination property.
      */
     public void setPagination(@jakarta.annotation.Nullable final Pagination value) {

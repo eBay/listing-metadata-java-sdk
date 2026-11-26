@@ -14,6 +14,7 @@
 
 package com.ebay.listingmetadata.generated.metadata.compatibilities.get_compatibility_property_names;
 
+import com.ebay.listingmetadata.generated.metadata.models.ErrorMessage;
 import com.ebay.listingmetadata.generated.metadata.models.PropertyNamesRequest;
 import com.ebay.listingmetadata.generated.metadata.models.PropertyNamesResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -53,6 +54,8 @@ public class GetCompatibilityPropertyNamesRequestBuilder extends BaseRequestBuil
      * This method is used to retrieve product compatibility property names for the specified compatibility-enabled category.&lt;br&gt;&lt;br&gt;Compatibility property names can be used alongside the corresponding compatibility property value (retrieved using the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot; &gt;getCompatibilityPropertyValues&lt;/a&gt; method) to describe the assembly for which an item is compatible.&lt;br&gt;&lt;br&gt;The &lt;b&gt;categoryId&lt;/b&gt; of the compatibility-enabled category for which to retrieve compatibility property names is required in the request body.&lt;br&gt;&lt;br&gt;By default, all property names within the compatibility category of the specified compatibility-enable category are returned. You can limit the size of the result set by using the &lt;b&gt;dataset&lt;/b&gt; array to specify the types of properties you want returned.
      * @param body This type defines the properties used to retrieve compatibility property names.
      * @return a {@link PropertyNamesResponse}
+     * @throws ErrorMessage When receiving a 400 status code
+     * @throws ErrorMessage When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public PropertyNamesResponse post(@jakarta.annotation.Nonnull final PropertyNamesRequest body) {
@@ -63,12 +66,17 @@ public class GetCompatibilityPropertyNamesRequestBuilder extends BaseRequestBuil
      * @param body This type defines the properties used to retrieve compatibility property names.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PropertyNamesResponse}
+     * @throws ErrorMessage When receiving a 400 status code
+     * @throws ErrorMessage When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public PropertyNamesResponse post(@jakarta.annotation.Nonnull final PropertyNamesRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, PropertyNamesResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", ErrorMessage::createFromDiscriminatorValue);
+        errorMapping.put("500", ErrorMessage::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, PropertyNamesResponse::createFromDiscriminatorValue);
     }
     /**
      * This method is used to retrieve product compatibility property names for the specified compatibility-enabled category.&lt;br&gt;&lt;br&gt;Compatibility property names can be used alongside the corresponding compatibility property value (retrieved using the &lt;a href=&quot;/develop/api/sell/metadata_api#sell-metadata_api-compatibilities-getcompatibilitypropertyvalues&quot; &gt;getCompatibilityPropertyValues&lt;/a&gt; method) to describe the assembly for which an item is compatible.&lt;br&gt;&lt;br&gt;The &lt;b&gt;categoryId&lt;/b&gt; of the compatibility-enabled category for which to retrieve compatibility property names is required in the request body.&lt;br&gt;&lt;br&gt;By default, all property names within the compatibility category of the specified compatibility-enable category are returned. You can limit the size of the result set by using the &lt;b&gt;dataset&lt;/b&gt; array to specify the types of properties you want returned.

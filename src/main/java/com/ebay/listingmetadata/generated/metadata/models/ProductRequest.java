@@ -35,7 +35,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<PropertyFilterInner> applicationPropertyFilters;
     /**
-     * This array defines the type of properties that are returned for the catalog-enabled category.&lt;br&gt;&lt;br&gt;For example, if you specify &lt;code&gt;Searchable&lt;/code&gt;, the compatibility details will contain properties that can be used to search for products, such as make or model.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This field cannot be used alongside &lt;b&gt;dataPropertyName&lt;/b&gt;. If both are used, an error will occur.&lt;/span&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;DisplayableProductDetails&lt;/code&gt;: Properties for use in a user interface to describe products.&lt;/li&gt;&lt;li&gt;&lt;code&gt;DisplayableSearchResults&lt;/code&gt;: Properties for use in results for product searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Searchable&lt;/code&gt;: Properties for use in searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Sortable&lt;/code&gt;: Properties that are suitable for sorting.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;DisplayableSearchResults&lt;/code&gt;
+     * This array defines the type of properties that are returned for the catalog-enabled category.&lt;br&gt;&lt;br&gt;For example, if you specify &lt;code&gt;Searchable&lt;/code&gt;, the compatibility details will contain properties that can be used to search for products, such as make or model.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This field cannot be used alongside &lt;b&gt;datasetPropertyName&lt;/b&gt;. If both are used, an error will occur.&lt;/span&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;DisplayableProductDetails&lt;/code&gt;: Properties for use in a user interface to describe products.&lt;/li&gt;&lt;li&gt;&lt;code&gt;DisplayableSearchResults&lt;/code&gt;: Properties for use in results for product searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Searchable&lt;/code&gt;: Properties for use in searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Sortable&lt;/code&gt;: Properties that are suitable for sorting.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;DisplayableSearchResults&lt;/code&gt;
      */
     private java.util.List<String> dataset;
     /**
@@ -43,15 +43,15 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> datasetPropertyName;
     /**
-     * This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
+     * This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
      */
     private DisabledProductFilter disabledProductFilter;
     /**
-     * This container controls the pagination of the result set.
+     * This type defines the fields used to control the pagination of the result set.
      */
     private PaginationInput paginationInput;
     /**
-     * This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
+     * This type defines the supported product identifiers.
      */
     private ProductIdentifier productIdentifier;
     /**
@@ -91,7 +91,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return this.applicationPropertyFilters;
     }
     /**
-     * Gets the dataset property value. This array defines the type of properties that are returned for the catalog-enabled category.&lt;br&gt;&lt;br&gt;For example, if you specify &lt;code&gt;Searchable&lt;/code&gt;, the compatibility details will contain properties that can be used to search for products, such as make or model.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This field cannot be used alongside &lt;b&gt;dataPropertyName&lt;/b&gt;. If both are used, an error will occur.&lt;/span&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;DisplayableProductDetails&lt;/code&gt;: Properties for use in a user interface to describe products.&lt;/li&gt;&lt;li&gt;&lt;code&gt;DisplayableSearchResults&lt;/code&gt;: Properties for use in results for product searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Searchable&lt;/code&gt;: Properties for use in searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Sortable&lt;/code&gt;: Properties that are suitable for sorting.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;DisplayableSearchResults&lt;/code&gt;
+     * Gets the dataset property value. This array defines the type of properties that are returned for the catalog-enabled category.&lt;br&gt;&lt;br&gt;For example, if you specify &lt;code&gt;Searchable&lt;/code&gt;, the compatibility details will contain properties that can be used to search for products, such as make or model.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This field cannot be used alongside &lt;b&gt;datasetPropertyName&lt;/b&gt;. If both are used, an error will occur.&lt;/span&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;DisplayableProductDetails&lt;/code&gt;: Properties for use in a user interface to describe products.&lt;/li&gt;&lt;li&gt;&lt;code&gt;DisplayableSearchResults&lt;/code&gt;: Properties for use in results for product searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Searchable&lt;/code&gt;: Properties for use in searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Sortable&lt;/code&gt;: Properties that are suitable for sorting.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;DisplayableSearchResults&lt;/code&gt;
      * @return a {@link java.util.List<String>}
      */
     @jakarta.annotation.Nullable
@@ -107,7 +107,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return this.datasetPropertyName;
     }
     /**
-     * Gets the disabledProductFilter property value. This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
+     * Gets the disabledProductFilter property value. This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
      * @return a {@link DisabledProductFilter}
      */
     @jakarta.annotation.Nullable
@@ -131,7 +131,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the paginationInput property value. This container controls the pagination of the result set.
+     * Gets the paginationInput property value. This type defines the fields used to control the pagination of the result set.
      * @return a {@link PaginationInput}
      */
     @jakarta.annotation.Nullable
@@ -139,7 +139,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         return this.paginationInput;
     }
     /**
-     * Gets the productIdentifier property value. This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
+     * Gets the productIdentifier property value. This type defines the supported product identifiers.
      * @return a {@link ProductIdentifier}
      */
     @jakarta.annotation.Nullable
@@ -184,7 +184,7 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         this.applicationPropertyFilters = value;
     }
     /**
-     * Sets the dataset property value. This array defines the type of properties that are returned for the catalog-enabled category.&lt;br&gt;&lt;br&gt;For example, if you specify &lt;code&gt;Searchable&lt;/code&gt;, the compatibility details will contain properties that can be used to search for products, such as make or model.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This field cannot be used alongside &lt;b&gt;dataPropertyName&lt;/b&gt;. If both are used, an error will occur.&lt;/span&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;DisplayableProductDetails&lt;/code&gt;: Properties for use in a user interface to describe products.&lt;/li&gt;&lt;li&gt;&lt;code&gt;DisplayableSearchResults&lt;/code&gt;: Properties for use in results for product searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Searchable&lt;/code&gt;: Properties for use in searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Sortable&lt;/code&gt;: Properties that are suitable for sorting.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;DisplayableSearchResults&lt;/code&gt;
+     * Sets the dataset property value. This array defines the type of properties that are returned for the catalog-enabled category.&lt;br&gt;&lt;br&gt;For example, if you specify &lt;code&gt;Searchable&lt;/code&gt;, the compatibility details will contain properties that can be used to search for products, such as make or model.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This field cannot be used alongside &lt;b&gt;datasetPropertyName&lt;/b&gt;. If both are used, an error will occur.&lt;/span&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;DisplayableProductDetails&lt;/code&gt;: Properties for use in a user interface to describe products.&lt;/li&gt;&lt;li&gt;&lt;code&gt;DisplayableSearchResults&lt;/code&gt;: Properties for use in results for product searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Searchable&lt;/code&gt;: Properties for use in searches.&lt;/li&gt;&lt;li&gt;&lt;code&gt;Sortable&lt;/code&gt;: Properties that are suitable for sorting.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; &lt;code&gt;DisplayableSearchResults&lt;/code&gt;
      * @param value Value to set for the dataset property.
      */
     public void setDataset(@jakarta.annotation.Nullable final java.util.List<String> value) {
@@ -198,21 +198,21 @@ public class ProductRequest implements AdditionalDataHolder, Parsable {
         this.datasetPropertyName = value;
     }
     /**
-     * Sets the disabledProductFilter property value. This container can be used to specify whether or not to filter out products which are disabled for selling on eBay and/or disabled for product review. 
+     * Sets the disabledProductFilter property value. This type defines the booleans used to determine if a product is excluded from eBay selling and/or review.
      * @param value Value to set for the disabledProductFilter property.
      */
     public void setDisabledProductFilter(@jakarta.annotation.Nullable final DisabledProductFilter value) {
         this.disabledProductFilter = value;
     }
     /**
-     * Sets the paginationInput property value. This container controls the pagination of the result set.
+     * Sets the paginationInput property value. This type defines the fields used to control the pagination of the result set.
      * @param value Value to set for the paginationInput property.
      */
     public void setPaginationInput(@jakarta.annotation.Nullable final PaginationInput value) {
         this.paginationInput = value;
     }
     /**
-     * Sets the productIdentifier property value. This container is used to provide unique identifier for the product. The product identifier consists of an identifier type and value, and are unique across all sites.
+     * Sets the productIdentifier property value. This type defines the supported product identifiers.
      * @param value Value to set for the productIdentifier property.
      */
     public void setProductIdentifier(@jakarta.annotation.Nullable final ProductIdentifier value) {
