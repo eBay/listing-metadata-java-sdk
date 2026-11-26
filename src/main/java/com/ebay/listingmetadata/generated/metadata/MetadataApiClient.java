@@ -84,7 +84,7 @@ public class MetadataApiClient extends BaseRequestBuilder {
         ApiClientBuilder.registerDefaultDeserializer(() -> new FormParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new TextParseNodeFactory());
         if (requestAdapter.getBaseUrl() == null || requestAdapter.getBaseUrl().isEmpty()) {
-            requestAdapter.setBaseUrl("https://api.ebay.com/sell/metadata/v1");
+            requestAdapter.setBaseUrl("https://api.ebay.com{basePath}");
         }
         pathParameters.put("baseurl", requestAdapter.getBaseUrl());
     }
